@@ -28,7 +28,7 @@ public class Lotería extends Stage {
     private VBox VB_Cambio_de_tablas;
     private VBox VB_Partida;
     private ImageView IV_Carta, IV;
-    private Image I_Dorso, I_Carta_P;
+    private Image I_Dorso;
     private Button B_Anterior;
     private Button B_Siguiente;
     private Button B_Iniciar;
@@ -99,7 +99,6 @@ public class Lotería extends Stage {
                 IV = null;
                 try {
                     Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg");
-                    I_Carta_P = new Image(Stream);
                     IV = new ImageView(new Image("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg"));
                     ++Posicion;
                 } catch (FileNotFoundException var8) {
@@ -118,7 +117,7 @@ public class Lotería extends Stage {
 
     private void Mezclar_cartas() {
         Aleatorio = new Random();
-        for (int i = 0; i < Cartas.length; i++) {
+        for (i = 0; i < Cartas.length; i++) {
             Indice_aleatorio_para_intercambiar = Aleatorio.nextInt(Cartas.length);
             Temporal = Cartas[Indice_aleatorio_para_intercambiar];
             Cartas[Indice_aleatorio_para_intercambiar] = Cartas[i];
@@ -128,8 +127,8 @@ public class Lotería extends Stage {
 
     private void guardarTabla(int tablaActual) {
         Posicion = 0;
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
                 todasLasTablas[tablaActual][i][j] = Cartas[Posicion];
                 Posicion++;
             }
@@ -138,8 +137,8 @@ public class Lotería extends Stage {
 
     private void cargarTabla() {
         Posicion = 0;
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
                 Cartas[Posicion] = todasLasTablas[tablaActual][i][j];
                 Posicion++;
             }
