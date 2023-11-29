@@ -34,7 +34,6 @@ public class Lotería extends Stage {
     private Button B_Iniciar;
     private Button B_Reiniciar;
     private GridPane GP_Tabla;
-    private InputStream Stream;
     private Random Aleatorio;
     private String Temporal;
     private String[] Cartas = new String[]{""};
@@ -98,7 +97,7 @@ public class Lotería extends Stage {
             for (j = 0; j < 4; ++j) {
                 IV = null;
                 try {
-                    Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg");
+                    FileInputStream Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg");
                     IV = new ImageView(new Image("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg"));
                     ++Posicion;
                 } catch (FileNotFoundException var8) {
