@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.Random;
 
 /*
@@ -35,6 +34,7 @@ public class Lotería extends Stage {
     private Button B_Reiniciar;
     private GridPane GP_Tabla;
     private Random Aleatorio;
+    private FileInputStream Stream;
     private String Temporal;
     private String[] Cartas = new String[]{""};
     private int i, j, Posicion, Indice_aleatorio_para_intercambiar;
@@ -97,7 +97,7 @@ public class Lotería extends Stage {
             for (j = 0; j < 4; ++j) {
                 IV = null;
                 try {
-                    FileInputStream Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg");
+                    Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg");
                     IV = new ImageView(new Image("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Cartas[Posicion] + ".jpg"));
                     ++Posicion;
                 } catch (FileNotFoundException var8) {
