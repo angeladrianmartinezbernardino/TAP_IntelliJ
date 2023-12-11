@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Vamos a empezar otra vez.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Algo.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1701272234245" duration="1690000" />
       <workItem from="1701314080536" duration="769000" />
       <workItem from="1701582749501" duration="1624000" />
-      <workItem from="1702253883673" duration="7715000" />
+      <workItem from="1702253883673" duration="8698000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -180,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702255719342</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Algo.">
+      <option name="closed" value="true" />
+      <created>1702265955159</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702265955159</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +210,7 @@
     <MESSAGE value="Ya entendí." />
     <MESSAGE value="Casi." />
     <MESSAGE value="Vamos a empezar otra vez." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vamos a empezar otra vez." />
+    <MESSAGE value="Algo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Algo." />
   </component>
 </project>

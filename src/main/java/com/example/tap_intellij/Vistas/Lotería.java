@@ -43,11 +43,6 @@ public class Lotería extends Stage {
 
     public Lotería() {
         this.Crear_mazo();
-        this.Mezclar_cartas();
-        for (int tabla = 0; tabla < 5; tabla++) {
-            Mezclar_cartas();
-            guardarTabla(tabla);
-        }
         this.Crear_UI();
         this.Escena = new Scene(this.Juego, 600.0, 625.0);
         this.setTitle("Loteria");
@@ -58,7 +53,10 @@ public class Lotería extends Stage {
     }
 
     private void Crear_UI() {
-        this.Mezclar_cartas();
+        for (int tabla = 0; tabla < 5; tabla++) {
+            Mezclar_cartas();
+            guardarTabla(tabla);
+        }
         this.Crear_tabla();
         this.Crear_mazo();
         this.Anterior = new Button("<");
