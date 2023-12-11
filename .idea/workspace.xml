@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Algo.">
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Estoy acomodando.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +55,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/AAdri/OneDrive/Multimedia/Documentos/Programas/IntelliJ/TAP-master",
+    "last_opened_file_path": "C:/Users/AAdri/OneDrive/Multimedia/Documentos/Programas/IntelliJ/tap2023-main",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,7 +90,7 @@
       <workItem from="1701272234245" duration="1690000" />
       <workItem from="1701314080536" duration="769000" />
       <workItem from="1701582749501" duration="1624000" />
-      <workItem from="1702253883673" duration="8698000" />
+      <workItem from="1702253883673" duration="11068000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -187,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702265955159</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Estoy acomodando.">
+      <option name="closed" value="true" />
+      <created>1702266356471</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702266356471</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +220,7 @@
     <MESSAGE value="Casi." />
     <MESSAGE value="Vamos a empezar otra vez." />
     <MESSAGE value="Algo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Algo." />
+    <MESSAGE value="Estoy acomodando." />
+    <option name="LAST_COMMIT_MESSAGE" value="Estoy acomodando." />
   </component>
 </project>

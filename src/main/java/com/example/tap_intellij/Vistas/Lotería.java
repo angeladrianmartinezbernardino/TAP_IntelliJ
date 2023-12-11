@@ -33,13 +33,9 @@ public class Lotería extends Stage {
     private Button Iniciar;
     private Button Reiniciar;
     private GridPane Tabla;
-    private Random Aleatorio;
     private FileInputStream Stream;
-    private String Temporal;
     private String[] Carta = new String[]{""};
-    private int i, j, Posición, Índice_aleatorio_para_intercambiar;
-    private int tablaActual = 0;
-    private final String[][][] Tablas = new String[5][4][4];
+    private int i, j, Posición;
 
     public Lotería() {
         this.Crear_mazo();
@@ -48,15 +44,9 @@ public class Lotería extends Stage {
         this.setTitle("Loteria");
         this.setScene(this.Escena);
         this.show();
-        cargarTabla();
-        guardarTabla(tablaActual);
     }
 
     private void Crear_UI() {
-        for (int tabla = 0; tabla < 5; tabla++) {
-            Mezclar_cartas();
-            guardarTabla(tabla);
-        }
         this.Crear_tabla();
         this.Crear_mazo();
         this.Anterior = new Button("<");
@@ -66,8 +56,6 @@ public class Lotería extends Stage {
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
         this.Cambio_de_tablas = new VBox(this.Tabla, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
-        this.Anterior.setOnAction(e -> Cambiar_de_tabla(false));
-        this.Siguiente.setOnAction(e -> Cambiar_de_tabla(true));
         this.Iniciar = new Button("Iniciar");
         this.Partida = new VBox(this.Mazo, this.Iniciar);
         this.Juego = new HBox(this.Cambio_de_tablas, this.Partida);
@@ -110,53 +98,5 @@ public class Lotería extends Stage {
                 this.Tabla.add(this.Carta_en_Tabla[i][j], i, j);
             }
         }
-    }
-
-    private void Mezclar_cartas() {
-        Aleatorio = new Random();
-        for (i = 0; i < Carta.length; i++) {
-            Índice_aleatorio_para_intercambiar = Aleatorio.nextInt(Carta.length);
-            Temporal = Carta[Índice_aleatorio_para_intercambiar];
-            Carta[Índice_aleatorio_para_intercambiar] = Carta[i];
-            Carta[i] = Temporal;
-        }
-    }
-
-    private void guardarTabla(int tablaActual) {
-        Posición = 0;
-        for (i = 0; i < 4; i++) {
-            for (j = 0; j < 4; j++) {
-                Tablas[tablaActual][i][j] = Carta[Posición];
-                Posición++;
-            }
-        }
-    }
-
-    private void cargarTabla() {
-        Posición = 0;
-        for (i = 0; i < 4; i++) {
-            for (j = 0; j < 4; j++) {
-                Carta[Posición] = Tablas[tablaActual][i][j];
-                Posición++;
-            }
-        }
-    }
-
-    private void Cambiar_de_tabla(boolean adelante) {
-        if (adelante) {
-            tablaActual = tablaActual + 1;
-            if (tablaActual > 4) {
-                tablaActual = 0;
-                cargarTabla();
-            }
-        } else {
-            tablaActual = tablaActual - 1;
-            if (tablaActual < 0) {
-                tablaActual = 4;
-                cargarTabla();
-            }
-        }
-        cargarTabla();
-        Crear_tabla();
     }
 }
