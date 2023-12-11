@@ -120,10 +120,15 @@ public class Lotería extends Stage {
 
     private void cambiarTabla(int cambio) {
         tablaActualIndex += cambio;
-        if (tablaActualIndex < 0) tablaActualIndex = 4;
-        else if (tablaActualIndex > 4) tablaActualIndex = 0;
-        Crear_tabla(tablaActualIndex);
+        if (tablaActualIndex < 0) {
+            tablaActualIndex = todasLasTablas.size() - 1; // Ir a la última tabla si se pasa del principio
+        } else if (tablaActualIndex >= todasLasTablas.size()) {
+            tablaActualIndex = 0; // Volver a la primera tabla si se pasa del final
+        }
+        System.out.println("Índice de tabla actual: " + tablaActualIndex); // Mensaje de depuración
+        Crear_tabla(tablaActualIndex); // Actualizar la interfaz de usuario con la nueva tabla
     }
+
 
     // ... (resto del código, si hay más)
 }
