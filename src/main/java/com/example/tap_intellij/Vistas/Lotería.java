@@ -20,7 +20,7 @@ import java.io.FileNotFoundException;
 
 public class Lotería extends Stage {
     private final Scene Escena;
-    private final Button[][] Carta_en_Tabla = new Button[4][4];
+    private final Button[][] Tabla_con_cartas = new Button[4][4];
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
@@ -91,10 +91,10 @@ public class Lotería extends Stage {
                 }
                 IV.setFitHeight(126.324);
                 IV.setFitWidth(89.28);
-                this.Carta_en_Tabla[i][j] = new Button();
-                this.Carta_en_Tabla[i][j].setGraphic(IV);
-                this.Carta_en_Tabla[i][j].setPrefSize(100.0, 140.0);
-                this.Tabla.add(this.Carta_en_Tabla[i][j], i, j);
+                this.Tabla_con_cartas[i][j] = new Button();
+                this.Tabla_con_cartas[i][j].setGraphic(IV);
+                this.Tabla_con_cartas[i][j].setPrefSize(100.0, 140.0);
+                this.Tabla.add(this.Tabla_con_cartas[i][j], i, j);
             }
         }
     }

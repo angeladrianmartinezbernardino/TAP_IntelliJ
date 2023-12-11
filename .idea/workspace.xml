@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Estoy acomodando.">
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Es la base principal de la lotería.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
       <workItem from="1701272234245" duration="1690000" />
       <workItem from="1701314080536" duration="769000" />
       <workItem from="1701582749501" duration="1624000" />
-      <workItem from="1702253883673" duration="11068000" />
+      <workItem from="1702253883673" duration="15138000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -196,7 +195,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702266356471</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Es la base de la lotería.">
+      <option name="closed" value="true" />
+      <created>1702269394577</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702269394577</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Es la base principal de la lotería.">
+      <option name="closed" value="true" />
+      <created>1702269474166</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702269474166</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +236,8 @@
     <MESSAGE value="Vamos a empezar otra vez." />
     <MESSAGE value="Algo." />
     <MESSAGE value="Estoy acomodando." />
-    <option name="LAST_COMMIT_MESSAGE" value="Estoy acomodando." />
+    <MESSAGE value="Es la base de la lotería." />
+    <MESSAGE value="Es la base principal de la lotería." />
+    <option name="LAST_COMMIT_MESSAGE" value="Es la base principal de la lotería." />
   </component>
 </project>
