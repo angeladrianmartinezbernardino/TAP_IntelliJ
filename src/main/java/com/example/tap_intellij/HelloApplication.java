@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 /*
  * Ángel Adrián Martínez Bernardino.
+ *
+ * Proyectos de Tópicos Avanzados de Programación.
  * */
 
 public class HelloApplication extends Application {
