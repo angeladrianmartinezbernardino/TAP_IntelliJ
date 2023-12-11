@@ -13,6 +13,10 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * Ángel Adrián Martínez Bernardino.
@@ -20,24 +24,23 @@ import java.io.FileNotFoundException;
 
 public class Lotería extends Stage {
     private final Scene Escena;
-    private final Button[][] Tabla_con_cartas = new Button[4][4];
+    private final List<Button[][]> todasLasTablas = new ArrayList<>(); // Lista de tablas
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
     private VBox Partida;
     private ImageView Mazo, IV;
     private Image Dorso;
-    private Button Anterior;
-    private Button Siguiente;
-    private Button Iniciar;
-    private Button Reiniciar;
+    private Button Anterior, Siguiente, Iniciar, Reiniciar;
     private GridPane Tabla;
     private FileInputStream Stream;
-    private String[] Carta = new String[]{""};
+    private String[] Carta;
     private int i, j, Posición;
+    private int tablaActualIndex = 0; // Índice de la tabla actual
 
     public Lotería() {
         this.Crear_mazo();
+        this.inicializarTablas();
         this.Crear_UI();
         this.Escena = new Scene(this.Juego, 600.0, 625.0);
         this.setTitle("Loteria");
@@ -46,12 +49,13 @@ public class Lotería extends Stage {
     }
 
     private void Crear_UI() {
-        this.Crear_tabla();
-        this.Crear_mazo();
+        this.Crear_tabla(tablaActualIndex); // Crear la primera tabla
         this.Anterior = new Button("<");
         this.Anterior.setPrefSize(200.0, 100.0);
+        this.Anterior.setOnAction(e -> cambiarTabla(-1)); // Cambiar a la tabla anterior
         this.Siguiente = new Button(">");
         this.Siguiente.setPrefSize(200.0, 100.0);
+        this.Siguiente.setOnAction(e -> cambiarTabla(1)); // Cambiar a la siguiente tabla
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
         this.Cambio_de_tablas = new VBox(this.Tabla, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
@@ -59,9 +63,9 @@ public class Lotería extends Stage {
         this.Partida = new VBox(this.Mazo, this.Iniciar);
         this.Juego = new HBox(this.Cambio_de_tablas, this.Partida);
         this.Juego.setPadding(new Insets(20.0));
-        Reiniciar = new Button("Comenzar de nuevo");
-        Reiniciar.setVisible(false);
-        Partida.getChildren().add(Reiniciar);
+        this.Reiniciar = new Button("Comenzar de nuevo");
+        this.Reiniciar.setVisible(false);
+        this.Partida.getChildren().add(this.Reiniciar);
     }
 
     private void Crear_mazo() {
@@ -70,32 +74,56 @@ public class Lotería extends Stage {
         this.Mazo = new ImageView(Dorso);
         this.Mazo.setFitWidth(119.2);
         this.Mazo.setFitHeight(168.4);
-        for (i = 0; i < 54; i++) {
-            Carta[i] = String.valueOf(i + 1);
+    }
+
+    private void inicializarTablas() {
+        for (int k = 0; k < 5; k++) {
+            List<String> cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
+            Collections.shuffle(cartasMezcladas);
+
+            Button[][] tabla = new Button[4][4];
+            int pos = 0;
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    String cartaActual = cartasMezcladas.get(pos);
+                    Button boton = new Button();
+
+                    try {
+                        Image imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
+                        ImageView imageView = new ImageView(imagenCarta);
+                        imageView.setFitHeight(126.324); // Ajusta estos valores según sea necesario
+                        imageView.setFitWidth(89.28);
+                        boton.setGraphic(imageView);
+                    } catch (FileNotFoundException e) {
+                        System.out.println("Archivo no encontrado: " + e.getMessage());
+                        // Manejar el caso de que el archivo no se encuentre
+                    }
+
+                    tabla[i][j] = boton;
+                    pos++;
+                }
+            }
+            todasLasTablas.add(tabla);
         }
     }
 
-    private void Crear_tabla() {
+
+    private void Crear_tabla(int indiceTabla) {
         this.Tabla = new GridPane();
-        Posición = 0;
-        for (i = 0; i < 4; ++i) {
-            for (j = 0; j < 4; ++j) {
-                IV = null;
-                try {
-                    Stream = new FileInputStream("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Carta[Posición] + ".jpg");
-                    IV = new ImageView(new Image("C:\\Users\\AAdri\\OneDrive\\Multimedia\\Documentos\\Programas\\IntelliJ\\TAP_IntelliJ\\src\\main\\resources\\Imágenes\\" + Carta[Posición] + ".jpg"));
-                    ++Posición;
-                } catch (FileNotFoundException var8) {
-                    IV = new ImageView();
-                    System.out.println("Archivo no encontrado: " + var8.getMessage());
-                }
-                IV.setFitHeight(126.324);
-                IV.setFitWidth(89.28);
-                this.Tabla_con_cartas[i][j] = new Button();
-                this.Tabla_con_cartas[i][j].setGraphic(IV);
-                this.Tabla_con_cartas[i][j].setPrefSize(100.0, 140.0);
-                this.Tabla.add(this.Tabla_con_cartas[i][j], i, j);
+        Button[][] tablaActual = todasLasTablas.get(indiceTabla);
+        for (int i = 0; i < tablaActual.length; i++) {
+            for (int j = 0; j < tablaActual[i].length; j++) {
+                this.Tabla.add(tablaActual[i][j], i, j);
             }
         }
     }
+
+    private void cambiarTabla(int cambio) {
+        tablaActualIndex += cambio;
+        if (tablaActualIndex < 0) tablaActualIndex = 4;
+        else if (tablaActualIndex > 4) tablaActualIndex = 0;
+        Crear_tabla(tablaActualIndex);
+    }
+
+    // ... (resto del código, si hay más)
 }
