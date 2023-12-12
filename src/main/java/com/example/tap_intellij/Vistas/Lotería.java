@@ -100,7 +100,6 @@ public class Lotería extends Stage {
                         }
                     });
                     Todas_las_tablas[Tabla][Fila][Columna] = Botón_de_carta_en_tabla;
-                    //Prueba.
                 }
             }
         }
