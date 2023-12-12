@@ -2,8 +2,10 @@ package com.example.tap_intellij.Vistas;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -25,20 +27,16 @@ public class Lotería extends Stage {
     private final Scene Escena;
     private final Button[][][] Todas_las_tablas = new Button[5][4][4];
     private Button[][] Tabla_actual;
-    private HBox Juego;
-    private HBox Seleccionar_Tabla;
-    private VBox Cambio_de_tablas;
-    private VBox Partida;
+    private HBox Juego, Seleccionar_Tabla;
+    private VBox Cambio_de_tablas, Partida;
     private Button Anterior, Siguiente, Iniciar, Reiniciar, Botón_de_carta_en_tabla;
     private GridPane Tabla_para_jugar;
-    private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna, Índice, Número_de_carta;
-    private List<Integer> Números_disponibles;
-
+    private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna, Índice, Número_de_carta, Carta_actual;
+    private List<Integer> Números_disponibles, Cartas_del_mazo;
     private Label Mazo;
     private Timeline Línea_del_tiempo;
     private final int Timpo_para_carta = 4;
-    private List<Integer> Cartas_del_mazo;
-    private int Carta_actual;
+    private Alert Alerta;
 
     public Lotería() {
         this.Cartas_del_mazo = new ArrayList<>(Arrays.asList(
@@ -148,9 +146,57 @@ public class Lotería extends Stage {
     private void Sacar_carta() {
         Carta_actual = Cartas_del_mazo.remove(0);
         Mazo.setText("La carta es " + Carta_actual);
-        if (Cartas_del_mazo.isEmpty()) {
+        Marcar_cartas_en_la_tabla(Carta_actual);
+        if (Verificar_victoria()) {
             Línea_del_tiempo.stop();
-            Mazo.setText("¡Fin del juego!");
+            Mazo.setText("¡Fin del juego! Has ganado.");
+            Mostrar_victoria();
+        } else if (Cartas_del_mazo.isEmpty()) {
+            Línea_del_tiempo.stop();
+            Mazo.setText("¡Fin del juego! Pero no has ganado.");
+            Mostrar_derrota();
         }
+    }
+
+    private boolean Verificar_victoria() {
+        for (Button[] fila : Tabla_actual) {
+            for (Button boton : fila) {
+                if (!boton.isDisabled()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void Marcar_cartas_en_la_tabla(int numeroDeCarta) {
+        for (Button[] Fila : Tabla_actual) {
+            for (Button Botón : Fila) {
+                if (Botón.getText().endsWith(String.valueOf(numeroDeCarta))) {
+                    Botón.setStyle("-fx-opacity: 0.5;");
+                    Botón.setDisable(true);
+                }
+            }
+        }
+    }
+
+    private void Mostrar_victoria() {
+        Platform.runLater(() -> {
+            Alerta = new Alert(Alert.AlertType.INFORMATION);
+            Alerta.setTitle("Juego Terminado");
+            Alerta.setHeaderText(null);
+            Alerta.setContentText("¡Felicidades! Has ganado el juego.");
+            Alerta.showAndWait();
+        });
+    }
+
+    private void Mostrar_derrota() {
+        Platform.runLater(() -> {
+            Alerta = new Alert(Alert.AlertType.INFORMATION);
+            Alerta.setTitle("Juego Terminado");
+            Alerta.setHeaderText(null);
+            Alerta.setContentText("¡Vaya! No has ganado el juego.");
+            Alerta.showAndWait();
+        });
     }
 }
