@@ -68,9 +68,9 @@ public class Lotería extends Stage {
     private void Crear_tabla(int indiceTabla) {
         this.Tabla_para_jugar = new GridPane();
         Tabla_actual = Todas_las_tablas[indiceTabla];
-        for (int fila = 0; fila < Tabla_actual.length; fila++) {
-            for (int columna = 0; columna < Tabla_actual[fila].length; columna++) {
-                this.Tabla_para_jugar.add(Tabla_actual[fila][columna], columna, fila);
+        for (Fila = 0; Fila < Tabla_actual.length; Fila++) {
+            for (Columna = 0; Columna < Tabla_actual[Fila].length; Columna++) {
+                this.Tabla_para_jugar.add(Tabla_actual[Fila][Columna], Columna, Fila);
             }
         }
     }
