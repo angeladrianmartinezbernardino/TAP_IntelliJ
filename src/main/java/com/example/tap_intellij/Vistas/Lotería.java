@@ -34,13 +34,14 @@ public class Lotería extends Stage {
     private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna, Índice, Número_de_carta;
     private List<Integer> Números_disponibles;
 
-    private Label mazoLabel;
-    private Timeline timeline;
-    private final int tiempoCarta = 4;
-    private List<Integer> cartasJuego;
+    private Label Mazo;
+    private Timeline Línea_del_tiempo;
+    private final int Timpo_para_carta = 4;
+    private List<Integer> Cartas_del_mazo;
+    private int Carta_actual;
 
     public Lotería() {
-        this.cartasJuego = new ArrayList<>(Arrays.asList(
+        this.Cartas_del_mazo = new ArrayList<>(Arrays.asList(
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
@@ -48,17 +49,17 @@ public class Lotería extends Stage {
                 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
                 51, 52, 53, 54
         ));
-        Collections.shuffle(this.cartasJuego);
+        Collections.shuffle(this.Cartas_del_mazo);
         this.Iniciar_tablas();
         this.Crear_UI();
         this.Escena = new Scene(this.Juego, 600.0, 625.0);
         this.setTitle("Lotería");
         this.setScene(this.Escena);
         this.show();
-        this.mazoLabel = new Label("Mazo");
-        mazoLabel.setStyle("-fx-background-color: pink; -fx-text-fill: black; -fx-font-size: 20;");
-        mazoLabel.setPrefSize(200, 200);
-        this.Partida.getChildren().add(0, mazoLabel); // Asegúrate de que el mazoLabel sea el primer elemento en Partida
+        this.Mazo = new Label("Mazo");
+        Mazo.setStyle("-fx-background-color: pink; -fx-text-fill: black; -fx-font-size: 20;");
+        Mazo.setPrefSize(200, 200);
+        this.Partida.getChildren().add(0, Mazo);
     }
 
     private void Crear_UI() {
@@ -76,7 +77,8 @@ public class Lotería extends Stage {
         this.Iniciar.setOnAction(e -> {
             Anterior.setDisable(true);
             Siguiente.setDisable(true);
-            iniciarJuego();
+            Iniciar.setDisable(true);
+            Iniciar_juego();
         });
         this.Partida = new VBox(this.Iniciar);
         this.Juego = new HBox(this.Cambio_de_tablas, this.Partida);
@@ -128,39 +130,32 @@ public class Lotería extends Stage {
         this.Cambio_de_tablas.getChildren().add(0, this.Tabla_para_jugar);
     }
 
-    private void iniciarJuego() {
+    private void Iniciar_juego() {
         Anterior.setDisable(true);
         Siguiente.setDisable(true);
-
-        timeline = new Timeline(new KeyFrame(Duration.seconds(tiempoCarta), e -> sacarCarta()));
-        timeline.setCycleCount(Timeline.INDEFINITE); // Usa INDEFINITE si quieres que continúe hasta que se detenga manualmente
-        timeline.play();
+        Línea_del_tiempo = new Timeline(new KeyFrame(Duration.seconds(Timpo_para_carta), e -> Sacar_carta()));
+        Línea_del_tiempo.setCycleCount(Timeline.INDEFINITE);
+        Línea_del_tiempo.play();
     }
 
-    private void sacarCarta() {
-        // Generar un número aleatorio entre 1 y 54
-        int cartaActual = cartasJuego.remove(0);
-        mazoLabel.setText("Carta actual es " + cartaActual);
-
-        // Marcar la carta automáticamente después de 4 segundos si el jugador no lo ha hecho
-        new Timeline(new KeyFrame(Duration.seconds(tiempoCarta), event -> {
-            marcarCarta(cartaActual);
+    private void Sacar_carta() {
+        Carta_actual = Cartas_del_mazo.remove(0);
+        Mazo.setText("La carta es " + Carta_actual);
+        new Timeline(new KeyFrame(Duration.seconds(Timpo_para_carta), event -> {
+            Marcar_carta(Carta_actual);
         })).play();
-
-        // Si cartasJuego está vacío, detener el juego
-        if (cartasJuego.isEmpty()) {
-            timeline.stop();
-            mazoLabel.setText("Fin del juego");
+        if (Cartas_del_mazo.isEmpty()) {
+            Línea_del_tiempo.stop();
+            Mazo.setText("¡Fin del juego!");
         }
     }
 
-    private void marcarCarta(int numeroCarta) {
-        // Encuentra el botón en la tabla actual que corresponde al número de carta sacado
+    private void Marcar_carta(int Número_de_carta) {
         for (Button[] fila : Tabla_actual) {
-            for (Button boton : fila) {
-                if (boton.getText().endsWith(String.valueOf(numeroCarta))) {
-                    boton.setStyle("-fx-opacity: 0.5;"); // Marcar la carta visualmente
-                    boton.setDisable(true); // Deshabilitar el botón para evitar más clics
+            for (Button Botón : fila) {
+                if (Botón.getText().endsWith(String.valueOf(Número_de_carta))) {
+                    Botón.setStyle("-fx-opacity: 0.5;");
+                    Botón.setDisable(true);
                 }
             }
         }
