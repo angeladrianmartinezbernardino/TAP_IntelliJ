@@ -83,8 +83,8 @@ public class Lotería extends Stage {
             Índice_de_la_tabla_actual = 0;
         }
         System.out.println("Índice de la tabla actual: " + Índice_de_la_tabla_actual);
-        this.Cambio_de_tablas.getChildren().remove(this.Tabla_para_jugar); // Eliminar la tabla anterior
-        Crear_tabla(Índice_de_la_tabla_actual); // Crear la nueva tabla
-        this.Cambio_de_tablas.getChildren().add(0, this.Tabla_para_jugar); // Añadir la nueva tabla en la primera posición del VBox
+        this.Cambio_de_tablas.getChildren().remove(this.Tabla_para_jugar);
+        Crear_tabla(Índice_de_la_tabla_actual);
+        this.Cambio_de_tablas.getChildren().add(0, this.Tabla_para_jugar);
     }
 }
