@@ -5,4 +5,8 @@ module com.example.tap_intellij {
 
     opens com.example.tap_intellij to javafx.fxml;
     exports com.example.tap_intellij;
+
+    requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
+    requires mariadb.java.client;
 }

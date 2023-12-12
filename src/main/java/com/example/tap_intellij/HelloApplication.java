@@ -1,5 +1,6 @@
 package com.example.tap_intellij;
 
+import com.example.tap_intellij.Modelos.Conexion;
 import com.example.tap_intellij.Vistas.Calculadora;
 import com.example.tap_intellij.Vistas.Lotería;
 import com.example.tap_intellij.Vistas.Restaurante;
@@ -12,6 +13,8 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /*
  * Ángel Adrián Martínez Bernardino.
@@ -42,11 +45,13 @@ public class HelloApplication extends Application {
         Menu_Parcial_1 = new Menu("Parcial 1");
         Menu_Parcial_1.getItems().addAll(MI_Calculadora, MI_Lotería);
         Menu_Parcial_2 = new Menu("Parcial 2");
+        Menu_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_Atletismo);
         MB_Barra_de_menu = new MenuBar(Menu_Parcial_1, Menu_Parcial_2);
     }
 
     @Override
     public void start(Stage stage) {
+        connectToDB();
         CrearUI();
         BP = new BorderPane();
         BP.setTop(MB_Barra_de_menu);
@@ -59,5 +64,10 @@ public class HelloApplication extends Application {
     private void Salir() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Mensaje del sistema");
+    }
+
+    public void connectToDB() {
+        Conexion.createConnection();
+        System.out.println("Conexi[on establecida.");
     }
 }
