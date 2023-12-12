@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Falta ordenar.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +92,7 @@
       <workItem from="1701582749501" duration="1624000" />
       <workItem from="1702253883673" duration="19281000" />
       <workItem from="1702279064722" duration="356000" />
-      <workItem from="1702330944041" duration="9790000" />
+      <workItem from="1702330944041" duration="12841000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -285,7 +286,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702341117360</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Falta ordenar.">
+      <option name="closed" value="true" />
+      <created>1702341237172</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1702341237172</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Falta ordenar.">
+      <option name="closed" value="true" />
+      <created>1702341289789</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1702341289789</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
