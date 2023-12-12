@@ -36,7 +36,7 @@ public class Lotería extends Stage {
     private GridPane Tabla;
     private String[] Carta;
     private String Carta_actual;
-    private int i, j, k, Posición;
+    private int i, j, Bucle_para_tablas, Posición;
     private int Índice_de_la_tabla_actual = 0;
     private List<String> Cartas_mezcladas;
 
@@ -79,7 +79,7 @@ public class Lotería extends Stage {
     }
 
     private void inicializarTablas() {
-        for (k = 0; k < 5; k++) {
+        for (Bucle_para_tablas = 0; Bucle_para_tablas < 5; Bucle_para_tablas++) {
             Cartas_mezcladas = new ArrayList<>(Arrays.asList(Carta));
             Collections.shuffle(Cartas_mezcladas);
             Posición = 0;
@@ -96,7 +96,7 @@ public class Lotería extends Stage {
                     } catch (FileNotFoundException e) {
                         System.out.println("Archivo no encontrado: " + e.getMessage());
                     }
-                    Todas_las_tablas[k][i][j] = Botón;
+                    Todas_las_tablas[Bucle_para_tablas][i][j] = Botón;
                     Posición++;
                 }
             }
