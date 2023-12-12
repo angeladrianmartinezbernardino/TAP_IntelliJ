@@ -25,10 +25,10 @@ public class Lotería extends Stage {
     private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna;
 
     public Lotería() {
-        this.inicializarTablas();
+        this.Iniciar_tablas();
         this.Crear_UI();
         this.Escena = new Scene(this.Juego, 600.0, 625.0);
-        this.setTitle("Loteria");
+        this.setTitle("Lotería");
         this.setScene(this.Escena);
         this.show();
     }
@@ -37,10 +37,10 @@ public class Lotería extends Stage {
         this.Crear_tabla(Índice_de_la_tabla_actual);
         this.Anterior = new Button("Tabla anterior");
         this.Anterior.setPrefSize(200.0, 100.0);
-        this.Anterior.setOnAction(e -> cambiarTabla(-1));
+        this.Anterior.setOnAction(e -> Cambiar_tabla(-1));
         this.Siguiente = new Button("Siguiente tabla");
         this.Siguiente.setPrefSize(200.0, 100.0);
-        this.Siguiente.setOnAction(e -> cambiarTabla(1));
+        this.Siguiente.setOnAction(e -> Cambiar_tabla(1));
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
         this.Cambio_de_tablas = new VBox(this.Tabla_para_jugar, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
@@ -53,7 +53,7 @@ public class Lotería extends Stage {
         this.Partida.getChildren().add(this.Reiniciar);
     }
 
-    private void inicializarTablas() {
+    private void Iniciar_tablas() {
         for (Tabla = 0; Tabla < 5; Tabla++) {
             for (Fila = 0; Fila < 4; Fila++) {
                 for (Columna = 0; Columna < 4; Columna++) {
@@ -75,8 +75,8 @@ public class Lotería extends Stage {
         }
     }
 
-    private void cambiarTabla(int cambio) {
-        Índice_de_la_tabla_actual += cambio;
+    private void Cambiar_tabla(int Cambio) {
+        Índice_de_la_tabla_actual += Cambio;
         if (Índice_de_la_tabla_actual < 0) {
             Índice_de_la_tabla_actual = Todas_las_tablas.length - 1;
         } else if (Índice_de_la_tabla_actual >= Todas_las_tablas.length) {
