@@ -35,18 +35,11 @@ public class Lotería extends Stage {
     private List<Integer> Números_disponibles, Cartas_del_mazo;
     private Label Mazo;
     private Timeline Línea_del_tiempo;
-    private final int Timpo_para_carta = 4;
+    private final double Timpo_para_carta = 4.0;
     private Alert Alerta;
 
     public Lotería() {
-        this.Cartas_del_mazo = new ArrayList<>(Arrays.asList(
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-                21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-                31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-                41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                51, 52, 53, 54
-        ));
+        this.Cartas_del_mazo = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54));
         Collections.shuffle(this.Cartas_del_mazo);
         this.Iniciar_tablas();
         this.Crear_UI();
@@ -149,11 +142,11 @@ public class Lotería extends Stage {
         Marcar_cartas_en_la_tabla(Carta_actual);
         if (Verificar_victoria()) {
             Línea_del_tiempo.stop();
-            Mazo.setText("¡Fin del juego! Has ganado.");
+            System.out.println("¡Fin del juego! Has ganado.");
             Mostrar_victoria();
         } else if (Cartas_del_mazo.isEmpty()) {
             Línea_del_tiempo.stop();
-            Mazo.setText("¡Fin del juego! Pero no has ganado.");
+            System.out.println("¡Fin del juego! Pero no has ganado.");
             Mostrar_derrota();
         }
     }
