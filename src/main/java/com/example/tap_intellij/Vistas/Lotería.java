@@ -24,19 +24,18 @@ import java.util.List;
 
 public class Lotería extends Stage {
     private final Scene Escena;
-    private final Button[][][] todasLasTablas = new Button[5][4][4]; // Arreglo tridimensional para las tablas
+    private final Button[][][] todasLasTablas = new Button[5][4][4];
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
     private VBox Partida;
-    private ImageView Mazo, IV;
+    private ImageView Mazo;
     private Image Dorso;
     private Button Anterior, Siguiente, Iniciar, Reiniciar;
     private GridPane Tabla;
-    private FileInputStream Stream;
     private String[] Carta;
-    private int i, j, Posición;
-    private int tablaActualIndex = 0; // Índice de la tabla actual
+    private int i, j, k;
+    private int tablaActualIndex = 0;
 
     public Lotería() {
         this.Crear_mazo();
@@ -49,13 +48,13 @@ public class Lotería extends Stage {
     }
 
     private void Crear_UI() {
-        this.Crear_tabla(tablaActualIndex); // Crear la primera tabla
+        this.Crear_tabla(tablaActualIndex);
         this.Anterior = new Button("<");
         this.Anterior.setPrefSize(200.0, 100.0);
-        this.Anterior.setOnAction(e -> cambiarTabla(-1)); // Cambiar a la tabla anterior
+        this.Anterior.setOnAction(e -> cambiarTabla(-1));
         this.Siguiente = new Button(">");
         this.Siguiente.setPrefSize(200.0, 100.0);
-        this.Siguiente.setOnAction(e -> cambiarTabla(1)); // Cambiar a la siguiente tabla
+        this.Siguiente.setOnAction(e -> cambiarTabla(1));
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
         this.Cambio_de_tablas = new VBox(this.Tabla, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
@@ -77,16 +76,14 @@ public class Lotería extends Stage {
     }
 
     private void inicializarTablas() {
-        for (int k = 0; k < 5; k++) {
+        for (k = 0; k < 5; k++) {
             List<String> cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
             Collections.shuffle(cartasMezcladas);
-
             int pos = 0;
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 4; j++) {
+            for (i = 0; i < 4; i++) {
+                for (j = 0; j < 4; j++) {
                     String cartaActual = cartasMezcladas.get(pos);
                     Button boton = new Button();
-
                     try {
                         Image imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
                         ImageView imageView = new ImageView(imagenCarta);
@@ -95,7 +92,6 @@ public class Lotería extends Stage {
                         boton.setGraphic(imageView);
                     } catch (FileNotFoundException e) {
                         System.out.println("Archivo no encontrado: " + e.getMessage());
-                        // Manejar el caso de que el archivo no se encuentre
                     }
 
                     todasLasTablas[k][i][j] = boton;
@@ -104,8 +100,6 @@ public class Lotería extends Stage {
             }
         }
     }
-
-
 
     private void Crear_tabla(int indiceTabla) {
         this.Tabla = new GridPane();
@@ -117,19 +111,14 @@ public class Lotería extends Stage {
         }
     }
 
-
     private void cambiarTabla(int cambio) {
         tablaActualIndex += cambio;
         if (tablaActualIndex < 0) {
-            tablaActualIndex = todasLasTablas.length - 1; // Ir a la última tabla si se pasa del principio
+            tablaActualIndex = todasLasTablas.length - 1;
         } else if (tablaActualIndex >= todasLasTablas.length) {
-            tablaActualIndex = 0; // Volver a la primera tabla si se pasa del final
+            tablaActualIndex = 0;
         }
-        System.out.println("Índice de tabla actual: " + tablaActualIndex); // Mensaje de depuración
-        Crear_tabla(tablaActualIndex); // Actualizar la interfaz de usuario con la nueva tabla
+        System.out.println("Índice de tabla actual: " + tablaActualIndex);
+        Crear_tabla(tablaActualIndex);
     }
-
-
-
-    // ... (resto del código, si hay más)
 }
