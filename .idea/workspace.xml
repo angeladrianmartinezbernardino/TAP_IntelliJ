@@ -48,8 +48,11 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Restaurante.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -106,7 +109,7 @@
       <workItem from="1701582749501" duration="1624000" />
       <workItem from="1702253883673" duration="19281000" />
       <workItem from="1702279064722" duration="356000" />
-      <workItem from="1702330944041" duration="22503000" />
+      <workItem from="1702330944041" duration="28686000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -396,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702354018209</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Más o menos.">
+      <option name="closed" value="true" />
+      <created>1702355250273</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1702355250273</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -101,6 +101,13 @@ public class Lotería extends Stage {
                     Número_de_carta = Números_disponibles.get(Índice);
                     Botón_de_carta_en_tabla = new Button("Botón [" + Tabla + "][" + Fila + "][" + Columna + "] es " + Número_de_carta);
                     Botón_de_carta_en_tabla.setPrefSize(140, 165);
+                    Botón_de_carta_en_tabla.setOnAction(event -> {
+                        Button btn = (Button) event.getSource();
+                        if (btn.getText().endsWith(String.valueOf(Carta_actual))) {
+                            btn.setStyle("-fx-opacity: 0.5;");
+                            btn.setDisable(true);
+                        }
+                    });
                     Todas_las_tablas[Tabla][Fila][Columna] = Botón_de_carta_en_tabla;
                 }
             }
@@ -141,23 +148,9 @@ public class Lotería extends Stage {
     private void Sacar_carta() {
         Carta_actual = Cartas_del_mazo.remove(0);
         Mazo.setText("La carta es " + Carta_actual);
-        new Timeline(new KeyFrame(Duration.seconds(Timpo_para_carta), event -> {
-            Marcar_carta(Carta_actual);
-        })).play();
         if (Cartas_del_mazo.isEmpty()) {
             Línea_del_tiempo.stop();
             Mazo.setText("¡Fin del juego!");
-        }
-    }
-
-    private void Marcar_carta(int Número_de_carta) {
-        for (Button[] fila : Tabla_actual) {
-            for (Button Botón : fila) {
-                if (Botón.getText().endsWith(String.valueOf(Número_de_carta))) {
-                    Botón.setStyle("-fx-opacity: 0.5;");
-                    Botón.setDisable(true);
-                }
-            }
         }
     }
 }
