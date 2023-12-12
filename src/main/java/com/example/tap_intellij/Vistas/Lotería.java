@@ -53,6 +53,12 @@ public class Lotería extends Stage {
         this.Cambio_de_tablas = new VBox(this.Tabla_para_jugar, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
         this.Iniciar = new Button("Iniciar");
+        this.Iniciar.setOnAction(e -> {
+            // Deshabilita los botones cuando el juego inicia
+            Anterior.setDisable(true);
+            Siguiente.setDisable(true);
+            iniciarJuego(); // Suponiendo que tienes un método para iniciar el juego
+        });
         this.Partida = new VBox(this.Iniciar);
         this.Juego = new HBox(this.Cambio_de_tablas, this.Partida);
         this.Juego.setPadding(new Insets(20.0));
@@ -101,5 +107,10 @@ public class Lotería extends Stage {
         this.Cambio_de_tablas.getChildren().remove(this.Tabla_para_jugar);
         Crear_tabla(Índice_de_la_tabla_actual);
         this.Cambio_de_tablas.getChildren().add(0, this.Tabla_para_jugar);
+    }
+
+    private void iniciarJuego() {
+        // Aquí iría el código para iniciar el juego
+        // Por ejemplo, mezclar las cartas, comenzar a sacar cartas, etc.
     }
 }
