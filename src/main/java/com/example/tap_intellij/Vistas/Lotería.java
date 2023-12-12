@@ -24,7 +24,7 @@ import java.util.List;
 
 public class Lotería extends Stage {
     private final Scene Escena;
-    private final List<Button[][]> todasLasTablas = new ArrayList<>(); // Lista de tablas
+    private final Button[][][] todasLasTablas = new Button[5][4][4]; // Arreglo tridimensional para las tablas
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
@@ -81,7 +81,6 @@ public class Lotería extends Stage {
             List<String> cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
             Collections.shuffle(cartasMezcladas);
 
-            Button[][] tabla = new Button[4][4];
             int pos = 0;
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
@@ -99,18 +98,18 @@ public class Lotería extends Stage {
                         // Manejar el caso de que el archivo no se encuentre
                     }
 
-                    tabla[i][j] = boton;
+                    todasLasTablas[k][i][j] = boton;
                     pos++;
                 }
             }
-            todasLasTablas.add(tabla);
         }
     }
 
 
+
     private void Crear_tabla(int indiceTabla) {
         this.Tabla = new GridPane();
-        Button[][] tablaActual = todasLasTablas.get(indiceTabla);
+        Button[][] tablaActual = todasLasTablas[indiceTabla];
         for (int i = 0; i < tablaActual.length; i++) {
             for (int j = 0; j < tablaActual[i].length; j++) {
                 this.Tabla.add(tablaActual[i][j], i, j);
@@ -118,16 +117,18 @@ public class Lotería extends Stage {
         }
     }
 
+
     private void cambiarTabla(int cambio) {
         tablaActualIndex += cambio;
         if (tablaActualIndex < 0) {
-            tablaActualIndex = todasLasTablas.size() - 1; // Ir a la última tabla si se pasa del principio
-        } else if (tablaActualIndex >= todasLasTablas.size()) {
+            tablaActualIndex = todasLasTablas.length - 1; // Ir a la última tabla si se pasa del principio
+        } else if (tablaActualIndex >= todasLasTablas.length) {
             tablaActualIndex = 0; // Volver a la primera tabla si se pasa del final
         }
         System.out.println("Índice de tabla actual: " + tablaActualIndex); // Mensaje de depuración
         Crear_tabla(tablaActualIndex); // Actualizar la interfaz de usuario con la nueva tabla
     }
+
 
 
     // ... (resto del código, si hay más)
