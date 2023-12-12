@@ -20,9 +20,9 @@ public class Lotería extends Stage {
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
     private VBox Partida;
-    private Button Anterior, Siguiente, Iniciar, Reiniciar;
-    private GridPane Tabla;
-    private int Índice_de_la_tabla_actual = 0;
+    private Button Anterior, Siguiente, Iniciar, Reiniciar, Botón_de_carta_en_tabla;
+    private GridPane Tabla_para_jugar;
+    private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna;
 
     public Lotería() {
         this.inicializarTablas();
@@ -42,7 +42,7 @@ public class Lotería extends Stage {
         this.Siguiente.setPrefSize(200.0, 100.0);
         this.Siguiente.setOnAction(e -> cambiarTabla(1));
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
-        this.Cambio_de_tablas = new VBox(this.Tabla, this.Seleccionar_Tabla);
+        this.Cambio_de_tablas = new VBox(this.Tabla_para_jugar, this.Seleccionar_Tabla);
         this.Cambio_de_tablas.setSpacing(20.0);
         this.Iniciar = new Button("Iniciar");
         this.Partida = new VBox(this.Iniciar);
@@ -54,24 +54,23 @@ public class Lotería extends Stage {
     }
 
     private void inicializarTablas() {
-        for (int numTabla = 0; numTabla < 5; numTabla++) {
-            for (int fila = 0; fila < 4; fila++) {
-                for (int columna = 0; columna < 4; columna++) {
-                    // El texto del botón ahora incluye el índice de la tabla
-                    Button boton = new Button("Botón [" + numTabla + "][" + fila + "][" + columna + "]");
-                    boton.setPrefSize(89.28, 126.324); // Tamaño del botón
-                    Todas_las_tablas[numTabla][fila][columna] = boton;
+        for (Tabla = 0; Tabla < 5; Tabla++) {
+            for (Fila = 0; Fila < 4; Fila++) {
+                for (Columna = 0; Columna < 4; Columna++) {
+                    Botón_de_carta_en_tabla = new Button("Botón [" + Tabla + "][" + Fila + "][" + Columna + "]");
+                    Botón_de_carta_en_tabla.setPrefSize(100, 125);
+                    Todas_las_tablas[Tabla][Fila][Columna] = Botón_de_carta_en_tabla;
                 }
             }
         }
     }
 
     private void Crear_tabla(int indiceTabla) {
-        this.Tabla = new GridPane();
+        this.Tabla_para_jugar = new GridPane();
         Tabla_actual = Todas_las_tablas[indiceTabla];
         for (int fila = 0; fila < Tabla_actual.length; fila++) {
             for (int columna = 0; columna < Tabla_actual[fila].length; columna++) {
-                this.Tabla.add(Tabla_actual[fila][columna], columna, fila);
+                this.Tabla_para_jugar.add(Tabla_actual[fila][columna], columna, fila);
             }
         }
     }
@@ -84,8 +83,8 @@ public class Lotería extends Stage {
             Índice_de_la_tabla_actual = 0;
         }
         System.out.println("Índice de la tabla actual: " + Índice_de_la_tabla_actual);
-        this.Cambio_de_tablas.getChildren().remove(this.Tabla); // Eliminar la tabla anterior
+        this.Cambio_de_tablas.getChildren().remove(this.Tabla_para_jugar); // Eliminar la tabla anterior
         Crear_tabla(Índice_de_la_tabla_actual); // Crear la nueva tabla
-        this.Cambio_de_tablas.getChildren().add(0, this.Tabla); // Añadir la nueva tabla en la primera posición del VBox
+        this.Cambio_de_tablas.getChildren().add(0, this.Tabla_para_jugar); // Añadir la nueva tabla en la primera posición del VBox
     }
 }
