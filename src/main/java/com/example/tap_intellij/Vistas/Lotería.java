@@ -25,15 +25,17 @@ import java.util.List;
 public class Lotería extends Stage {
     private final Scene Escena;
     private final Button[][][] todasLasTablas = new Button[5][4][4];
+    private Button[][] tablaActual;
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
     private VBox Partida;
-    private ImageView Mazo;
-    private Image Dorso;
-    private Button Anterior, Siguiente, Iniciar, Reiniciar;
+    private ImageView Mazo, imageView;
+    private Image Dorso, imagenCarta;
+    private Button Anterior, Siguiente, Iniciar, Reiniciar, boton;
     private GridPane Tabla;
     private String[] Carta;
+    private String cartaActual;
     private int i, j, k, Posición;
     private int Índice_de_la_tabla_actual = 0;
     private List<String> cartasMezcladas;
@@ -83,11 +85,11 @@ public class Lotería extends Stage {
             Posición = 0;
             for (i = 0; i < 4; i++) {
                 for (j = 0; j < 4; j++) {
-                    String cartaActual = cartasMezcladas.get(Posición);
-                    Button boton = new Button();
+                    cartaActual = cartasMezcladas.get(Posición);
+                    boton = new Button();
                     try {
-                        Image imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
-                        ImageView imageView = new ImageView(imagenCarta);
+                        imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
+                        imageView = new ImageView(imagenCarta);
                         imageView.setFitHeight(126.324); // Ajusta estos valores según sea necesario
                         imageView.setFitWidth(89.28);
                         boton.setGraphic(imageView);
@@ -104,9 +106,9 @@ public class Lotería extends Stage {
 
     private void Crear_tabla(int indiceTabla) {
         this.Tabla = new GridPane();
-        Button[][] tablaActual = todasLasTablas[indiceTabla];
-        for (int i = 0; i < tablaActual.length; i++) {
-            for (int j = 0; j < tablaActual[i].length; j++) {
+        tablaActual = todasLasTablas[indiceTabla];
+        for (i = 0; i < tablaActual.length; i++) {
+            for (j = 0; j < tablaActual[i].length; j++) {
                 this.Tabla.add(tablaActual[i][j], i, j);
             }
         }
