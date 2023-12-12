@@ -24,21 +24,21 @@ import java.util.List;
 
 public class Lotería extends Stage {
     private final Scene Escena;
-    private final Button[][][] todasLasTablas = new Button[5][4][4];
-    private Button[][] tablaActual;
+    private final Button[][][] Todas_las_tablas = new Button[5][4][4];
+    private Button[][] Tabla_actual;
     private HBox Juego;
     private HBox Seleccionar_Tabla;
     private VBox Cambio_de_tablas;
     private VBox Partida;
-    private ImageView Mazo, imageView;
-    private Image Dorso, imagenCarta;
-    private Button Anterior, Siguiente, Iniciar, Reiniciar, boton;
+    private ImageView Mazo, IV;
+    private Image Dorso, I_Carta;
+    private Button Anterior, Siguiente, Iniciar, Reiniciar, Botón;
     private GridPane Tabla;
     private String[] Carta;
-    private String cartaActual;
+    private String Carta_actual;
     private int i, j, k, Posición;
     private int Índice_de_la_tabla_actual = 0;
-    private List<String> cartasMezcladas;
+    private List<String> Cartas_mezcladas;
 
     public Lotería() {
         this.Crear_mazo();
@@ -52,10 +52,10 @@ public class Lotería extends Stage {
 
     private void Crear_UI() {
         this.Crear_tabla(Índice_de_la_tabla_actual);
-        this.Anterior = new Button("<");
+        this.Anterior = new Button("Tabla anterior");
         this.Anterior.setPrefSize(200.0, 100.0);
         this.Anterior.setOnAction(e -> cambiarTabla(-1));
-        this.Siguiente = new Button(">");
+        this.Siguiente = new Button("Siguiente tabla");
         this.Siguiente.setPrefSize(200.0, 100.0);
         this.Siguiente.setOnAction(e -> cambiarTabla(1));
         this.Seleccionar_Tabla = new HBox(this.Anterior, this.Siguiente);
@@ -80,24 +80,23 @@ public class Lotería extends Stage {
 
     private void inicializarTablas() {
         for (k = 0; k < 5; k++) {
-            cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
-            Collections.shuffle(cartasMezcladas);
+            Cartas_mezcladas = new ArrayList<>(Arrays.asList(Carta));
+            Collections.shuffle(Cartas_mezcladas);
             Posición = 0;
             for (i = 0; i < 4; i++) {
                 for (j = 0; j < 4; j++) {
-                    cartaActual = cartasMezcladas.get(Posición);
-                    boton = new Button();
+                    Carta_actual = Cartas_mezcladas.get(Posición);
+                    Botón = new Button();
                     try {
-                        imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
-                        imageView = new ImageView(imagenCarta);
-                        imageView.setFitHeight(126.324); // Ajusta estos valores según sea necesario
-                        imageView.setFitWidth(89.28);
-                        boton.setGraphic(imageView);
+                        I_Carta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + Carta_actual));
+                        IV = new ImageView(I_Carta);
+                        IV.setFitHeight(126.324); // Ajusta estos valores según sea necesario
+                        IV.setFitWidth(89.28);
+                        Botón.setGraphic(IV);
                     } catch (FileNotFoundException e) {
                         System.out.println("Archivo no encontrado: " + e.getMessage());
                     }
-
-                    todasLasTablas[k][i][j] = boton;
+                    Todas_las_tablas[k][i][j] = Botón;
                     Posición++;
                 }
             }
@@ -106,10 +105,10 @@ public class Lotería extends Stage {
 
     private void Crear_tabla(int indiceTabla) {
         this.Tabla = new GridPane();
-        tablaActual = todasLasTablas[indiceTabla];
-        for (i = 0; i < tablaActual.length; i++) {
-            for (j = 0; j < tablaActual[i].length; j++) {
-                this.Tabla.add(tablaActual[i][j], i, j);
+        Tabla_actual = Todas_las_tablas[indiceTabla];
+        for (i = 0; i < Tabla_actual.length; i++) {
+            for (j = 0; j < Tabla_actual[i].length; j++) {
+                this.Tabla.add(Tabla_actual[i][j], i, j);
             }
         }
     }
@@ -117,11 +116,11 @@ public class Lotería extends Stage {
     private void cambiarTabla(int cambio) {
         Índice_de_la_tabla_actual += cambio;
         if (Índice_de_la_tabla_actual < 0) {
-            Índice_de_la_tabla_actual = todasLasTablas.length - 1;
-        } else if (Índice_de_la_tabla_actual >= todasLasTablas.length) {
+            Índice_de_la_tabla_actual = Todas_las_tablas.length - 1;
+        } else if (Índice_de_la_tabla_actual >= Todas_las_tablas.length) {
             Índice_de_la_tabla_actual = 0;
         }
-        System.out.println("Índice de tabla actual: " + Índice_de_la_tabla_actual);
+        System.out.println("Índice de la tabla actual: " + Índice_de_la_tabla_actual);
         Crear_tabla(Índice_de_la_tabla_actual);
     }
 }
