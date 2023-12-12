@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ya funciona, pero de manera textual." />
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ya funciona, pero de manera textual.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +108,7 @@
       <workItem from="1701582749501" duration="1624000" />
       <workItem from="1702253883673" duration="19281000" />
       <workItem from="1702279064722" duration="356000" />
-      <workItem from="1702330944041" duration="32770000" />
+      <workItem from="1702330944041" duration="33124000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -428,7 +430,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702366264646</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Ya funciona, pero de manera textual.">
+      <option name="closed" value="true" />
+      <created>1702367058445</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1702367058446</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
