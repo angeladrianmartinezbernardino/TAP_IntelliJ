@@ -2,6 +2,7 @@ package com.example.tap_intellij;
 
 import com.example.tap_intellij.Vistas.Calculadora;
 import com.example.tap_intellij.Vistas.Lotería;
+import com.example.tap_intellij.Vistas.Pista_de_Atletismo;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -22,7 +23,7 @@ public class HelloApplication extends Application {
     private BorderPane BP;
     private MenuBar MB_Barra_de_menu;
     private Menu Menu_Parcial_1, Menu_Parcial_2;
-    private MenuItem MI_Calculadora, MI_Loteria;
+    private MenuItem MI_Calculadora, MI_Loteria, MI_Pista;
 
     public static void main(String[] args) {
         launch();
@@ -33,6 +34,8 @@ public class HelloApplication extends Application {
         MI_Calculadora.setOnAction((event) -> new Calculadora());
         MI_Loteria = new MenuItem("Lotería");
         MI_Loteria.setOnAction((event) -> new Lotería());
+        MI_Pista = new MenuItem("Pista Atletismo");
+        MI_Pista.setOnAction((event) -> new Pista_de_Atletismo());
         Menu_Parcial_1 = new Menu("Parcial 1");
         Menu_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria);
         Menu_Parcial_2 = new Menu("Parcial 2");
