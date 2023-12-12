@@ -90,7 +90,7 @@ public class Lotería extends Stage {
                     try {
                         I_Carta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + Carta_actual));
                         IV = new ImageView(I_Carta);
-                        IV.setFitHeight(126.324); // Ajusta estos valores según sea necesario
+                        IV.setFitHeight(126.324);
                         IV.setFitWidth(89.28);
                         Botón.setGraphic(IV);
                     } catch (FileNotFoundException e) {
