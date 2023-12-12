@@ -8,6 +8,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
 /*
  * Ángel Adrián Martínez Bernardino.
  * */
@@ -22,7 +27,10 @@ public class Lotería extends Stage {
     private VBox Partida;
     private Button Anterior, Siguiente, Iniciar, Reiniciar, Botón_de_carta_en_tabla;
     private GridPane Tabla_para_jugar;
-    private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna;
+    private int Índice_de_la_tabla_actual = 0, Tabla, Fila, Columna, Índice, Número_de_carta;
+    private List<Integer> Números_disponibles;
+
+    private final Random random = new Random();
 
     public Lotería() {
         this.Iniciar_tablas();
@@ -54,11 +62,18 @@ public class Lotería extends Stage {
     }
 
     private void Iniciar_tablas() {
+        Números_disponibles = new ArrayList<>();
+        for (int i = 1; i <= 54; i++) {
+            Números_disponibles.add(i);
+        }
         for (Tabla = 0; Tabla < 5; Tabla++) {
+            Collections.shuffle(Números_disponibles);
             for (Fila = 0; Fila < 4; Fila++) {
                 for (Columna = 0; Columna < 4; Columna++) {
-                    Botón_de_carta_en_tabla = new Button("Botón [" + Tabla + "][" + Fila + "][" + Columna + "]");
-                    Botón_de_carta_en_tabla.setPrefSize(100, 125);
+                    Índice = Fila * 4 + Columna;
+                    Número_de_carta = Números_disponibles.get(Índice);
+                    Botón_de_carta_en_tabla = new Button("Botón [" + Tabla + "][" + Fila + "][" + Columna + "] es " + Número_de_carta);
+                    Botón_de_carta_en_tabla.setPrefSize(140, 165);
                     Todas_las_tablas[Tabla][Fila][Columna] = Botón_de_carta_en_tabla;
                 }
             }
