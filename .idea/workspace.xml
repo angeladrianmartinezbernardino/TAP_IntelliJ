@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Más o menos.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" afterDir="false" />
-    </list>
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ya funciona, pero de manera textual." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +106,7 @@
       <workItem from="1701582749501" duration="1624000" />
       <workItem from="1702253883673" duration="19281000" />
       <workItem from="1702279064722" duration="356000" />
-      <workItem from="1702330944041" duration="32215000" />
+      <workItem from="1702330944041" duration="32770000" />
     </task>
     <task id="LOCAL-00001" summary="Hola">
       <option name="closed" value="true" />
@@ -423,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702365626736</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Ya funciona, pero de manera textual.">
+      <option name="closed" value="true" />
+      <created>1702366264646</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1702366264646</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,6 +462,7 @@
     <MESSAGE value="Este esqueleto funciona perfecto." />
     <MESSAGE value="Esqueleto con el arreglo." />
     <MESSAGE value="Más o menos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Más o menos." />
+    <MESSAGE value="Ya funciona, pero de manera textual." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya funciona, pero de manera textual." />
   </component>
 </project>
