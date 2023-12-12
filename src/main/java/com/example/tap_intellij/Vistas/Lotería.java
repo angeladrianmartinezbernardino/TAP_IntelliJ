@@ -34,8 +34,9 @@ public class Lotería extends Stage {
     private Button Anterior, Siguiente, Iniciar, Reiniciar;
     private GridPane Tabla;
     private String[] Carta;
-    private int i, j, k;
-    private int tablaActualIndex = 0;
+    private int i, j, k, Posición;
+    private int Índice_de_la_tabla_actual = 0;
+    private List<String> cartasMezcladas;
 
     public Lotería() {
         this.Crear_mazo();
@@ -48,7 +49,7 @@ public class Lotería extends Stage {
     }
 
     private void Crear_UI() {
-        this.Crear_tabla(tablaActualIndex);
+        this.Crear_tabla(Índice_de_la_tabla_actual);
         this.Anterior = new Button("<");
         this.Anterior.setPrefSize(200.0, 100.0);
         this.Anterior.setOnAction(e -> cambiarTabla(-1));
@@ -77,12 +78,12 @@ public class Lotería extends Stage {
 
     private void inicializarTablas() {
         for (k = 0; k < 5; k++) {
-            List<String> cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
+            cartasMezcladas = new ArrayList<>(Arrays.asList(Carta));
             Collections.shuffle(cartasMezcladas);
-            int pos = 0;
+            Posición = 0;
             for (i = 0; i < 4; i++) {
                 for (j = 0; j < 4; j++) {
-                    String cartaActual = cartasMezcladas.get(pos);
+                    String cartaActual = cartasMezcladas.get(Posición);
                     Button boton = new Button();
                     try {
                         Image imagenCarta = new Image(new FileInputStream("C:\\\\Users\\\\AAdri\\\\OneDrive\\\\Multimedia\\\\Documentos\\\\Programas\\\\IntelliJ\\\\TAP_IntelliJ\\\\src\\\\main\\\\resources\\\\Imágenes\\\\" + cartaActual));
@@ -95,7 +96,7 @@ public class Lotería extends Stage {
                     }
 
                     todasLasTablas[k][i][j] = boton;
-                    pos++;
+                    Posición++;
                 }
             }
         }
@@ -112,13 +113,13 @@ public class Lotería extends Stage {
     }
 
     private void cambiarTabla(int cambio) {
-        tablaActualIndex += cambio;
-        if (tablaActualIndex < 0) {
-            tablaActualIndex = todasLasTablas.length - 1;
-        } else if (tablaActualIndex >= todasLasTablas.length) {
-            tablaActualIndex = 0;
+        Índice_de_la_tabla_actual += cambio;
+        if (Índice_de_la_tabla_actual < 0) {
+            Índice_de_la_tabla_actual = todasLasTablas.length - 1;
+        } else if (Índice_de_la_tabla_actual >= todasLasTablas.length) {
+            Índice_de_la_tabla_actual = 0;
         }
-        System.out.println("Índice de tabla actual: " + tablaActualIndex);
-        Crear_tabla(tablaActualIndex);
+        System.out.println("Índice de tabla actual: " + Índice_de_la_tabla_actual);
+        Crear_tabla(Índice_de_la_tabla_actual);
     }
 }
