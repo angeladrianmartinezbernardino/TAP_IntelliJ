@@ -71,6 +71,7 @@ public class Simulador_de_impresión extends Stage {
         Hora_de_acceso_del_archivo = new SimpleDateFormat("HH:mm:ss").format(new Date());
         Tarea = new Impresión_de_tarea(String.valueOf(Lista_de_tareas.size() + 1), Nombre_de_archivo, Número_de_hojas, Hora_de_acceso_del_archivo);
         Lista_de_tareas.add(Tarea);
+        Tabla_de_tareas.refresh();
     }
 
     private void controlarSimulador() {
