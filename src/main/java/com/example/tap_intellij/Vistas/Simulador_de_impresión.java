@@ -50,15 +50,15 @@ public class Simulador_de_impresión extends Stage {
         Número_de_archivo.setCellValueFactory(new PropertyValueFactory<>("Número_de_archivo"));
         Nombre = new TableColumn<>("Nombre de archivo");
         Nombre.setCellValueFactory(new PropertyValueFactory<>("Nombre_de_archivo"));
-        Hojas = new TableColumn<>("Numero de hojas");
+        Hojas = new TableColumn<>("Número de hojas");
         Hojas.setCellValueFactory(new PropertyValueFactory<>("Número_de_hojas"));
         Hora_de_acceso = new TableColumn<>("Hora de acceso");
         Hora_de_acceso.setCellValueFactory(new PropertyValueFactory<>("Hora_de_acceso"));
         Tabla_de_tareas.getColumns().addAll(Número_de_archivo, Nombre, Hojas, Hora_de_acceso);
         Barra_de_progreso = new ProgressBar(0);
-        Agregar_tarea = new Button("Agregar Tarea");
+        Agregar_tarea = new Button("Agregar tarea");
         Agregar_tarea.setOnAction(event -> agregarTarea());
-        Control_del_simulador = new Button("Iniciar Simulador");
+        Control_del_simulador = new Button("Iniciar simulador");
         Control_del_simulador.setOnAction(event -> controlarSimulador());
     }
 
