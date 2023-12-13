@@ -9,8 +9,8 @@ public class Conexión extends Stage {
     public static Connection Conexión_a_la_base_de_datos;
     private static String Servidor = "localhost";
     private static String Usuario = "restaurante";
-    private static String Contraseña = "Laptop#2002";
-    private static String Base_de_datos = "restaurante";
+    private static String Contraseña = "1234567890";
+    private static String Base_de_datos = "Restaurante";
 
     public static void Crear_conexión_a_la_base_de_datos() {
         try {

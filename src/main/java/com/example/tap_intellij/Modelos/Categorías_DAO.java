@@ -41,7 +41,7 @@ public class Categorías_DAO extends Stage {
 
     public void Insertar() {
         try {
-            Consulta = "INSERT INTO Catagorías" +
+            Consulta = "INSERT INTO Categorías" +
                     "(Nombre) VALUES('" + this.Nombre_de_la_categoría + "')";
             Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
             Declaración.execute(Consulta);
@@ -52,7 +52,7 @@ public class Categorías_DAO extends Stage {
 
     public void Actualizar() {
         try {
-            Consulta = "UPDATE Catagorías SET Nombre = '" + this.Nombre_de_la_categoría + "' " +
+            Consulta = "UPDATE Categorías SET Nombre = '" + this.Nombre_de_la_categoría + "' " +
                     "WHERE ID = " + this.ID_de_la_categoría;
             Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
             Declaración.executeUpdate(Consulta);
@@ -63,7 +63,7 @@ public class Categorías_DAO extends Stage {
 
     public void Eliminar() {
         try {
-            Consulta = "DELETE FROM Catagorías WHERE ID = " + this.ID_de_la_categoría;
+            Consulta = "DELETE FROM Categorías WHERE ID = " + this.ID_de_la_categoría;
             Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
             Declaración.executeUpdate(Consulta);
         } catch (Exception e) {
@@ -75,7 +75,7 @@ public class Categorías_DAO extends Stage {
         listCat = FXCollections.observableArrayList();
         Categorías_DAO objC;
         try {
-            Consulta = "SELECT * FROM Catagorías";
+            Consulta = "SELECT * FROM Categorías";
             Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
             Resultado = Declaración.executeQuery(Consulta);
             while (Resultado.next()) {
