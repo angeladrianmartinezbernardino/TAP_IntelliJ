@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ordenando.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/TareaImpresion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/SimuladorImpresion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Categorías_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Categorías_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Conexión.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Conexión.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,15 +113,7 @@
       <workItem from="1702279064722" duration="356000" />
       <workItem from="1702330944041" duration="36102000" />
       <workItem from="1702406909342" duration="5638000" />
-      <workItem from="1702442470651" duration="7828000" />
-    </task>
-    <task id="LOCAL-00002" summary="Nuevo.">
-      <option name="closed" value="true" />
-      <created>1701149046527</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1701149046527</updated>
+      <workItem from="1702442470651" duration="9450000" />
     </task>
     <task id="LOCAL-00003" summary="Nuevo.">
       <option name="closed" value="true" />
@@ -506,7 +499,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702450118476</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Ordenando.">
+      <option name="closed" value="true" />
+      <created>1702453567226</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1702453567227</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

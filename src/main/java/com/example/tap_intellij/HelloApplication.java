@@ -1,10 +1,7 @@
 package com.example.tap_intellij;
 
 import com.example.tap_intellij.Modelos.Conexión;
-import com.example.tap_intellij.Vistas.Calculadora;
-import com.example.tap_intellij.Vistas.Lotería;
-import com.example.tap_intellij.Vistas.Restaurante;
-import com.example.tap_intellij.Vistas.Pista_de_Atletismo;
+import com.example.tap_intellij.Vistas.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -25,7 +22,7 @@ public class HelloApplication extends Application {
     private BorderPane BP;
     private MenuBar MB_Barra_de_menu;
     private Menu Menu_Parcial_1, Menu_Parcial_2;
-    private MenuItem MI_Calculadora, MI_Lotería, MI_Restaurante, MI_Pista_de_Atletismo;
+    private MenuItem MI_Calculadora, MI_Lotería, MI_Restaurante, MI_Pista_de_Atletismo, MI_Simulador_de_impresión;
 
     public static void main(String[] args) {
         launch();
@@ -40,10 +37,12 @@ public class HelloApplication extends Application {
         MI_Restaurante.setOnAction((event) -> new Restaurante());
         MI_Pista_de_Atletismo = new MenuItem("Pista Atletismo");
         MI_Pista_de_Atletismo.setOnAction((event) -> new Pista_de_Atletismo());
+        MI_Simulador_de_impresión = new MenuItem("Simulador de impresión");
+        MI_Simulador_de_impresión.setOnAction((event) -> new Simulador_de_impresión());
         Menu_Parcial_1 = new Menu("Parcial 1");
         Menu_Parcial_1.getItems().addAll(MI_Calculadora, MI_Lotería);
         Menu_Parcial_2 = new Menu("Parcial 2");
-        Menu_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_Atletismo);
+        Menu_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_Atletismo, MI_Simulador_de_impresión);
         MB_Barra_de_menu = new MenuBar(Menu_Parcial_1, Menu_Parcial_2);
     }
 
