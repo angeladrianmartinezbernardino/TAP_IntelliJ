@@ -16,14 +16,14 @@ public class Pista_de_Atletismo extends Stage {
     private String[] strCorredores = {"Martina", "Germán", "Yuno", "Rodrigo", "Rubén", "Vanessa"};
 
     public Pista_de_Atletismo() {
-        CrearUI();
+        Crear_UI();
         escena = new Scene(vBox);
         this.setTitle("Pista de Atletismo :)");
         this.setScene(escena);
         this.show();
     }
 
-    private void CrearUI() {
+    private void Crear_UI() {
         vBox = new VBox();
         for (int i = 0; i < pgbCorredores.length; i++) {
             pgbCorredores[i] = new ProgressBar(0);

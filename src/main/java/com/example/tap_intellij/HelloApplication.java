@@ -1,6 +1,6 @@
 package com.example.tap_intellij;
 
-import com.example.tap_intellij.Modelos.Conexion;
+import com.example.tap_intellij.Modelos.Conexión;
 import com.example.tap_intellij.Vistas.Calculadora;
 import com.example.tap_intellij.Vistas.Lotería;
 import com.example.tap_intellij.Vistas.Restaurante;
@@ -13,8 +13,6 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /*
  * Ángel Adrián Martínez Bernardino.
@@ -33,7 +31,7 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    private void CrearUI() {
+    private void Crear_UI() {
         MI_Calculadora = new MenuItem("Calculadora");
         MI_Calculadora.setOnAction((event) -> new Calculadora());
         MI_Lotería = new MenuItem("Lotería");
@@ -51,8 +49,8 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        connectToDB();
-        CrearUI();
+        Conexión_a_la_base_de_datos();
+        Crear_UI();
         BP = new BorderPane();
         BP.setTop(MB_Barra_de_menu);
         Escena = new Scene(BP, 200, 300);
@@ -66,8 +64,8 @@ public class HelloApplication extends Application {
         alert.setTitle("Mensaje del sistema");
     }
 
-    public void connectToDB() {
-        Conexion.createConnection();
+    public void Conexión_a_la_base_de_datos() {
+        Conexión.Crear_conexión_a_la_base_de_datos();
         System.out.println("Conexi[on establecida.");
     }
 }

@@ -1,7 +1,7 @@
 package com.example.tap_intellij.Vistas;
 
 import com.example.tap_intellij.Componentes.Celda_del_botón;
-import com.example.tap_intellij.Modelos.CategoriasDAO;
+import com.example.tap_intellij.Modelos.Categorías_DAO;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,62 +17,65 @@ import org.kordamp.bootstrapfx.BootstrapFX;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 public class Restaurante extends Stage {
-    private VBox vBox;
-    private TableView<CategoriasDAO> tbvCategorias;
-    private Button btnAgregar;
-    private CategoriasDAO categoriasDAO;
+    private final Panel Panel;
+    private VBox VBox;
+    private BorderPane Contenido;
+    private Scene Escena;
+    private Button Agregar;
+    private Categorías_DAO Categorías_DAO;
+    private TableView<Categorías_DAO> Categorías;
+    private TableColumn<Categorías_DAO, Integer> ID_de_categoría;
+    private TableColumn<Categorías_DAO, String> Nombre_de_categoría, Editar, Eliminar;
 
     public Restaurante() {
-        CrearUI();
-        Panel panel = new Panel("This is the title");
-        panel.getStyleClass().add("panel-primary");                            //(2)
-        BorderPane content = new BorderPane();
-        content.setPadding(new Insets(20));
-        //Button button = new Button("Hello BootstrapFX");
-        //button.getStyleClass().setAll("btn", "btn-succes");                     //(2)
-        content.setCenter(vBox);
-        panel.setBody(content);
-        Scene scene = new Scene(panel);
-        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());       //(3)
+        Crear_UI();
+        Panel = new Panel("This is the title");
+        Panel.getStyleClass().add("panel-primary");
+        Contenido = new BorderPane();
+        Contenido.setPadding(new Insets(20));
+        Contenido.setCenter(VBox);
+        Panel.setBody(Contenido);
+        Escena = new Scene(Panel);
+        Escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         this.setTitle("BootstrapFX");
-        this.setScene(scene);
+        this.setScene(Escena);
         this.sizeToScene();
         this.show();
     }
 
-    private void CrearUI() {
-        categoriasDAO = new CategoriasDAO();
-        tbvCategorias = new TableView<CategoriasDAO>();
-        CreateTable();
-        btnAgregar = new Button("Agregar");
-        btnAgregar.getStyleClass().setAll("btn", "btn-succes");
-        btnAgregar.setOnAction(event -> new CategoriaForm(tbvCategorias, null));
-        vBox = new VBox(tbvCategorias, btnAgregar);
+    private void Crear_UI() {
+        Categorías_DAO = new Categorías_DAO();
+        Categorías = new TableView<Categorías_DAO>();
+        Crear_tabla();
+        Agregar = new Button("Agregar");
+        Agregar.getStyleClass().setAll("btn", "btn-succes");
+        Agregar.setOnAction(event -> new Formulario_de_Categoría(Categorías, null));
+        VBox = new VBox(Categorías, Agregar);
 
     }
 
-    private void CreateTable() {
-        TableColumn<CategoriasDAO, Integer> tbcIdCat = new TableColumn<>("ID");
-        tbcIdCat.setCellValueFactory(new PropertyValueFactory<>("idCategoria"));
-        TableColumn<CategoriasDAO, String> tbcNomCat = new TableColumn<>("Categoria");
-        tbcNomCat.setCellValueFactory(new PropertyValueFactory<>("nomCategoria"));
-        tbvCategorias.setItems(categoriasDAO.LISTARCATEGORIAS());
-        TableColumn<CategoriasDAO, String> tbcEditar = new TableColumn<>("Editar");
-        tbcEditar.setCellFactory(
-                new Callback<TableColumn<CategoriasDAO, String>, TableCell<CategoriasDAO, String>>() {
+    private void Crear_tabla() {
+        ID_de_categoría = new TableColumn<>("ID");
+        ID_de_categoría.setCellValueFactory(new PropertyValueFactory<>("idCategoria"));
+        Nombre_de_categoría = new TableColumn<>("Categoría");
+        Nombre_de_categoría.setCellValueFactory(new PropertyValueFactory<>("nomCategoria"));
+        Categorías.setItems(Categorías_DAO.Enlistar_categorías());
+        Editar = new TableColumn<>("Editar");
+        Editar.setCellFactory(
+                new Callback<TableColumn<Categorías_DAO, String>, TableCell<Categorías_DAO, String>>() {
                     @Override
-                    public TableCell<CategoriasDAO, String> call(TableColumn<CategoriasDAO, String> param) {
+                    public TableCell<Categorías_DAO, String> call(TableColumn<Categorías_DAO, String> param) {
                         return new Celda_del_botón(1);
                     }
                 });
-        TableColumn<CategoriasDAO, String> tbcEliminar = new TableColumn("Eliminar");
-        tbcEliminar.setCellFactory(new Callback<TableColumn<CategoriasDAO, String>, TableCell<CategoriasDAO, String>>() {
+        Eliminar = new TableColumn("Eliminar");
+        Eliminar.setCellFactory(new Callback<TableColumn<Categorías_DAO, String>, TableCell<Categorías_DAO, String>>() {
             @Override
-            public TableCell<CategoriasDAO, String> call(TableColumn<CategoriasDAO, String> categoriasDAOStringTableColumn) {
+            public TableCell<Categorías_DAO, String> call(TableColumn<Categorías_DAO, String> categoriasDAOStringTableColumn) {
                 return new Celda_del_botón(1);
             }
         });
-        tbvCategorias.getColumns().addAll(tbcIdCat, tbcNomCat, tbcEditar, tbcEliminar);
-        tbvCategorias.setItems(categoriasDAO.LISTARCATEGORIAS());
+        Categorías.getColumns().addAll(ID_de_categoría, Nombre_de_categoría, Editar, Eliminar);
+        Categorías.setItems(Categorías_DAO.Enlistar_categorías());
     }
 }

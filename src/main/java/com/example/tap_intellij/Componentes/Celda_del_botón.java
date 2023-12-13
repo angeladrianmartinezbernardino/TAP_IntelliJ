@@ -1,29 +1,29 @@
 package com.example.tap_intellij.Componentes;
 
-import com.example.tap_intellij.Modelos.CategoriasDAO;
-import com.example.tap_intellij.Vistas.CategoriaForm;
+import com.example.tap_intellij.Modelos.Categorías_DAO;
+import com.example.tap_intellij.Vistas.Formulario_de_Categoría;
 import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class Celda_del_botón extends TableCell<CategoriasDAO, String> {
+public class Celda_del_botón extends TableCell<Categorías_DAO, String> {
     private Button btnCelda;
     private int opc;
-    private TableView<CategoriasDAO> tbvCategorias;
-    private CategoriasDAO objCat;
+    private TableView<Categorías_DAO> tbvCategorias;
+    private Categorías_DAO objCat;
 
     public Celda_del_botón(int opc) {
         this.opc = opc;
         String txtBtn = this.opc == 1 ? "Editar" : "Eliminar";
         btnCelda = new Button("Editar");
-        btnCelda.setOnAction(event -> accionBoton());
+        btnCelda.setOnAction(event -> Eliminar_categoría());
     }
 
-    private void accionBoton() {
+    private void Eliminar_categoría() {
         tbvCategorias = Celda_del_botón.this.getTableView();
         objCat = tbvCategorias.getItems().get(Celda_del_botón.this.getIndex());
         if (this.opc == 1) {
-            new CategoriaForm(tbvCategorias, objCat);
+            new Formulario_de_Categoría(tbvCategorias, objCat);
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Tópicos Avanzados de Programación");
@@ -31,8 +31,8 @@ public class Celda_del_botón extends TableCell<CategoriasDAO, String> {
             alert.setContentText("¿Deseas eliminar la categoría?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                objCat.ELIMINAR();
-                tbvCategorias.setItems(objCat.LISTARCATEGORIAS());
+                objCat.Eliminar();
+                tbvCategorias.setItems(objCat.Enlistar_categorías());
                 tbvCategorias.refresh();
             }
         }
