@@ -60,6 +60,7 @@ public class Simulador_de_impresión extends Stage {
         Agregar_tarea.setOnAction(event -> agregarTarea());
         Control_del_simulador = new Button("Iniciar simulador");
         Control_del_simulador.setOnAction(event -> controlarSimulador());
+
     }
 
     private void agregarTarea() {
