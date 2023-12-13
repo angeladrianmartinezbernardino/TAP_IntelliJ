@@ -29,7 +29,7 @@ public class Restaurante extends Stage {
 
     public Restaurante() {
         Crear_UI();
-        Panel = new Panel("This is the title");
+        Panel = new Panel("Restaurante");
         Panel.getStyleClass().add("panel-primary");
         Contenido = new BorderPane();
         Contenido.setPadding(new Insets(20));
@@ -37,7 +37,7 @@ public class Restaurante extends Stage {
         Panel.setBody(Contenido);
         Escena = new Scene(Panel);
         Escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
-        this.setTitle("BootstrapFX");
+        this.setTitle("Ventana");
         this.setScene(Escena);
         this.sizeToScene();
         this.show();
@@ -56,9 +56,9 @@ public class Restaurante extends Stage {
 
     private void Crear_tabla() {
         ID_de_categoría = new TableColumn<>("ID");
-        ID_de_categoría.setCellValueFactory(new PropertyValueFactory<>("idCategoria"));
+        ID_de_categoría.setCellValueFactory(new PropertyValueFactory<>("ID"));
         Nombre_de_categoría = new TableColumn<>("Categoría");
-        Nombre_de_categoría.setCellValueFactory(new PropertyValueFactory<>("nomCategoria"));
+        Nombre_de_categoría.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
         Categorías.setItems(Categorías_DAO.Enlistar_categorías());
         Editar = new TableColumn<>("Editar");
         Editar.setCellFactory(

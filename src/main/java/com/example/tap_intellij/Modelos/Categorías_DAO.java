@@ -80,8 +80,8 @@ public class Categorías_DAO extends Stage {
             Resultado = Declaración.executeQuery(Consulta);
             while (Resultado.next()) {
                 objC = new Categorías_DAO();
-                objC.ID_de_la_categoría = Resultado.getInt("idCategoria");
-                objC.Nombre_de_la_categoría = Resultado.getString("nomCategoria");
+                objC.ID_de_la_categoría = Resultado.getInt("ID");
+                objC.Nombre_de_la_categoría = Resultado.getString("Nombre");
                 listCat.add(objC);
             }
         } catch (Exception e) {

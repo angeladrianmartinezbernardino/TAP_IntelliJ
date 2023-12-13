@@ -7,30 +7,32 @@ import javafx.scene.control.*;
 import java.util.Optional;
 
 public class Celda_del_botón extends TableCell<Categorías_DAO, String> {
-    private Button btnCelda;
-    private int opc;
+    private Button Celda;
+    private int Opción;
     private TableView<Categorías_DAO> tbvCategorias;
     private Categorías_DAO objCat;
+    private Alert Alerta;
+    private Optional<ButtonType> Resultado;
 
-    public Celda_del_botón(int opc) {
-        this.opc = opc;
-        String txtBtn = this.opc == 1 ? "Editar" : "Eliminar";
-        btnCelda = new Button("Editar");
-        btnCelda.setOnAction(event -> Eliminar_categoría());
+    public Celda_del_botón(int Opción) {
+        this.Opción = Opción;
+        String txtBtn = this.Opción == 1 ? "Editar" : "Eliminar";
+        Celda = new Button("Editar");
+        Celda.setOnAction(event -> Eliminar_categoría());
     }
 
     private void Eliminar_categoría() {
         tbvCategorias = Celda_del_botón.this.getTableView();
         objCat = tbvCategorias.getItems().get(Celda_del_botón.this.getIndex());
-        if (this.opc == 1) {
+        if (this.Opción == 1) {
             new Formulario_de_Categoría(tbvCategorias, objCat);
         } else {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Tópicos Avanzados de Programación");
-            alert.setHeaderText("Confirmación del sistema");
-            alert.setContentText("¿Deseas eliminar la categoría?");
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
+            Alerta = new Alert(Alert.AlertType.CONFIRMATION);
+            Alerta.setTitle("Tópicos Avanzados de Programación");
+            Alerta.setHeaderText("Confirmación del sistema");
+            Alerta.setContentText("¿Deseas eliminar la categoría?");
+            Resultado = Alerta.showAndWait();
+            if (Resultado.get() == ButtonType.OK) {
                 objCat.Eliminar();
                 tbvCategorias.setItems(objCat.Enlistar_categorías());
                 tbvCategorias.refresh();
@@ -42,7 +44,7 @@ public class Celda_del_botón extends TableCell<Categorías_DAO, String> {
     protected void updateItem(String item, boolean empty) {
         super.updateItem(item, empty);
         if (!empty) {
-            this.setGraphic(btnCelda);
+            this.setGraphic(Celda);
         }
     }
 }
