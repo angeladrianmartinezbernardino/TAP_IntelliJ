@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 /*
  * Ángel Adrián Martínez Bernardino.
+ *
+ * Calculadora.
  * */
 
 public class Calculadora extends Stage {
