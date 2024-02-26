@@ -26,10 +26,12 @@ public class Calculadora extends Stage {
     private boolean Tiene_decimal = false;
     private boolean Despues_de_igual = false;
     private boolean Es_negativo = false;
+    private Scene Escena;
 
     public Calculadora() {
         Crear_UI();
-        Scene Escena = new Scene(GP_Ventana, 250, 250);
+        Escena = new Scene(GP_Ventana, 250, 250);
+        Escena.getStylesheets().add(getClass().getResource("/Estilos/Calculadora.css").toString());
         this.setTitle("Calculadora");
         this.setScene(Escena);
         this.show();
