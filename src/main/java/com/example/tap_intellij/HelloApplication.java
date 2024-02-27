@@ -23,6 +23,7 @@ public class HelloApplication extends Application {
     private MenuBar MB_Barra_de_menu;
     private Menu Menu_Parcial_1, Menu_Parcial_2;
     private MenuItem MI_Calculadora, MI_Lotería, MI_Restaurante, MI_Pista_de_Atletismo, MI_Simulador_de_impresión;
+    private Alert Alerta;
 
     public static void main(String[] args) {
         launch();
@@ -53,14 +54,15 @@ public class HelloApplication extends Application {
         BP = new BorderPane();
         BP.setTop(MB_Barra_de_menu);
         Escena = new Scene(BP, 200, 300);
+        Escena.getStylesheets().add(getClass().getResource("/Estilos/Main.css").toString());
         stage.setScene(Escena);
         stage.setMaximized(true);
         stage.show();
     }
 
     private void Salir() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Mensaje del sistema");
+        Alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        Alerta.setTitle("Mensaje del sistema");
     }
 
     public void Conexión_a_la_base_de_datos() {
