@@ -1,7 +1,7 @@
 package com.example.tap_intellij.Vistas;
 
 import com.example.tap_intellij.Componentes.Celda_del_botón;
-import com.example.tap_intellij.Modelos.Categorías_DAO;
+import com.example.tap_intellij.Modelos.Categorias_DAO;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,10 +22,10 @@ public class Restaurante extends Stage {
     private BorderPane Contenido;
     private Scene Escena;
     private Button Agregar;
-    private Categorías_DAO Categorías_DAO;
-    private TableView<Categorías_DAO> Categorías;
-    private TableColumn<Categorías_DAO, Integer> ID_de_categoría;
-    private TableColumn<Categorías_DAO, String> Nombre_de_categoría, Editar, Eliminar;
+    private Categorias_DAO Categorias_DAO;
+    private TableView<Categorias_DAO> Categorías;
+    private TableColumn<Categorias_DAO, Integer> ID_de_categoría;
+    private TableColumn<Categorias_DAO, String> Nombre_de_categoría, Editar, Eliminar;
 
     public Restaurante() {
         Crear_UI();
@@ -44,12 +44,12 @@ public class Restaurante extends Stage {
     }
 
     private void Crear_UI() {
-        Categorías_DAO = new Categorías_DAO();
-        Categorías = new TableView<Categorías_DAO>();
+        Categorias_DAO = new Categorias_DAO();
+        Categorías = new TableView<Categorias_DAO>();
         Crear_tabla();
         Agregar = new Button("Agregar");
         Agregar.getStyleClass().setAll("btn", "btn-succes");
-        Agregar.setOnAction(event -> new Formulario_de_Categoría(Categorías, null));
+        Agregar.setOnAction(event -> new Formulario_de_Categoria(Categorías, null));
         VBox = new VBox(Categorías, Agregar);
 
     }
@@ -59,23 +59,23 @@ public class Restaurante extends Stage {
         ID_de_categoría.setCellValueFactory(new PropertyValueFactory<>("ID"));
         Nombre_de_categoría = new TableColumn<>("Categoría");
         Nombre_de_categoría.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        Categorías.setItems(Categorías_DAO.Enlistar_categorías());
+        Categorías.setItems(Categorias_DAO.Enlistar_categorías());
         Editar = new TableColumn<>("Editar");
         Editar.setCellFactory(
-                new Callback<TableColumn<Categorías_DAO, String>, TableCell<Categorías_DAO, String>>() {
+                new Callback<TableColumn<Categorias_DAO, String>, TableCell<Categorias_DAO, String>>() {
                     @Override
-                    public TableCell<Categorías_DAO, String> call(TableColumn<Categorías_DAO, String> param) {
+                    public TableCell<Categorias_DAO, String> call(TableColumn<Categorias_DAO, String> param) {
                         return new Celda_del_botón(1);
                     }
                 });
         Eliminar = new TableColumn("Eliminar");
-        Eliminar.setCellFactory(new Callback<TableColumn<Categorías_DAO, String>, TableCell<Categorías_DAO, String>>() {
+        Eliminar.setCellFactory(new Callback<TableColumn<Categorias_DAO, String>, TableCell<Categorias_DAO, String>>() {
             @Override
-            public TableCell<Categorías_DAO, String> call(TableColumn<Categorías_DAO, String> categoriasDAOStringTableColumn) {
+            public TableCell<Categorias_DAO, String> call(TableColumn<Categorias_DAO, String> categoriasDAOStringTableColumn) {
                 return new Celda_del_botón(1);
             }
         });
         Categorías.getColumns().addAll(ID_de_categoría, Nombre_de_categoría, Editar, Eliminar);
-        Categorías.setItems(Categorías_DAO.Enlistar_categorías());
+        Categorías.setItems(Categorias_DAO.Enlistar_categorías());
     }
 }

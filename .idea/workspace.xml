@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ya casi con estilos.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Cambiando estilos.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Celda_del_botón.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Celda_del_botón.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Categorías_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Categorias_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Conexión.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Conexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Formulario_de_Categoría.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Formulario_de_Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Lotería.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Loteria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Pista_de_Atletismo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Pista_de_atletismo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Restaurante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Restaurante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Simulador_de_impresión.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Simulador_de_impresion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,15 +143,12 @@
       <workItem from="1702487158113" duration="12555000" />
       <workItem from="1702507420417" duration="764000" />
       <workItem from="1708924884007" duration="2129000" />
-      <workItem from="1708991898722" duration="286000" />
-    </task>
-    <task id="LOCAL-00012" summary="Algo.">
-      <option name="closed" value="true" />
-      <created>1702265955159</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1702265955159</updated>
+      <workItem from="1708991898722" duration="1213000" />
+      <workItem from="1709075157880" duration="601000" />
+      <workItem from="1709075967800" duration="216000" />
+      <workItem from="1709076247150" duration="4743000" />
+      <workItem from="1709248091238" duration="4380000" />
+      <workItem from="1709459447426" duration="1350000" />
     </task>
     <task id="LOCAL-00013" summary="Estoy acomodando.">
       <option name="closed" value="true" />
@@ -529,7 +534,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708926240428</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Cambiando estilos.">
+      <option name="closed" value="true" />
+      <created>1708992450170</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1708992450170</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,6 +582,7 @@
     <MESSAGE value="Simulador." />
     <MESSAGE value="Ya casi." />
     <MESSAGE value="Ya casi con estilos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya casi con estilos." />
+    <MESSAGE value="Cambiando estilos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiando estilos." />
   </component>
 </project>

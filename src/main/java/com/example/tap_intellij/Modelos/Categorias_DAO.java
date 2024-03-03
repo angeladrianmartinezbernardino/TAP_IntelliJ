@@ -7,13 +7,13 @@ import javafx.stage.Stage;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Categorías_DAO extends Stage {
+public class Categorias_DAO extends Stage {
     public int Categoría;
     private String Nombre_de_la_categoría, Consulta;
     private int ID_de_la_categoría;
     private Statement Declaración;
     private ResultSet Resultado;
-    private ObservableList<Categorías_DAO> listCat;
+    private ObservableList<Categorias_DAO> listCat;
 
     public int getCategoría() {
         return Categoría;
@@ -43,7 +43,7 @@ public class Categorías_DAO extends Stage {
         try {
             Consulta = "INSERT INTO Categorías" +
                     "(Nombre) VALUES('" + this.Nombre_de_la_categoría + "')";
-            Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
+            Declaración = Conexion.Conexión_a_la_base_de_datos.createStatement();
             Declaración.execute(Consulta);
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,7 +54,7 @@ public class Categorías_DAO extends Stage {
         try {
             Consulta = "UPDATE Categorías SET Nombre = '" + this.Nombre_de_la_categoría + "' " +
                     "WHERE ID = " + this.ID_de_la_categoría;
-            Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
+            Declaración = Conexion.Conexión_a_la_base_de_datos.createStatement();
             Declaración.executeUpdate(Consulta);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,22 +64,22 @@ public class Categorías_DAO extends Stage {
     public void Eliminar() {
         try {
             Consulta = "DELETE FROM Categorías WHERE ID = " + this.ID_de_la_categoría;
-            Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
+            Declaración = Conexion.Conexión_a_la_base_de_datos.createStatement();
             Declaración.executeUpdate(Consulta);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ObservableList<Categorías_DAO> Enlistar_categorías() {
+    public ObservableList<Categorias_DAO> Enlistar_categorías() {
         listCat = FXCollections.observableArrayList();
-        Categorías_DAO objC;
+        Categorias_DAO objC;
         try {
             Consulta = "SELECT * FROM Categorías";
-            Declaración = Conexión.Conexión_a_la_base_de_datos.createStatement();
+            Declaración = Conexion.Conexión_a_la_base_de_datos.createStatement();
             Resultado = Declaración.executeQuery(Consulta);
             while (Resultado.next()) {
-                objC = new Categorías_DAO();
+                objC = new Categorias_DAO();
                 objC.ID_de_la_categoría = Resultado.getInt("ID");
                 objC.Nombre_de_la_categoría = Resultado.getString("Nombre");
                 listCat.add(objC);

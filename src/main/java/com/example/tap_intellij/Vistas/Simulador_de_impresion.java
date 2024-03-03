@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class Simulador_de_impresión extends Stage {
+public class Simulador_de_impresion extends Stage {
 
     private TableView<Impresión_de_tarea> Tabla_de_tareas;
     private ProgressBar Barra_de_progreso;
@@ -33,7 +33,7 @@ public class Simulador_de_impresión extends Stage {
     private int Número_de_hojas;
     private Impresión_de_tarea Tarea, Tarea_actual;
 
-    public Simulador_de_impresión() {
+    public Simulador_de_impresion() {
         Crear_UI();
         Hilo_del_simulador = new SimuladorHilo();
         Simulador_activo = false;

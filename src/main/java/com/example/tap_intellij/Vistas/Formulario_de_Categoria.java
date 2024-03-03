@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas;
 
-import com.example.tap_intellij.Modelos.Categorías_DAO;
+import com.example.tap_intellij.Modelos.Categorias_DAO;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,17 +9,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class Formulario_de_Categoría extends Stage {
+public class Formulario_de_Categoria extends Stage {
     private Scene Escena;
     private HBox HBox;
     private TextField Nombre_de_categoría;
     private Button Guardar;
-    private Categorías_DAO Objeto_de_Categorías_DAO;
-    TableView<Categorías_DAO> Categoría;
+    private Categorias_DAO objeto_de_Categorias_DAO;
+    TableView<Categorias_DAO> Categoría;
 
-    public Formulario_de_Categoría(TableView<Categorías_DAO> tbvCat, Categorías_DAO Objeto_de_Categorías_DAO) {
+    public Formulario_de_Categoria(TableView<Categorias_DAO> tbvCat, Categorias_DAO objeto_de_Categorias_DAO) {
         this.Categoría = tbvCat;
-        this.Objeto_de_Categorías_DAO = Objeto_de_Categorías_DAO == null ? new Categorías_DAO() : Objeto_de_Categorías_DAO;
+        this.objeto_de_Categorias_DAO = objeto_de_Categorias_DAO == null ? new Categorias_DAO() : objeto_de_Categorias_DAO;
         Crear_UI();
         Escena = new Scene(HBox);
         this.setTitle("Gestión de Categorías");
@@ -29,7 +29,7 @@ public class Formulario_de_Categoría extends Stage {
 
     private void Crear_UI() {
         Nombre_de_categoría = new TextField();
-        Nombre_de_categoría.setText(Objeto_de_Categorías_DAO.getNombre_de_la_categoría());
+        Nombre_de_categoría.setText(objeto_de_Categorias_DAO.getNombre_de_la_categoría());
         Nombre_de_categoría.setPromptText("Nombre de la categoría");
         Guardar = new Button("Guardar");
         Guardar.setOnAction(event -> Guardar_categoría());
@@ -39,14 +39,14 @@ public class Formulario_de_Categoría extends Stage {
     }
 
     private void Guardar_categoría() {
-        Objeto_de_Categorías_DAO.setNombre_de_la_categoría(Nombre_de_categoría.getText());
-        if(Objeto_de_Categorías_DAO.getID_de_la_categoría() > 0){
-            Objeto_de_Categorías_DAO.Actualizar();
+        objeto_de_Categorias_DAO.setNombre_de_la_categoría(Nombre_de_categoría.getText());
+        if(objeto_de_Categorias_DAO.getID_de_la_categoría() > 0){
+            objeto_de_Categorias_DAO.Actualizar();
         }else{
-            Objeto_de_Categorías_DAO.Insertar();
+            objeto_de_Categorias_DAO.Insertar();
         }
-        Objeto_de_Categorías_DAO.Insertar();
-        Categoría.setItems(Objeto_de_Categorías_DAO.Enlistar_categorías());
+        objeto_de_Categorias_DAO.Insertar();
+        Categoría.setItems(objeto_de_Categorias_DAO.Enlistar_categorías());
         Categoría.refresh();
         this.close();
     }

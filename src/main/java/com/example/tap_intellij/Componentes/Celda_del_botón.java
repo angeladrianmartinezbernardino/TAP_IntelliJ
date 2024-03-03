@@ -1,16 +1,16 @@
 package com.example.tap_intellij.Componentes;
 
-import com.example.tap_intellij.Modelos.Categorías_DAO;
-import com.example.tap_intellij.Vistas.Formulario_de_Categoría;
+import com.example.tap_intellij.Modelos.Categorias_DAO;
+import com.example.tap_intellij.Vistas.Formulario_de_Categoria;
 import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class Celda_del_botón extends TableCell<Categorías_DAO, String> {
+public class Celda_del_botón extends TableCell<Categorias_DAO, String> {
     private Button Celda;
     private int Opción;
-    private TableView<Categorías_DAO> tbvCategorias;
-    private Categorías_DAO objCat;
+    private TableView<Categorias_DAO> tbvCategorias;
+    private Categorias_DAO objCat;
     private Alert Alerta;
     private Optional<ButtonType> Resultado;
 
@@ -25,7 +25,7 @@ public class Celda_del_botón extends TableCell<Categorías_DAO, String> {
         tbvCategorias = Celda_del_botón.this.getTableView();
         objCat = tbvCategorias.getItems().get(Celda_del_botón.this.getIndex());
         if (this.Opción == 1) {
-            new Formulario_de_Categoría(tbvCategorias, objCat);
+            new Formulario_de_Categoria(tbvCategorias, objCat);
         } else {
             Alerta = new Alert(Alert.AlertType.CONFIRMATION);
             Alerta.setTitle("Tópicos Avanzados de Programación");
