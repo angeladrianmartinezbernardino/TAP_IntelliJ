@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Estilos/Cuadro_magico.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cuadroMagico.dat" beforeDir="false" afterPath="$PROJECT_DIR$/cuadroMagico.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" afterDir="false" />
@@ -17,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -40,8 +41,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="28f7b0a5-46d6-4a53-9542-4e787fe11a69" />
-        <option name="url" value="https://github.com/angeladrianmartinezbernardino/TAP_IntelliJ.git" />
+        <option name="accountId" value="87a221e3-0416-42b1-b300-6a120e4c9776" />
+        <option name="url" value="https://github.com/angeladrianmartinezbernardino/TAP_IntelliJ" />
       </UrlAndAccount>
     </option>
   </component>
@@ -142,15 +143,10 @@
       <workItem from="1709076247150" duration="4743000" />
       <workItem from="1709248091238" duration="4380000" />
       <workItem from="1709459447426" duration="1821000" />
-      <workItem from="1709518672179" duration="1211000" />
-    </task>
-    <task id="LOCAL-00014" summary="Es la base de la lotería.">
-      <option name="closed" value="true" />
-      <created>1702269394577</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1702269394577</updated>
+      <workItem from="1709518672179" duration="2442000" />
+      <workItem from="1709521929547" duration="1253000" />
+      <workItem from="1709590318571" duration="398000" />
+      <workItem from="1709590884626" duration="2082000" />
     </task>
     <task id="LOCAL-00015" summary="Es la base principal de la lotería.">
       <option name="closed" value="true" />
@@ -536,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709461207258</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1709520851993</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1709520851994</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

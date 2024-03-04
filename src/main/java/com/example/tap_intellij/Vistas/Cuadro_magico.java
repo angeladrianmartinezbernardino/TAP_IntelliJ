@@ -12,111 +12,109 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class Cuadro_magico extends Stage {
-    private Scene escena;
-    private GridPane gpVentana;
-    private TextField tfTamano;
-    private Button btnCalcular;
+    private Scene Escena;
+    private GridPane Ventana;
+    private TextField Cuadro_texto;
+    private Button Calcular, Celda;
+    private Label Introducir_tamano;
+    private int Tamano, i, Numero, Fila, Columna, Valor;
+    private RandomAccessFile Archivo;
 
     public Cuadro_magico() {
         CrearUI();
-        escena = new Scene(gpVentana, 600, 500);
-        this.setTitle("Cuadro Mágico");
-        this.setScene(escena);
+        Escena = new Scene(Ventana, 600, 500);
+        Escena.getStylesheets().add(getClass().getResource("/Estilos/Cuadro_magico.css").toString());
+        this.setTitle("Cuadro mágico");
+        this.setScene(Escena);
         this.show();
     }
 
     private void CrearUI() {
-        gpVentana = new GridPane();
-        gpVentana.setAlignment(Pos.CENTER);
-        gpVentana.setHgap(10);
-        gpVentana.setVgap(10);
-
-        Label lblTamano = new Label("Tamaño del cuadro:");
-        tfTamano = new TextField();
-        btnCalcular = new Button("Calcular Cuadro Mágico");
-
-        btnCalcular.setOnAction(event -> calcularCuadroMagico());
-
-        gpVentana.add(lblTamano, 0, 0);
-        gpVentana.add(tfTamano, 1, 0);
-        gpVentana.add(btnCalcular, 1, 1);
+        Ventana = new GridPane();
+        Ventana.setAlignment(Pos.CENTER);
+        Ventana.setHgap(10);
+        Ventana.setVgap(10);
+        Introducir_tamano = new Label("Tamaño del cuadro:");
+        Cuadro_texto = new TextField();
+        Calcular = new Button("Calcular Cuadro Mágico");
+        Calcular.setOnAction(event -> calcularCuadroMagico());
+        // Asegúrate de no agregar los elementos de la UI nuevamente aquí.
+        // Solo configura el GridPane y agrega los elementos de control.
+        Ventana.add(Introducir_tamano, 0, 0);
+        Ventana.add(Cuadro_texto, 1, 0);
+        Ventana.add(Calcular, 1, 1);
     }
 
     private void calcularCuadroMagico() {
-        int tamano = Integer.parseInt(tfTamano.getText());
+        Tamano = Integer.parseInt(Cuadro_texto.getText());
         // Validación del tamaño introducido por el usuario
-        if (tamano < 3 || tamano % 2 == 0) {
-            System.out.println("El tamaño debe ser impar y mayor o igual a 3");
+        if (Tamano < 3 || Tamano % 2 == 0) {
+            System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
             return;
         }
-
-        // Limpia el GridPane antes de agregar nuevos elementos
-        gpVentana.getChildren().clear();
-        CrearUI(); // Re-agrega los elementos de entrada
-
-        // Aquí implementarías el algoritmo para generar el cuadro mágico
-        // utilizando archivos de acceso aleatorio en vez de arreglos.
-        generarCuadroMagico(tamano);
-
+        // Solo limpia la parte del GridPane donde se mostrará el cuadro mágico.
+        Ventana.getChildren().removeIf(node -> GridPane.getRowIndex(node) > 1);
+        // Implementación del algoritmo para generar el cuadro mágico.
+        Generar_cuadro_magico(Tamano);
         // Mostrar el cuadro mágico en el GridPane
-        mostrarCuadroMagico(tamano);
+        Mostrar_cuadro_magico(Tamano);
     }
 
-    private void generarCuadroMagico(int tamano) {
+    private void Generar_cuadro_magico(int Tamano) {
         try {
-            RandomAccessFile archivo = new RandomAccessFile("cuadroMagico.dat", "rw");
+            Archivo = new RandomAccessFile("cuadroMagico.dat", "rw");
             // Inicializar archivo
-            for (int i = 0; i < tamano * tamano; i++) {
-                archivo.writeInt(0);
+            for (i = 0; i < Tamano * Tamano; i++) {
+                Archivo.writeInt(0);
             }
-
-            int num = 1;
-            int fila = tamano / 2;
-            int columna = tamano - 1;
-            while (num <= tamano * tamano) {
-                if (fila == -1 && columna == tamano) {
-                    columna = tamano - 2;
-                    fila = 0;
+            Numero = 1;
+            Fila = Tamano / 2;
+            Columna = Tamano - 1;
+            while (Numero <= Tamano * Tamano) {
+                if (Fila == -1 && Columna == Tamano) {
+                    Columna = Tamano - 2;
+                    Fila = 0;
                 } else {
-                    if (columna == tamano) {
-                        columna = 0;
+                    if (Columna == Tamano) {
+                        Columna = 0;
                     }
-                    if (fila < 0) {
-                        fila = tamano - 1;
+                    if (Fila < 0) {
+                        Fila = Tamano - 1;
                     }
                 }
-
-                archivo.seek((fila * tamano + columna) * Integer.BYTES);
-                if (archivo.readInt() != 0) {
-                    columna -= 2;
-                    fila++;
+                Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
+                if (Archivo.readInt() != 0) {
+                    Columna -= 2;
+                    Fila++;
                     continue;
                 } else {
-                    archivo.seek((fila * tamano + columna) * Integer.BYTES);
-                    archivo.writeInt(num++);
+                    Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
+                    Archivo.writeInt(Numero++);
                 }
-
-                fila--;
-                columna++;
+                Fila--;
+                Columna++;
             }
-            archivo.close();
+            Archivo.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void mostrarCuadroMagico(int tamano) {
+    private void Mostrar_cuadro_magico(int Tamano) {
         try {
-            RandomAccessFile archivo = new RandomAccessFile("cuadroMagico.dat", "r");
-            for (int i = 0; i < tamano; i++) {
-                for (int j = 0; j < tamano; j++) {
-                    archivo.seek((i * tamano + j) * Integer.BYTES);
-                    int valor = archivo.readInt();
-                    Label label = new Label(String.valueOf(valor));
-                    gpVentana.add(label, j, i + 2); // +2 para ajustar por los elementos de entrada
+            Archivo = new RandomAccessFile("cuadroMagico.dat", "r");
+            for (Fila = 0; Fila < Tamano; Fila++) {
+                for (Columna = 0; Columna < Tamano; Columna++) {
+                    Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
+                    Valor = Archivo.readInt();
+                    Celda = new Button(String.valueOf(Valor));
+                    Celda.setMinWidth(60); // Establece un ancho mínimo para los botones
+                    Celda.setMinHeight(60); // Establece una altura mínima para los botones
+                    // Ahora agrega el botón al GridPane en lugar de una etiqueta
+                    Ventana.add(Celda, Columna + 2, Fila); // +2 para ajustar por los elementos de entrada
                 }
             }
-            archivo.close();
+            Archivo.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
