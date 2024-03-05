@@ -11,6 +11,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+/*
+ * Ángel Adrián Martínez Bernardino.
+ *
+ * Calculadora.
+ * */
+
 public class Cuadro_magico extends Stage {
     private Scene Escena;
     private GridPane Ventana;
@@ -108,8 +114,8 @@ public class Cuadro_magico extends Stage {
                     Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
                     Valor = Archivo.readInt();
                     Celda = new Button(String.valueOf(Valor));
-                    Celda.setMinWidth(60); // Establece un ancho mínimo para los botones
-                    Celda.setMinHeight(60); // Establece una altura mínima para los botones
+                    Celda.setMinWidth(30); // Establece un ancho mínimo para los botones
+                    Celda.setMinHeight(30); // Establece una altura mínima para los botones
                     // Ahora agrega el botón al GridPane en lugar de una etiqueta
                     Ventana.add(Celda, Columna + 2, Fila); // +2 para ajustar por los elementos de entrada
                 }

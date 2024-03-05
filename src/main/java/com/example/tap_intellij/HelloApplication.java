@@ -21,8 +21,8 @@ public class HelloApplication extends Application {
     private Scene Escena;
     private BorderPane BP;
     private MenuBar MB_Barra_de_menu;
-    private Menu Menu_Parcial_1, Menu_Parcial_2;
-    private MenuItem MI_Calculadora, MI_Loteria, MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Cuadro_magico;
+    private Menu M_Parcial_1, M_Parcial_2, M_salir;
+    private MenuItem MI_Calculadora, MI_Loteria, MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Cuadro_magico, MI_Salir;
     private Alert Alerta;
 
     public static void main(String[] args) {
@@ -42,11 +42,17 @@ public class HelloApplication extends Application {
         MI_Pista_de_atletismo.setOnAction((event) -> new Pista_de_atletismo());
         MI_Simulador_de_impresion = new MenuItem("Simulador de impresión");
         MI_Simulador_de_impresion.setOnAction((event) -> new Simulador_de_impresion());
-        Menu_Parcial_1 = new Menu("Parcial 1");
-        Menu_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria, MI_Cuadro_magico);
-        Menu_Parcial_2 = new Menu("Parcial 2");
-        Menu_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion);
-        MB_Barra_de_menu = new MenuBar(Menu_Parcial_1, Menu_Parcial_2);
+        MI_Salir = new MenuItem("Salir");
+        MI_Salir.setOnAction(event -> System.exit(0));
+        //Opciones del menú principal del programa.
+        M_Parcial_1 = new Menu("Parcial 1");
+        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria, MI_Cuadro_magico);
+        M_Parcial_2 = new Menu("Parcial 2");
+        M_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion);
+        M_salir = new Menu("Salir");
+        M_salir.getItems().addAll(MI_Salir);
+        //Menú principal del programa.
+        MB_Barra_de_menu = new MenuBar(M_Parcial_1, M_Parcial_2, M_salir);
     }
 
     @Override
