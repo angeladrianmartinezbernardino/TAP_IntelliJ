@@ -1,12 +1,12 @@
 package com.example.tap_intellij.Componentes;
 
-public class Impresión_de_tarea {
+public class Impresion_tarea {
     private String Número_de_archivo;
     private String Nombre_de_archivo;
     private int Número_de_hojas;
     private String Hora_de_acceso;
 
-    public Impresión_de_tarea(String Número_de_archivo, String Nombre_de_archivo, int Número_de_hojas, String Hora_de_acceso) {
+    public Impresion_tarea(String Número_de_archivo, String Nombre_de_archivo, int Número_de_hojas, String Hora_de_acceso) {
         this.Número_de_archivo = Número_de_archivo;
         this.Nombre_de_archivo = Nombre_de_archivo;
         this.Número_de_hojas = Número_de_hojas;

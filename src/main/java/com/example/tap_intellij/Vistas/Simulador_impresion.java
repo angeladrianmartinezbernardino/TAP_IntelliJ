@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas;
 
-import com.example.tap_intellij.Componentes.Impresión_de_tarea;
+import com.example.tap_intellij.Componentes.Impresion_tarea;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,23 +17,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class Simulador_de_impresion extends Stage {
+public class Simulador_impresion extends Stage {
 
-    private TableView<Impresión_de_tarea> Tabla_de_tareas;
+    private TableView<Impresion_tarea> Tabla_de_tareas;
     private ProgressBar Barra_de_progreso;
     private Button Agregar_tarea, Control_del_simulador;
-    private ObservableList<Impresión_de_tarea> Lista_de_tareas;
+    private ObservableList<Impresion_tarea> Lista_de_tareas;
     private SimuladorHilo Hilo_del_simulador;
     private boolean Simulador_activo;
-    private TableColumn<Impresión_de_tarea, String> Número_de_archivo, Nombre, Hora_de_acceso;
-    private TableColumn<Impresión_de_tarea, Integer> Hojas;
+    private TableColumn<Impresion_tarea, String> Número_de_archivo, Nombre, Hora_de_acceso;
+    private TableColumn<Impresion_tarea, Integer> Hojas;
     private Random Aleatorio;
     private SimpleDateFormat Formato_de_fecha;
     private String Nombre_de_archivo, Hora_de_acceso_del_archivo;
     private int Número_de_hojas;
-    private Impresión_de_tarea Tarea, Tarea_actual;
+    private Impresion_tarea Tarea, Tarea_actual;
 
-    public Simulador_de_impresion() {
+    public Simulador_impresion() {
         Crear_UI();
         Hilo_del_simulador = new SimuladorHilo();
         Simulador_activo = false;
@@ -69,7 +69,7 @@ public class Simulador_de_impresion extends Stage {
         Nombre_de_archivo = "Archivo_" + Formato_de_fecha.format(new Date()) + ".txt";
         Número_de_hojas = Aleatorio.nextInt(50) + 1;
         Hora_de_acceso_del_archivo = new SimpleDateFormat("HH:mm:ss").format(new Date());
-        Tarea = new Impresión_de_tarea(String.valueOf(Lista_de_tareas.size() + 1), Nombre_de_archivo, Número_de_hojas, Hora_de_acceso_del_archivo);
+        Tarea = new Impresion_tarea(String.valueOf(Lista_de_tareas.size() + 1), Nombre_de_archivo, Número_de_hojas, Hora_de_acceso_del_archivo);
         Lista_de_tareas.add(Tarea);
         Tabla_de_tareas.refresh();
     }

@@ -7,7 +7,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Pista_de_atletismo extends Stage {
+public class Pista_atletismo extends Stage {
     private ProgressBar[] Corredores = new ProgressBar[6];
     private Hilo[] Hilos = new Hilo[6];
     private Button Iniciar;
@@ -16,7 +16,7 @@ public class Pista_de_atletismo extends Stage {
     private String[] Jugadores = {"Martina", "Germán", "Yuno", "Rodrigo", "Rubén", "Vanessa"};
     private int i;
 
-    public Pista_de_atletismo() {
+    public Pista_atletismo() {
         Crear_UI();
         Escena = new Scene(VBox);
         this.setTitle("Pista de Atletismo");

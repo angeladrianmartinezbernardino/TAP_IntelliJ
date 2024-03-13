@@ -1,21 +1,22 @@
 package com.example.tap_intellij.Modelos;
 
-import javafx.stage.Stage;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Conexion extends Stage {
-    public static Connection Conexión_a_la_base_de_datos;
-    private static String Servidor = "localhost";
-    private static String Usuario = "jefe";
-    private static String Contraseña = "1234567890";
-    private static String Base_de_datos = "taqueria";
+public class Conexion {
+    private static String SERVER = "localhost";
+    static private String DB = "taqueria";
+    static private String USER = "jefe";
+    static private String PASSWORD = "1234567890";
+    static public Connection Conexion;
 
-    public static void Crear_conexión_a_la_base_de_datos() {
+    public static void Crear_conexion() {
         try {
+            //Class.forName("com.mysql.cj.jdbc.Driver");
             Class.forName("org.mariadb.jdbc.Driver");
-            Conexión_a_la_base_de_datos = DriverManager.getConnection("jdbc:mariadb://" + Servidor + ":3306/" + Base_de_datos, Usuario, Contraseña);
+            //Conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + DB + "?allowPublicKeyRetrieval=true&useSSL=false", USER, PASSWORD);
+            Conexion = DriverManager.getConnection("jdbc:mariadb://" + SERVER + ":3306/" + DB, USER, PASSWORD);
+            System.out.println("¡Conexión establecida con éxito!");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -30,34 +30,35 @@ public class HelloApplication extends Application {
     }
 
     private void Crear_UI() {
+        //Menús.
         MI_Calculadora = new MenuItem("Calculadora");
         MI_Calculadora.setOnAction((event) -> new Calculadora());
         MI_Cuadro_magico = new MenuItem("Cuadro mágico");
         MI_Cuadro_magico.setOnAction((event) -> new Cuadro_magico());
         MI_Loteria = new MenuItem("Loteria");
         MI_Loteria.setOnAction((event) -> new Loteria());
-        MI_Restaurante = new MenuItem("Restaurante");
-        MI_Restaurante.setOnAction((event) -> new Restaurante());
-        MI_Pista_de_atletismo = new MenuItem("Pista Atletismo");
-        MI_Pista_de_atletismo.setOnAction((event) -> new Pista_de_atletismo());
+        MI_Restaurante = new MenuItem("Taquería");
+        MI_Restaurante.setOnAction((event) -> new EmpleadoTaqueria());
+        MI_Pista_de_atletismo = new MenuItem("Pista de Atletismo");
+        MI_Pista_de_atletismo.setOnAction((event) -> new Pista_atletismo());
         MI_Simulador_de_impresion = new MenuItem("Simulador de impresión");
-        MI_Simulador_de_impresion.setOnAction((event) -> new Simulador_de_impresion());
+        MI_Simulador_de_impresion.setOnAction((event) -> new Simulador_impresion());
         MI_Salir = new MenuItem("Salir");
         MI_Salir.setOnAction(event -> System.exit(0));
         //Opciones del menú principal del programa.
-        M_Parcial_1 = new Menu("Parcial 1");
-        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria, MI_Cuadro_magico);
-        M_Parcial_2 = new Menu("Parcial 2");
-        M_Parcial_2.getItems().addAll(MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion);
+        M_Parcial_1 = new Menu("Competencia 1");
+        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria, MI_Cuadro_magico, MI_Restaurante);
+        M_Parcial_2 = new Menu("Competencia 2");
+        M_Parcial_2.getItems().addAll(MI_Pista_de_atletismo, MI_Simulador_de_impresion);
         M_salir = new Menu("Salir");
         M_salir.getItems().addAll(MI_Salir);
-        //Menú principal del programa.
+        //Barra del Menú principal del programa.
         MB_Barra_de_menu = new MenuBar(M_Parcial_1, M_Parcial_2, M_salir);
     }
 
     @Override
     public void start(Stage stage) {
-        Conexión_a_la_base_de_datos();
+        Conexion.Crear_conexion();
         Crear_UI();
         BP = new BorderPane();
         BP.setTop(MB_Barra_de_menu);
@@ -71,10 +72,5 @@ public class HelloApplication extends Application {
     private void Salir() {
         Alerta = new Alert(Alert.AlertType.CONFIRMATION);
         Alerta.setTitle("Mensaje del sistema");
-    }
-
-    public void Conexión_a_la_base_de_datos() {
-        Conexion.Crear_conexión_a_la_base_de_datos();
-        System.out.println("Conexion establecida.");
     }
 }
