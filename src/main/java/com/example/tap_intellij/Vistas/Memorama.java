@@ -73,10 +73,6 @@ public class Memorama extends Stage {
         // Ahora agregamos los elementos al GridPane principal en las posiciones deseadas
         GP_Principal.add(HB_Menu, 0, 0);
         GP_Principal.add(VB_Juego, 0, 1);
-        // Establecer el GridPane principal como la raíz de la escena.
-        //Escena = new Scene(GP_Principal);
-        //this.setScene(Escena);
-        //this.show();
     }
 
     private void Manejar_resolver() {
@@ -91,6 +87,7 @@ public class Memorama extends Stage {
                 Alerta.showAndWait();
             } else {
                 Generar_tablero_cartas(Numero_pares);
+                B_Resolver.setDisable(true);
             }
         } catch (NumberFormatException e) {
             // Mostrar ventana de error.
