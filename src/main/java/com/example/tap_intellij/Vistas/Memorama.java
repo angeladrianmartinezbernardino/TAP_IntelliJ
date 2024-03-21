@@ -26,16 +26,18 @@ public class Memorama extends Stage {
     private HBox HB_Menu;
     private VBox VB_Juego, VB_Jugadores;
     private TextField TF_Numero_pares;
-    private Button B_Resolver;
+    private Button B_Resolver, B_Carta;
     private Label L_Temporizador;
     private GridPane GP_Principal, GP_Cartas;
     private Label L_Jugador_1, L_Jugador_2;
+    private Alert Alerta;
+    private int Total_cartas, Numero_pares, i, Columna, Fila;
 
     public Memorama() {
         // Llamada a métodos.
         this.Crear_UI();
-        // Crear una Scene con VB_Juego como raíz.
-        Escena = new Scene(this.HB_Menu);
+        // Crear una Scene con GP_Principal como raíz.
+        Escena = new Scene(this.GP_Principal);
         this.setScene(Escena);
         this.show();
         // Mezcla de números para asignarlos a cada carta posible.
@@ -72,55 +74,44 @@ public class Memorama extends Stage {
         GP_Principal.add(HB_Menu, 0, 0);
         GP_Principal.add(VB_Juego, 0, 1);
         // Establecer el GridPane principal como la raíz de la escena.
-        Escena = new Scene(GP_Principal);
-        this.setScene(Escena);
-        this.show();
+        //Escena = new Scene(GP_Principal);
+        //this.setScene(Escena);
+        //this.show();
     }
 
     private void Manejar_resolver() {
-        // En algún lugar dentro de tu clase, por ejemplo en un método que maneja el evento de clic del botón 'B_Resolver':
         try {
-            int numeroPares = Integer.parseInt(TF_Numero_pares.getText());
-            if (numeroPares < 3 || numeroPares > 15) {
-                // Mostrar ventana de aviso
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Número de Pares Inválido");
-                alert.setHeaderText(null);
-                alert.setContentText("Por favor, ingresa un número de pares entre 3 y 15.");
-                alert.showAndWait();
+            Numero_pares = Integer.parseInt(TF_Numero_pares.getText());
+            if (Numero_pares < 3 || Numero_pares > 15) {
+                // Mostrar ventana de aviso.
+                Alerta = new Alert(Alert.AlertType.WARNING);
+                Alerta.setTitle("Número de pares inválido");
+                Alerta.setHeaderText(null);
+                Alerta.setContentText("Por favor, ingresa un número de pares entre 3 y 15.");
+                Alerta.showAndWait();
             } else {
-                // Limpia el GridPane antes de añadir nuevas cartas
-                GP_Cartas.getChildren().clear();
-                GP_Cartas.getColumnConstraints().clear(); // Limpia las restricciones de las columnas si existen
-                for (int i = 0; i < numeroPares * 2; i++) {
-                    Button carta = new Button();
-                    // Configura el tamaño del botón y otros estilos necesarios
-                    carta.setPrefSize(100, 150);
-                    int columna = i % (numeroPares * 2);
-                    int fila = i / (numeroPares * 2);
-                    GP_Cartas.add(carta, columna, fila);
-                }
+                Generar_tablero_cartas(Numero_pares);
             }
         } catch (NumberFormatException e) {
-            // Mostrar ventana de aviso para entrada no numérica
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Entrada Inválida");
-            alert.setHeaderText(null);
-            alert.setContentText("La entrada debe ser un número entero.");
-            alert.showAndWait();
+            // Mostrar ventana de error.
+            Alerta = new Alert(Alert.AlertType.ERROR);
+            Alerta.setTitle("Entrada inválida");
+            Alerta.setHeaderText(null);
+            Alerta.setContentText("La entrada debe ser un número entero.");
+            Alerta.showAndWait();
         }
     }
 
-    private void Configurar_GP_Cartas(int numeroPares) {
-        GP_Cartas.getChildren().clear(); // Limpia el GridPane antes de añadir nuevas cartas.
-        int totalCartas = numeroPares * 2; // Total de cartas a mostrar.
-
-        for (int i = 0; i < totalCartas; i++) {
-            Button carta = new Button();
-            carta.setPrefSize(100, 150); // Configura el tamaño preferido del botón.
-            int columna = i % (numeroPares * 2);
-            int fila = i / (numeroPares * 2);
-            GP_Cartas.add(carta, columna, fila);
+    private void Generar_tablero_cartas(int Numero_pares) {
+        GP_Cartas.getChildren().clear();
+        Total_cartas = Numero_pares * 2;
+        // Asegurándonos de que las cartas se colocan en dos filas.
+        for (i = 0; i < Total_cartas; i++) {
+            B_Carta = new Button();
+            B_Carta.setPrefSize(100, 150);
+            Columna = i % (Total_cartas / 2); // Asegurar que haya dos filas.
+            Fila = i / (Total_cartas / 2); // La división determina la fila.
+            GP_Cartas.add(B_Carta, Columna, Fila);
         }
     }
 }
