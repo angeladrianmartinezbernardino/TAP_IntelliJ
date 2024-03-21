@@ -4,7 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles." />
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Memorama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuadroMagico.dat" beforeDir="false" afterPath="$PROJECT_DIR$/cuadroMagico.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/ButtonCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Button_cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/EmpleadoTaqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Empleado_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/33.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/34.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/42.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/45.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/46.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/47.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/48.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/50.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/51.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/52.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/53.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/54.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/Dorso.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Loteria/Dorso.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Imagenes/Empleado.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Taqueria/Empleado.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +76,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,6 +158,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Taqueria" />
+      <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Loteria" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\IntelliJ\TAP_IntelliJ\src\main\resources\Imágenes" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\IntelliJ\TAP_IntelliJ\src\main\resources" />
@@ -154,15 +219,10 @@
       <workItem from="1709853267899" duration="1425000" />
       <workItem from="1710204482518" duration="670000" />
       <workItem from="1710284532169" duration="175000" />
-      <workItem from="1710351862285" duration="2741000" />
-    </task>
-    <task id="LOCAL-00018" summary="Se cambia más o menos la tabla.">
-      <option name="closed" value="true" />
-      <created>1702333054532</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1702333054532</updated>
+      <workItem from="1710351862285" duration="3096000" />
+      <workItem from="1710830869341" duration="19000" />
+      <workItem from="1710957897410" duration="30000" />
+      <workItem from="1711002340714" duration="9745000" />
     </task>
     <task id="LOCAL-00019" summary="Se cambia más o menos la tabla.">
       <option name="closed" value="true" />
@@ -548,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710354561310</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1710354947868</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1710354947869</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

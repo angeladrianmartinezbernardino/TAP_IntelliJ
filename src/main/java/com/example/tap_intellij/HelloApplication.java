@@ -21,8 +21,8 @@ public class HelloApplication extends Application {
     private Scene Escena;
     private BorderPane BP;
     private MenuBar MB_Barra_de_menu;
-    private Menu M_Parcial_1, M_Parcial_2, M_salir;
-    private MenuItem MI_Calculadora, MI_Loteria, MI_Restaurante, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Cuadro_magico, MI_Salir;
+    private Menu M_Parcial_1, M_Parcial_2, M_Salir;
+    private MenuItem MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Taqueria, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Salir;
     private Alert Alerta;
 
     public static void main(String[] args) {
@@ -37,9 +37,11 @@ public class HelloApplication extends Application {
         MI_Cuadro_magico.setOnAction((event) -> new Cuadro_magico());
         MI_Loteria = new MenuItem("Loteria");
         MI_Loteria.setOnAction((event) -> new Loteria());
-        MI_Restaurante = new MenuItem("Taquería");
-        MI_Restaurante.setOnAction((event) -> new EmpleadoTaqueria());
-        MI_Pista_de_atletismo = new MenuItem("Pista de Atletismo");
+        MI_Memorama = new MenuItem("Memorama");
+        MI_Memorama.setOnAction((event) -> new Memorama());
+        MI_Taqueria = new MenuItem("Taquería");
+        MI_Taqueria.setOnAction((event) -> new Empleado_Taqueria());
+        MI_Pista_de_atletismo = new MenuItem("Pista de atletismo");
         MI_Pista_de_atletismo.setOnAction((event) -> new Pista_atletismo());
         MI_Simulador_de_impresion = new MenuItem("Simulador de impresión");
         MI_Simulador_de_impresion.setOnAction((event) -> new Simulador_impresion());
@@ -47,13 +49,13 @@ public class HelloApplication extends Application {
         MI_Salir.setOnAction(event -> System.exit(0));
         //Opciones del menú principal del programa.
         M_Parcial_1 = new Menu("Competencia 1");
-        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Loteria, MI_Cuadro_magico, MI_Restaurante);
+        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Taqueria);
         M_Parcial_2 = new Menu("Competencia 2");
         M_Parcial_2.getItems().addAll(MI_Pista_de_atletismo, MI_Simulador_de_impresion);
-        M_salir = new Menu("Salir");
-        M_salir.getItems().addAll(MI_Salir);
+        M_Salir = new Menu("Salir");
+        M_Salir.getItems().addAll(MI_Salir);
         //Barra del Menú principal del programa.
-        MB_Barra_de_menu = new MenuBar(M_Parcial_1, M_Parcial_2, M_salir);
+        MB_Barra_de_menu = new MenuBar(M_Parcial_1, M_Parcial_2, M_Salir);
     }
 
     @Override

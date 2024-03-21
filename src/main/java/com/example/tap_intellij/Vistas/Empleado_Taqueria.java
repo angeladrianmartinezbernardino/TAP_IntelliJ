@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas;
 
-import com.example.tap_intellij.Componentes.ButtonCell;
+import com.example.tap_intellij.Componentes.Button_cell;
 import com.example.tap_intellij.Modelos.Empleados_DAO;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,7 +12,7 @@ import javafx.util.Callback;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
-public class EmpleadoTaqueria extends Stage {
+public class Empleado_Taqueria extends Stage {
     private Panel pnlPrincipal;
     private BorderPane bpnPrincipal;
     private ToolBar tlbMenu;
@@ -20,7 +20,7 @@ public class EmpleadoTaqueria extends Stage {
     private TableView<Empleados_DAO> tbvEmpleados;
     private Button btnAgregarEmpleado;
 
-    public EmpleadoTaqueria() {
+    public Empleado_Taqueria() {
         CrearUI();
         this.setTitle("Taqueria Los Inges :)");
         this.setScene(escena);
@@ -28,7 +28,7 @@ public class EmpleadoTaqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/Empleado.png").toString());
+        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/Taqueria/Empleado.png").toString());
         imvEmp.setFitHeight(50);
         imvEmp.setFitWidth(50);
         btnAgregarEmpleado = new Button();
@@ -65,7 +65,7 @@ public class EmpleadoTaqueria extends Stage {
         tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override
             public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new ButtonCell(1);
+                return new Button_cell(1);
             }
         });
         //2
@@ -73,7 +73,7 @@ public class EmpleadoTaqueria extends Stage {
         tbcEliminar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override
             public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new ButtonCell(2);
+                return new Button_cell(2);
             }
         });
         tbvEmpleados.getColumns().addAll(tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp, tbcEditar, tbcEliminar);

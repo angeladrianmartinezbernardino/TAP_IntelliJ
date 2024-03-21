@@ -6,12 +6,12 @@ import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class ButtonCell extends TableCell<Empleados_DAO, String> {
+public class Button_cell extends TableCell<Empleados_DAO, String> {
     Button btnCelda;
     int opc;
     Empleados_DAO objEmp;
 
-    public ButtonCell(int opc) {
+    public Button_cell(int opc) {
         this.opc = opc;
         String txtButton = (opc == 1) ? "Editar" : "Eliminar";
         btnCelda = new Button(txtButton);
@@ -19,8 +19,8 @@ public class ButtonCell extends TableCell<Empleados_DAO, String> {
     }
 
     private void AccionBoton(int opc) {
-        TableView<Empleados_DAO> tbvEmpleados = ButtonCell.this.getTableView();
-        objEmp = tbvEmpleados.getItems().get(ButtonCell.this.getIndex());
+        TableView<Empleados_DAO> tbvEmpleados = Button_cell.this.getTableView();
+        objEmp = tbvEmpleados.getItems().get(Button_cell.this.getIndex());
         if (opc == 1) {
             new Empleados_Form(tbvEmpleados, objEmp);
         } else {
