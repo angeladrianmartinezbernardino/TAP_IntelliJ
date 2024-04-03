@@ -52,7 +52,7 @@ public class Empleado_Taqueria extends Stage {
     private void CrearTable() {
         Empleados_DAO objEmp = new Empleados_DAO();
         tbvEmpleados = new TableView<Empleados_DAO>();
-        TableColumn<Empleados_DAO, String> tbcNombreEmp = new TableColumn<>("Empleado");
+        TableColumn<Empleados_DAO, String> tbcNombreEmp = new TableColumn<>("Empleados");
         tbcNombreEmp.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
         TableColumn<Empleados_DAO, String> tbcrfcEmp = new TableColumn<>("RFC");
         tbcrfcEmp.setCellValueFactory(new PropertyValueFactory<>("RFCEmpleado"));
