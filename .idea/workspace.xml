@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Button_cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Button_cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Empleados_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Empleados_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Empleados_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Empleados_Form.java" afterDir="false" />
-    </list>
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,31 +163,7 @@
       <workItem from="1711002340714" duration="11176000" />
       <workItem from="1711050468234" duration="2231000" />
       <workItem from="1711062817470" duration="165000" />
-      <workItem from="1712139869006" duration="2073000" />
-    </task>
-    <task id="LOCAL-00024" summary="Falta ordenar.">
-      <option name="closed" value="true" />
-      <created>1702341117359</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1702341117360</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Falta ordenar.">
-      <option name="closed" value="true" />
-      <created>1702341237172</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1702341237172</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Falta ordenar.">
-      <option name="closed" value="true" />
-      <created>1702341289789</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1702341289789</updated>
+      <workItem from="1712139869006" duration="2423000" />
     </task>
     <task id="LOCAL-00027" summary="Este esqueleto sí funciona.">
       <option name="closed" value="true" />
@@ -562,7 +533,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711052707793</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1712143907045</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1712143907047</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1712144067903</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1712144067904</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1712144095442</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1712144095442</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
