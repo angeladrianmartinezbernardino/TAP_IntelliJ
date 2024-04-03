@@ -7,35 +7,35 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Empleados_DAO {
-    private int id_empleado;
-    private String nombre_empleado;
-    private String rfc_empleado;
+    private int idEmpleado;
+    private String nomEmpleado;
+    private String RFCEmpleado;
     private float salario;
     private String telefono;
     private String direccion;
 
-    public int getId_empleado() {
-        return id_empleado;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setId_empleado(int id_empleado) {
-        this.id_empleado = id_empleado;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
-    public String getNombre_empleado() {
-        return nombre_empleado;
+    public String getNomEmpleado() {
+        return nomEmpleado;
     }
 
-    public void setNombre_empleado(String nombre_empleado) {
-        this.nombre_empleado = nombre_empleado;
+    public void setNomEmpleado(String nomEmpleado) {
+        this.nomEmpleado = nomEmpleado;
     }
 
-    public String getRfc_empleado() {
-        return rfc_empleado;
+    public String getRFCEmpleado() {
+        return RFCEmpleado;
     }
 
-    public void setRfc_empleado(String rfc_empleado) {
-        this.rfc_empleado = rfc_empleado;
+    public void setRFCEmpleado(String RFCEmpleado) {
+        this.RFCEmpleado = RFCEmpleado;
     }
 
     public float getSalario() {
@@ -63,7 +63,7 @@ public class Empleados_DAO {
     }
 
     public void Insertar() {
-        String query = "INSERT INTO empleado(nombre_empleado, rfc_empleado, salario, telefono, direccion) VALUES ('" + nombre_empleado + "', '" + rfc_empleado + "', " + salario + ", '" + telefono + "', '" + direccion + "')";
+        String query = "INSERT INTO empleado(nomEmpleado, RFCEmpleado, salario, telefono, direccion) VALUES ('" + nomEmpleado + "', '" + RFCEmpleado + "', " + salario + ", '" + telefono + "', '" + direccion + "')";
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -73,7 +73,7 @@ public class Empleados_DAO {
     }
 
     public void Actualizar() {
-        String query = "UPDATE empleado SET nombre_empleado='" + nombre_empleado + "', rfc_empleado='" + rfc_empleado + "', salario=" + salario + ", " + "telefono='" + telefono + "', direccion='" + direccion + "' WHERE id_empleado =" + id_empleado;
+        String query = "UPDATE empleado SET nomEmpleado='" + nomEmpleado + "', RFCEmpleado='" + RFCEmpleado + "', salario=" + salario + ", " + "telefono='" + telefono + "', direccion='" + direccion + "' WHERE idEmpleado =" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -83,7 +83,7 @@ public class Empleados_DAO {
     }
 
     public void Eliminar() {
-        String query = "DELETE FROM empleado WHERE id_empleado=" + id_empleado;
+        String query = "DELETE FROM empleado WHERE idEmpleado=" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -101,9 +101,9 @@ public class Empleados_DAO {
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 objEmp = new Empleados_DAO();
-                objEmp.id_empleado = res.getInt("id_empleado");
-                objEmp.nombre_empleado = res.getString("nombre_empleado");
-                objEmp.rfc_empleado = res.getString("rfc_empleado");
+                objEmp.idEmpleado = res.getInt("idEmpleado");
+                objEmp.nomEmpleado = res.getString("nomEmpleado");
+                objEmp.RFCEmpleado = res.getString("RFCEmpleado");
                 objEmp.salario = res.getFloat("salario");
                 objEmp.telefono = res.getString("telefono");
                 objEmp.direccion = res.getString("direccion");

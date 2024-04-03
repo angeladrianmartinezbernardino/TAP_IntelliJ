@@ -53,9 +53,9 @@ public class Empleado_Taqueria extends Stage {
         Empleados_DAO objEmp = new Empleados_DAO();
         tbvEmpleados = new TableView<Empleados_DAO>();
         TableColumn<Empleados_DAO, String> tbcNombreEmp = new TableColumn<>("Empleado");
-        tbcNombreEmp.setCellValueFactory(new PropertyValueFactory<>("nombre_empleado"));
+        tbcNombreEmp.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
         TableColumn<Empleados_DAO, String> tbcrfcEmp = new TableColumn<>("RFC");
-        tbcrfcEmp.setCellValueFactory(new PropertyValueFactory<>("rfc_empleado"));
+        tbcrfcEmp.setCellValueFactory(new PropertyValueFactory<>("RFCEmpleado"));
         TableColumn<Empleados_DAO, Float> tbcSueldoEmp = new TableColumn<>("Sueldo");
         tbcSueldoEmp.setCellValueFactory(new PropertyValueFactory<>("salario"));
         TableColumn<Empleados_DAO, String> tbcTelEmp = new TableColumn<>("Telefono");

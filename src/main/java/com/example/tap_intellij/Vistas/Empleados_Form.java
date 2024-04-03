@@ -46,20 +46,20 @@ public class Empleados_Form extends Stage {
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objEmp.getNombre_empleado());
-        arTxtCampos[1].setText(objEmp.getRfc_empleado());
+        arTxtCampos[0].setText(objEmp.getNomEmpleado());
+        arTxtCampos[1].setText(objEmp.getRFCEmpleado());
         arTxtCampos[3].setText(objEmp.getSalario() + "");
         arTxtCampos[3].setText(objEmp.getTelefono());
         arTxtCampos[4].setText(objEmp.getDireccion());
     }
 
     private void GuardarEmpleado() {
-        objEmp.setNombre_empleado(arTxtCampos[0].getText());
-        objEmp.setRfc_empleado(arTxtCampos[1].getText());
+        objEmp.setNomEmpleado(arTxtCampos[0].getText());
+        objEmp.setRFCEmpleado(arTxtCampos[1].getText());
         objEmp.setSalario(Float.parseFloat(arTxtCampos[2].getText()));
         objEmp.setTelefono(arTxtCampos[3].getText());
         objEmp.setDireccion(arTxtCampos[4].getText());
-        if (objEmp.getId_empleado() > 0) {
+        if (objEmp.getIdEmpleado() > 0) {
             objEmp.Actualizar();
         } else {
             objEmp.Insertar();

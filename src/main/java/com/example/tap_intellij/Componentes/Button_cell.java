@@ -27,7 +27,7 @@ public class Button_cell extends TableCell<Empleados_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar el empleado?" + objEmp.getNombre_empleado());
+            alert.setContentText("¿Deseas borrar el empleado?" + objEmp.getNomEmpleado());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objEmp.Eliminar();
