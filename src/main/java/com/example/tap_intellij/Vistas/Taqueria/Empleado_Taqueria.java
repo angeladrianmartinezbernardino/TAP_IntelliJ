@@ -1,14 +1,13 @@
-package com.example.tap_intellij.Vistas;
+package com.example.tap_intellij.Vistas.Taqueria;
 
-import com.example.tap_intellij.Componentes.Button_cell;
+import com.example.tap_intellij.Componentes.Empleados_Button_Cell;
 import com.example.tap_intellij.Modelos.Empleados_DAO;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Empleados_Form;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.kordamp.bootstrapfx.BootstrapFX;
@@ -52,6 +51,8 @@ public class Empleado_Taqueria extends Stage {
     private void CrearTable() {
         Empleados_DAO objEmp = new Empleados_DAO();
         tbvEmpleados = new TableView<Empleados_DAO>();
+        TableColumn<Empleados_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
+        tbcidEmpleado.setCellValueFactory(new PropertyValueFactory<>("idEmpleado"));
         TableColumn<Empleados_DAO, String> tbcNombreEmp = new TableColumn<>("Empleado");
         tbcNombreEmp.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
         TableColumn<Empleados_DAO, String> tbcrfcEmp = new TableColumn<>("RFC");
@@ -67,7 +68,7 @@ public class Empleado_Taqueria extends Stage {
         tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override
             public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new Button_cell(1);
+                return new Empleados_Button_Cell(1);
             }
         });
         //2
@@ -75,10 +76,10 @@ public class Empleado_Taqueria extends Stage {
         tbcEliminar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
             @Override
             public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new Button_cell(2);
+                return new Empleados_Button_Cell(2);
             }
         });
-        tbvEmpleados.getColumns().addAll(tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp, tbcEditar, tbcEliminar);
+        tbvEmpleados.getColumns().addAll(tbcidEmpleado, tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp, tbcEditar, tbcEliminar);
         tbvEmpleados.setItems(objEmp.Consultar());
     }
 }

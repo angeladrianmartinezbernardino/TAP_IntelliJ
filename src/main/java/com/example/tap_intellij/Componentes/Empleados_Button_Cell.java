@@ -1,17 +1,17 @@
 package com.example.tap_intellij.Componentes;
 
 import com.example.tap_intellij.Modelos.Empleados_DAO;
-import com.example.tap_intellij.Vistas.Empleados_Form;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Empleados_Form;
 import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class Button_cell extends TableCell<Empleados_DAO, String> {
+public class Empleados_Button_Cell extends TableCell<Empleados_DAO, String> {
     Button btnCelda;
     int opc;
     Empleados_DAO objEmp;
 
-    public Button_cell(int opc) {
+    public Empleados_Button_Cell(int opc) {
         this.opc = opc;
         String txtButton = (opc == 1) ? "Editar" : "Eliminar";
         btnCelda = new Button(txtButton);
@@ -19,8 +19,8 @@ public class Button_cell extends TableCell<Empleados_DAO, String> {
     }
 
     private void AccionBoton(int opc) {
-        TableView<Empleados_DAO> tbvEmpleados = Button_cell.this.getTableView();
-        objEmp = tbvEmpleados.getItems().get(Button_cell.this.getIndex());
+        TableView<Empleados_DAO> tbvEmpleados = Empleados_Button_Cell.this.getTableView();
+        objEmp = tbvEmpleados.getItems().get(Empleados_Button_Cell.this.getIndex());
         if (opc == 1) {
             new Empleados_Form(tbvEmpleados, objEmp);
         } else {

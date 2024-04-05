@@ -1,4 +1,4 @@
-package com.example.tap_intellij.Vistas;
+package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
 import com.example.tap_intellij.Modelos.Empleados_DAO;
 import javafx.geometry.Insets;
@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class Empleados_Form extends Stage {
     private TableView<Empleados_DAO> tbvEmpleado;
     private Empleados_DAO objEmp;
-    String[] arPrompts = {"Nombre del empleado", "RFC del empleado", "Sueldo del empleado", "Telefono del empleado", "Direccion del empleado"};
+    String[] arPrompts = {"ID del empleado", "Nombre del empleado", "RFC del empleado", "Sueldo del empleado", "Telefono del empleado", "Direccion del empleado"};
     private Scene escena;
     private TextField[] arTxtCampos = new TextField[5];
     private Button btnGuardar;
@@ -46,19 +46,21 @@ public class Empleados_Form extends Stage {
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objEmp.getNomEmpleado());
-        arTxtCampos[1].setText(objEmp.getRFCEmpleado());
-        arTxtCampos[3].setText(objEmp.getSalario() + "");
-        arTxtCampos[3].setText(objEmp.getTelefono());
-        arTxtCampos[4].setText(objEmp.getDireccion());
+        arTxtCampos[0].setText(objEmp.getIdEmpleado()+"");
+        arTxtCampos[1].setText(objEmp.getNomEmpleado());
+        arTxtCampos[2].setText(objEmp.getRFCEmpleado());
+        arTxtCampos[3].setText(objEmp.getSalario()+"");
+        arTxtCampos[4].setText(objEmp.getTelefono());
+        arTxtCampos[5].setText(objEmp.getDireccion());
     }
 
     private void GuardarEmpleado() {
-        objEmp.setNomEmpleado(arTxtCampos[0].getText());
-        objEmp.setRFCEmpleado(arTxtCampos[1].getText());
-        objEmp.setSalario(Float.parseFloat(arTxtCampos[2].getText()));
-        objEmp.setTelefono(arTxtCampos[3].getText());
-        objEmp.setDireccion(arTxtCampos[4].getText());
+        objEmp.setIdEmpleado(Integer.parseInt(arTxtCampos[0].getText()));
+        objEmp.setNomEmpleado(arTxtCampos[1].getText());
+        objEmp.setRFCEmpleado(arTxtCampos[2].getText());
+        objEmp.setSalario(Float.parseFloat(arTxtCampos[3].getText()));
+        objEmp.setTelefono(arTxtCampos[4].getText());
+        objEmp.setDireccion(arTxtCampos[5].getText());
         if (objEmp.getIdEmpleado() > 0) {
             objEmp.Actualizar();
         } else {
@@ -71,5 +73,6 @@ public class Empleados_Form extends Stage {
         arTxtCampos[2].clear();
         arTxtCampos[3].clear();
         arTxtCampos[4].clear();
+        arTxtCampos[5].clear();
     }
 }

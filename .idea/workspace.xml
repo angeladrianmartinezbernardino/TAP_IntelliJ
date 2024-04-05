@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Ordenes_Button_Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Mesas_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Ordenes_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Productos_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Usuarios_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Mesas_Form.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Ordenes_Form.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Productos_Form.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Usuarios_Form.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Mesa_Taqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Orden_Taqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Producto_Taqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Usuario_Taqueria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Button_cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Empleados_Button_Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Empleado_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Empleado_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Empleados_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Empleados_Form.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +62,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/tap_intellij/HelloApplication.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Restaurante.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Empleados_DAO.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,31 +88,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Cuadro_magico.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AAdri/OneDrive/Documentos/Programas/IntelliJ/TAP_IntelliJ",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "sql.rename.search.for.storage.occurrences": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Cuadro_magico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AAdri/OneDrive/Documentos/Programas/IntelliJ/TAP_IntelliJ&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Taqueria" />
@@ -166,14 +183,8 @@
       <workItem from="1711050468234" duration="2231000" />
       <workItem from="1711062817470" duration="165000" />
       <workItem from="1712139869006" duration="2467000" />
-    </task>
-    <task id="LOCAL-00028" summary="Este esqueleto sí funciona.">
-      <option name="closed" value="true" />
-      <created>1702345118821</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1702345118821</updated>
+      <workItem from="1712194419275" duration="3348000" />
+      <workItem from="1712293699350" duration="8792000" />
     </task>
     <task id="LOCAL-00029" summary="Este esqueleto funciona perfecto.">
       <option name="closed" value="true" />
@@ -559,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712144197971</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1712194576977</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1712194576978</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
