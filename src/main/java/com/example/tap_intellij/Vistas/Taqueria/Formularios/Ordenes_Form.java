@@ -17,7 +17,7 @@ public class Ordenes_Form extends Stage {
     private Ordenes_DAO objOrd;
     String[] arPrompts = {"ID de la Orden", "id del Empleado", "Fecha", "Observaciones", "ID de la mesa", "ID del Usuario"};
     private Scene escena;
-    private TextField[] arTxtCampos = new TextField[5];
+    private TextField[] arTxtCampos = new TextField[6];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 

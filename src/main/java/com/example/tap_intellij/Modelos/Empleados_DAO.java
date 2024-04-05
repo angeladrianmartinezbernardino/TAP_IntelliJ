@@ -73,7 +73,7 @@ public class Empleados_DAO {
     }
 
     public void Actualizar() {
-        String query = "UPDATE empleado SET nomEmpleado='" + nomEmpleado + "', RFCEmpleado='" + RFCEmpleado + "', salario=" + salario + ", " + "telefono='" + telefono + "', direccion='" + direccion + "' WHERE idEmpleado =" + idEmpleado;
+        String query = "UPDATE empleado SET nomEmpleado='" + nomEmpleado + "', RFCEmpleado='" + RFCEmpleado + "', salario=" + salario + ", telefono='" + telefono + "', direccion='" + direccion + "' WHERE idEmpleado=" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
