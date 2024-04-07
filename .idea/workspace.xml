@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Empleados_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Empleados_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Empleados_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Empleados_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Ordenes_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Ordenes_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Estilos/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Estilos/Main.css" afterDir="false" />
-    </list>
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,15 +165,7 @@
       <workItem from="1711062817470" duration="165000" />
       <workItem from="1712139869006" duration="2467000" />
       <workItem from="1712194419275" duration="3348000" />
-      <workItem from="1712293699350" duration="11146000" />
-    </task>
-    <task id="LOCAL-00030" summary="Este esqueleto funciona perfecto.">
-      <option name="closed" value="true" />
-      <created>1702345971009</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1702345971010</updated>
+      <workItem from="1712293699350" duration="11529000" />
     </task>
     <task id="LOCAL-00031" summary="Este esqueleto funciona perfecto.">
       <option name="closed" value="true" />
@@ -565,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712302886778</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1712305439415</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1712305439420</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
