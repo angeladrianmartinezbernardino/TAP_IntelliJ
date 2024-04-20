@@ -53,16 +53,16 @@ public class Empleado_Taqueria extends Stage {
         tbvEmpleados = new TableView<Empleados_DAO>();
         TableColumn<Empleados_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
         tbcidEmpleado.setCellValueFactory(new PropertyValueFactory<>("idEmpleado"));
-        TableColumn<Empleados_DAO, String> tbcNombreEmp = new TableColumn<>("Empleado");
-        tbcNombreEmp.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
-        TableColumn<Empleados_DAO, String> tbcrfcEmp = new TableColumn<>("RFC");
-        tbcrfcEmp.setCellValueFactory(new PropertyValueFactory<>("RFCEmpleado"));
-        TableColumn<Empleados_DAO, Float> tbcSueldoEmp = new TableColumn<>("Sueldo");
-        tbcSueldoEmp.setCellValueFactory(new PropertyValueFactory<>("salario"));
-        TableColumn<Empleados_DAO, String> tbcTelEmp = new TableColumn<>("Telefono");
-        tbcTelEmp.setCellValueFactory(new PropertyValueFactory<>("telefono"));
-        TableColumn<Empleados_DAO, String> tbcDirEmp = new TableColumn<>("Direccion");
-        tbcDirEmp.setCellValueFactory(new PropertyValueFactory<>("direccion"));
+        TableColumn<Empleados_DAO, String> tbcnomEmpleado = new TableColumn<>("Empleado");
+        tbcnomEmpleado.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
+        TableColumn<Empleados_DAO, String> tbcRFCEmpleado = new TableColumn<>("RFC");
+        tbcRFCEmpleado.setCellValueFactory(new PropertyValueFactory<>("RFCEmpleado"));
+        TableColumn<Empleados_DAO, Float> tbcsueldo = new TableColumn<>("Sueldo");
+        tbcsueldo.setCellValueFactory(new PropertyValueFactory<>("salario"));
+        TableColumn<Empleados_DAO, String> tbctelefono = new TableColumn<>("Telefono");
+        tbctelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        TableColumn<Empleados_DAO, String> tbcdireccion = new TableColumn<>("Direccion");
+        tbcdireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         //1
         TableColumn<Empleados_DAO, String> tbcEditar = new TableColumn<Empleados_DAO, String>("Editar");
         tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
@@ -79,7 +79,7 @@ public class Empleado_Taqueria extends Stage {
                 return new Empleados_Button_Cell(2);
             }
         });
-        tbvEmpleados.getColumns().addAll(tbcidEmpleado, tbcNombreEmp, tbcrfcEmp, tbcSueldoEmp, tbcTelEmp, tbcDirEmp, tbcEditar, tbcEliminar);
+        tbvEmpleados.getColumns().addAll(tbcidEmpleado, tbcnomEmpleado, tbcRFCEmpleado, tbcsueldo, tbctelefono, tbcdireccion, tbcEditar, tbcEliminar);
         tbvEmpleados.setItems(objEmp.Consultar());
     }
 }

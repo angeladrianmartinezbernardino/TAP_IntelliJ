@@ -18,16 +18,16 @@ public class Empleados_DAO {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(int idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setIdEmpleado(int id_empleado) {
+        this.idEmpleado = id_empleado;
     }
 
     public String getNomEmpleado() {
         return nomEmpleado;
     }
 
-    public void setNomEmpleado(String nomEmpleado) {
-        this.nomEmpleado = nomEmpleado;
+    public void setNomEmpleado(String nombre_empleado) {
+        this.nomEmpleado = nombre_empleado;
     }
 
     public String getRFCEmpleado() {
@@ -73,7 +73,7 @@ public class Empleados_DAO {
     }
 
     public void Actualizar() {
-        String query = "UPDATE empleado SET nomEmpleado='" + nomEmpleado + "', RFCEmpleado='" + RFCEmpleado + "', salario=" + salario + ", telefono='" + telefono + "', direccion='" + direccion + "' WHERE idEmpleado=" + idEmpleado;
+        String query = "UPDATE empleado SET nomEmpleado='" + nomEmpleado + "', RFCEmpleado='" + RFCEmpleado + "', salario=" + salario + ", " + "telefono='" + telefono + "', direccion='" + direccion + "' WHERE idEmpleado =" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -83,7 +83,7 @@ public class Empleados_DAO {
     }
 
     public void Eliminar() {
-        String query = "DELETE FROM empleado WHERE idEmpleado=" + idEmpleado;
+        String query = "DELETE FROM empleado WHERE id_empleado=" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);

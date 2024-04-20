@@ -9,7 +9,7 @@ import java.util.Optional;
 public class Empleados_Button_Cell extends TableCell<Empleados_DAO, String> {
     Button btnCelda;
     int opc;
-    Empleados_DAO objEmp;
+    Empleados_DAO objMes;
 
     public Empleados_Button_Cell(int opc) {
         this.opc = opc;
@@ -20,18 +20,18 @@ public class Empleados_Button_Cell extends TableCell<Empleados_DAO, String> {
 
     private void AccionBoton(int opc) {
         TableView<Empleados_DAO> tbvEmpleados = Empleados_Button_Cell.this.getTableView();
-        objEmp = tbvEmpleados.getItems().get(Empleados_Button_Cell.this.getIndex());
+        objMes = tbvEmpleados.getItems().get(Empleados_Button_Cell.this.getIndex());
         if (opc == 1) {
-            new Empleados_Form(tbvEmpleados, objEmp);
+            new Empleados_Form(tbvEmpleados, objMes);
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar el empleado?" + objEmp.getNomEmpleado());
+            alert.setContentText("¿Deseas borrar el empleado?" + objMes.getNomEmpleado());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                objEmp.Eliminar();
-                tbvEmpleados.setItems((objEmp.Consultar()));
+                objMes.Eliminar();
+                tbvEmpleados.setItems((objMes.Consultar()));
                 tbvEmpleados.refresh();
             }
         }
