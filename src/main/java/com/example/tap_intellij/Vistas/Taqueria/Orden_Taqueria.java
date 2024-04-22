@@ -23,7 +23,7 @@ public class Orden_Taqueria extends Stage {
 
     public Orden_Taqueria() {
         CrearUI();
-        this.setTitle("Taqueria Los Inges :)");
+        this.setTitle("Órdenes");
         this.setScene(escena);
         this.show();
     }

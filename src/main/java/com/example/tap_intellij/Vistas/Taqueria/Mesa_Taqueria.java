@@ -23,7 +23,7 @@ public class Mesa_Taqueria extends Stage {
 
     public Mesa_Taqueria() {
         CrearUI();
-        this.setTitle("Taqueria Los Inges :)");
+        this.setTitle("Mesas");
         this.setScene(escena);
         this.show();
     }

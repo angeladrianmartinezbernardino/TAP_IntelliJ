@@ -23,7 +23,7 @@ public class Empleado_Taqueria extends Stage {
 
     public Empleado_Taqueria() {
         CrearUI();
-        this.setTitle("Taqueria Los Inges :)");
+        this.setTitle("Empleados");
         this.setScene(escena);
         this.show();
     }

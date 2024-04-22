@@ -23,7 +23,7 @@ public class Usuario_Taqueria extends Stage {
 
     public Usuario_Taqueria() {
         CrearUI();
-        this.setTitle("Taqueria Los Inges :)");
+        this.setTitle("Usuarios");
         this.setScene(escena);
         this.show();
     }
