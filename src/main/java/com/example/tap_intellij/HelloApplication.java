@@ -5,6 +5,7 @@ import com.example.tap_intellij.Vistas.*;
 import com.example.tap_intellij.Vistas.Taqueria.Empleado_Taqueria;
 import com.example.tap_intellij.Vistas.Taqueria.Mesa_Taqueria;
 import com.example.tap_intellij.Vistas.Taqueria.Orden_Taqueria;
+import com.example.tap_intellij.Vistas.Taqueria.Usuario_Taqueria;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -25,7 +26,7 @@ public class HelloApplication extends Application {
     private BorderPane BP;
     private MenuBar MB_Barra_de_menu;
     private Menu M_Parcial_1, M_Parcial_2, M_Salir;
-    private MenuItem MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Empleado_Taqueria, MI_Orden_Taqueria, MI_Mesa_Taqueria, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Salir;
+    private MenuItem MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Empleado_Taqueria, MI_Orden_Taqueria, MI_Mesa_Taqueria, MI_Usuario_Taqueria, MI_Pista_de_atletismo, MI_Simulador_de_impresion, MI_Salir;
     private Alert Alerta;
 
     public static void main(String[] args) {
@@ -48,6 +49,8 @@ public class HelloApplication extends Application {
         MI_Orden_Taqueria.setOnAction((event) -> new Orden_Taqueria());
         MI_Mesa_Taqueria = new MenuItem("Mesa_Taquería");
         MI_Mesa_Taqueria.setOnAction((event) -> new Mesa_Taqueria());
+        MI_Usuario_Taqueria = new MenuItem("Usuario_Taquería");
+        MI_Usuario_Taqueria.setOnAction((event) -> new Usuario_Taqueria());
         MI_Pista_de_atletismo = new MenuItem("Pista de atletismo");
         MI_Pista_de_atletismo.setOnAction((event) -> new Pista_atletismo());
         MI_Simulador_de_impresion = new MenuItem("Simulador de impresión");
@@ -56,7 +59,7 @@ public class HelloApplication extends Application {
         MI_Salir.setOnAction(event -> System.exit(0));
         //Opciones del menú principal del programa.
         M_Parcial_1 = new Menu("Competencia 1");
-        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Empleado_Taqueria, MI_Orden_Taqueria, MI_Mesa_Taqueria);
+        M_Parcial_1.getItems().addAll(MI_Calculadora, MI_Cuadro_magico, MI_Loteria, MI_Memorama, MI_Empleado_Taqueria, MI_Orden_Taqueria, MI_Mesa_Taqueria, MI_Usuario_Taqueria);
         M_Parcial_2 = new Menu("Competencia 2");
         M_Parcial_2.getItems().addAll(MI_Pista_de_atletismo, MI_Simulador_de_impresion);
         M_Salir = new Menu("Salir");

@@ -15,9 +15,9 @@ import java.sql.Date;
 public class Ordenes_Form extends Stage {
     private TableView<Ordenes_DAO> tbvOrdenes;
     private Ordenes_DAO objOrd;
-    String[] arPrompts = {"ID de la Orden", "id del Empleado", "Fecha", "Observaciones", "ID de la mesa", "ID del Usuario"};
+    String[] arPrompts = {"id del Empleado", "Fecha", "Observaciones", "ID de la mesa", "ID del Usuario"};
     private Scene escena;
-    private TextField[] arTxtCampos = new TextField[6];
+    private TextField[] arTxtCampos = new TextField[5];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
@@ -25,7 +25,7 @@ public class Ordenes_Form extends Stage {
         tbvOrdenes = tbvOrd;
         this.objOrd = (objOrd == null) ? new Ordenes_DAO() : objOrd;
         CrearUI();
-        this.setTitle("Insertar usuario");
+        this.setTitle("Insertar orden");
         this.setScene(escena);
         this.show();
     }
@@ -42,28 +42,26 @@ public class Ordenes_Form extends Stage {
         }
         LlenarForm();
         btnGuardar = new Button("Guardar");
-        btnGuardar.setOnAction(event -> GuardarEmpleado());
+        btnGuardar.setOnAction(event -> GuardarOrden());
         vbxPrincipal.getChildren().add(btnGuardar);
         escena = new Scene(vbxPrincipal, 350, 250);
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objOrd.getIdOrden()+"");
-        arTxtCampos[1].setText(objOrd.getIdEmpleado()+"");
-        arTxtCampos[3].setText(objOrd.getFecha() + "");
-        arTxtCampos[3].setText(objOrd.getObservaciones());
-        arTxtCampos[4].setText(objOrd.getIdMesa()+"");
-        arTxtCampos[5].setText(objOrd.getIdUsuario()+"");
+        arTxtCampos[0].setText(objOrd.getIdEmpleado()+"");
+        arTxtCampos[1].setText(objOrd.getFecha() + "");
+        arTxtCampos[2].setText(objOrd.getObservaciones());
+        arTxtCampos[3].setText(objOrd.getIdMesa()+"");
+        arTxtCampos[4].setText(objOrd.getIdUsuario()+"");
     }
 
-    private void GuardarEmpleado() {
-        objOrd.setIdOrden(Integer.parseInt(arTxtCampos[0].getText()));
-        objOrd.setIdEmpleado(Integer.valueOf(arTxtCampos[1].getText()));
-        objOrd.setFecha(Date.valueOf(arTxtCampos[2].getText()));
-        objOrd.setObservaciones(arTxtCampos[3].getText());
-        objOrd.setIdMesa(Integer.valueOf(arTxtCampos[4].getText()));
+    private void GuardarOrden() {
+        objOrd.setIdEmpleado(Integer.valueOf(arTxtCampos[0].getText()));
+        objOrd.setFecha(Date.valueOf(arTxtCampos[1].getText()));
+        objOrd.setObservaciones(arTxtCampos[2].getText());
+        objOrd.setIdMesa(Integer.valueOf(arTxtCampos[3].getText()));
         objOrd.setIdUsuario(Integer.parseInt(arTxtCampos[4].getText()));
-        if (objOrd.getIdEmpleado() > 0) {
+        if (objOrd.getIdOrden() > 0) {
             objOrd.Actualizar();
         } else {
             objOrd.Insertar();
@@ -75,6 +73,5 @@ public class Ordenes_Form extends Stage {
         arTxtCampos[2].clear();
         arTxtCampos[3].clear();
         arTxtCampos[4].clear();
-        arTxtCampos[5].clear();
     }
 }

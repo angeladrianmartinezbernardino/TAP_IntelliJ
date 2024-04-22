@@ -29,13 +29,13 @@ public class Mesa_Taqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/Taqueria/Empleado.png").toString());
-        imvEmp.setFitHeight(50);
-        imvEmp.setFitWidth(50);
+        ImageView imvMes = new ImageView(getClass().getResource("/Imagenes/Taqueria/Empleado.png").toString());
+        imvMes.setFitHeight(50);
+        imvMes.setFitWidth(50);
         btnAgregarMesa = new Button();
         btnAgregarMesa.setOnAction(event -> new Mesas_Form(tbvMesas, null));
         btnAgregarMesa.setPrefSize(50, 50);
-        btnAgregarMesa.setGraphic(imvEmp);
+        btnAgregarMesa.setGraphic(imvMes);
         tlbMenu = new ToolBar(btnAgregarMesa);
         CrearTable();
         bpnPrincipal = new BorderPane();

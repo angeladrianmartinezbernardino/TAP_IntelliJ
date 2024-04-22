@@ -27,7 +27,7 @@ public class Mesas_Button_Cell extends TableCell<Mesas_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar la mesa?" + objMes.getNumero());
+            alert.setContentText("¿Deseas borrar la mesa? " + objMes.getNumero());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objMes.Eliminar();

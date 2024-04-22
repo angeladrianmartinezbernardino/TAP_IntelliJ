@@ -40,7 +40,7 @@ public class Mesas_Form extends Stage {
         }
         LlenarForm();
         btnGuardar = new Button("Guardar");
-        btnGuardar.setOnAction(event -> GuardarEmpleado());
+        btnGuardar.setOnAction(event -> GuardarMesa());
         vbxPrincipal.getChildren().add(btnGuardar);
         escena = new Scene(vbxPrincipal, 350, 250);
     }
@@ -49,7 +49,7 @@ public class Mesas_Form extends Stage {
         arTxtCampos[0].setText(objMes.getNumero()+"");
     }
 
-    private void GuardarEmpleado() {
+    private void GuardarMesa() {
         objMes.setNumero(Integer.parseInt(arTxtCampos[0].getText()));
         if (objMes.getIdMesa() > 0) {
             objMes.Actualizar();

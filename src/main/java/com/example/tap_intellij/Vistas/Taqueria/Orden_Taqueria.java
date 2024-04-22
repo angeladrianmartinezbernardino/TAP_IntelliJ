@@ -29,13 +29,13 @@ public class Orden_Taqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/Taqueria/Empleado.png").toString());
-        imvEmp.setFitHeight(50);
-        imvEmp.setFitWidth(50);
+        ImageView imvOrd = new ImageView(getClass().getResource("/Imagenes/Taqueria/Empleado.png").toString());
+        imvOrd.setFitHeight(50);
+        imvOrd.setFitWidth(50);
         btnAgregarOrden = new Button();
         btnAgregarOrden.setOnAction(event -> new Ordenes_Form(tbvOrdenes, null));
         btnAgregarOrden.setPrefSize(50, 50);
-        btnAgregarOrden.setGraphic(imvEmp);
+        btnAgregarOrden.setGraphic(imvOrd);
         tlbMenu = new ToolBar(btnAgregarOrden);
         CrearTable();
         bpnPrincipal = new BorderPane();

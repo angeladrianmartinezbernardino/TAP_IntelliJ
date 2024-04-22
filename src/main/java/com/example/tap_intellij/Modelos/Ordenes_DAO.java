@@ -64,7 +64,7 @@ public class Ordenes_DAO {
     }
 
     public void Insertar() {
-        String query = "INSERT INTO orden(idOrden, idEmpleado, fecha, observaciones, idMesa, idUsuario) VALUES ('" + idOrden + "', '" + idEmpleado + "', " + fecha + "', " + observaciones + ", '" + idMesa + "', '" + idUsuario + "')";
+        String query = "INSERT INTO orden(idEmpleado, fecha, observaciones, idMesa, idUsuario) VALUES ('" + idEmpleado + "', '" + fecha + "', '" + observaciones + "', '" + idMesa + "', '" + idUsuario + "')";
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -84,7 +84,7 @@ public class Ordenes_DAO {
     }
 
     public void Eliminar() {
-        String query = "DELETE FROM empleado WHERE idOrden=" + idOrden;
+        String query = "DELETE FROM orden WHERE idOrden=" + idOrden;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);

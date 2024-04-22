@@ -83,7 +83,7 @@ public class Empleados_DAO {
     }
 
     public void Eliminar() {
-        String query = "DELETE FROM empleado WHERE id_empleado=" + idEmpleado;
+        String query = "DELETE FROM empleado WHERE idEmpleado=" + idEmpleado;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);

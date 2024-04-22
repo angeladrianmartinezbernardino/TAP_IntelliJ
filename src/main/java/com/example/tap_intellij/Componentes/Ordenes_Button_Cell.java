@@ -27,7 +27,7 @@ public class Ordenes_Button_Cell extends TableCell<Ordenes_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar el empleado?" + objOrd.getIdEmpleado());
+            alert.setContentText("¿Deseas borrar la orden? " + objOrd.getIdOrden());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objOrd.Eliminar();
