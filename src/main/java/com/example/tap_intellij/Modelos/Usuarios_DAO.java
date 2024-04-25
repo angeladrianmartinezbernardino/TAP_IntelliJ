@@ -99,21 +99,16 @@ public class Usuarios_DAO {
     public boolean autenticar(String usuario, String contraseña) {
         boolean autenticado = false;
         String query = "SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?";
-
         try (PreparedStatement preparedStatement = Conexion.Conexion.prepareStatement(query)) {
             preparedStatement.setString(1, usuario);
             preparedStatement.setString(2, contraseña);
-
             ResultSet resultSet = preparedStatement.executeQuery();
-
             if (resultSet.next()) {
                 autenticado = true;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return autenticado;
     }
-
 }
