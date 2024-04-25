@@ -3,6 +3,7 @@ package com.example.tap_intellij.Modelos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -94,4 +95,25 @@ public class Usuarios_DAO {
         }
         return listaEmp;
     }
+
+    public boolean autenticar(String usuario, String contraseña) {
+        boolean autenticado = false;
+        String query = "SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?";
+
+        try (PreparedStatement preparedStatement = Conexion.Conexion.prepareStatement(query)) {
+            preparedStatement.setString(1, usuario);
+            preparedStatement.setString(2, contraseña);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                autenticado = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return autenticado;
+    }
+
 }
