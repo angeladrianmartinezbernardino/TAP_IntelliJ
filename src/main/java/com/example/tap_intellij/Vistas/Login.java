@@ -40,10 +40,9 @@ public class Login extends Stage {
     private void autenticarYAcceder() {
         String usuario = txtUsuario.getText();
         String contrasena = txtContrasena.getText();
-
         if (modeloUsuario.autenticar(usuario, contrasena)) {
-            Acceso acceso = new Acceso();
-            acceso.show();
+            Categorias categorias = new Categorias();
+            categorias.show();
             this.close(); // Cierra la ventana de login
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

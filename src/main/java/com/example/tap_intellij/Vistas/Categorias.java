@@ -1,12 +1,11 @@
 package com.example.tap_intellij.Vistas;
 
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-public class Acceso extends Login {
+public class Categorias extends Login {
     private Scene escena;
 
-    public Acceso() {
+    public Categorias() {
         CrearUI();
         this.setTitle("Empleados");
         this.setScene(escena);
