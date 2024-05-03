@@ -43,7 +43,7 @@ public class Cuadro_magico extends Stage {
         Ventana_datos.setVgap(10);
         Introducir_tamano = new Label("Tamaño del cuadro");
         Cuadro_texto = new TextField();
-        Calcular = new Button("Calcular Cuadro Mágico");
+        Calcular = new Button("Calcular cuadro mágico");
         Calcular.setOnAction(event -> calcularCuadroMagico());
         Ventana_datos.add(Introducir_tamano, 0, 0);
         Ventana_datos.add(Cuadro_texto, 1, 0);
