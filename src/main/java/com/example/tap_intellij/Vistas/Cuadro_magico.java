@@ -57,9 +57,7 @@ public class Cuadro_magico extends Stage {
             System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
             return;
         }
-        // Implementación del algoritmo para generar el cuadro mágico.
         Generar_cuadro_magico(Tamano);
-        // Mostrar el cuadro mágico en el GridPane.
         Mostrar_cuadro_magico(Tamano);
     }
 
