@@ -18,35 +18,36 @@ import java.io.RandomAccessFile;
  * */
 
 public class Cuadro_magico extends Stage {
-    private Scene Escena;
-    private GridPane Ventana;
+    private Scene Escena_Principal, Escena_CM;
+    private GridPane Ventana_datos, Ventana_CM;
     private TextField Cuadro_texto;
     private Button Calcular, Celda;
     private Label Introducir_tamano;
     private int Tamano, i, Numero, Fila, Columna, Valor;
     private RandomAccessFile Archivo;
+    private Stage S_CM;
 
     public Cuadro_magico() {
         CrearUI();
-        Escena = new Scene(Ventana, 800, 400);
-        Escena.getStylesheets().add(getClass().getResource("/Estilos/Cuadro_magico.css").toString());
+        Escena_Principal = new Scene(Ventana_datos, 800, 400);
+        Escena_Principal.getStylesheets().add(getClass().getResource("/Estilos/Datos_CM.css").toString());
         this.setTitle("Cuadro mágico");
-        this.setScene(Escena);
+        this.setScene(Escena_Principal);
         this.show();
     }
 
     private void CrearUI() {
-        Ventana = new GridPane();
-        Ventana.setAlignment(Pos.CENTER);
-        Ventana.setHgap(10);
-        Ventana.setVgap(10);
+        Ventana_datos = new GridPane();
+        Ventana_datos.setAlignment(Pos.CENTER);
+        Ventana_datos.setHgap(10);
+        Ventana_datos.setVgap(10);
         Introducir_tamano = new Label("Tamaño del cuadro");
         Cuadro_texto = new TextField();
         Calcular = new Button("Calcular Cuadro Mágico");
         Calcular.setOnAction(event -> calcularCuadroMagico());
-        Ventana.add(Introducir_tamano, 0, 0);
-        Ventana.add(Cuadro_texto, 1, 0);
-        Ventana.add(Calcular, 1, 1);
+        Ventana_datos.add(Introducir_tamano, 0, 0);
+        Ventana_datos.add(Cuadro_texto, 1, 0);
+        Ventana_datos.add(Calcular, 1, 1);
     }
 
     private void calcularCuadroMagico() {
@@ -103,11 +104,11 @@ public class Cuadro_magico extends Stage {
     }
 
     private void Mostrar_cuadro_magico(int Tamano) {
-        Stage stageMagico = new Stage();
-        GridPane gridMagico = new GridPane();
-        gridMagico.setAlignment(Pos.CENTER);
-        gridMagico.setHgap(10);
-        gridMagico.setVgap(10);
+        S_CM = new Stage();
+        Ventana_CM = new GridPane();
+        Ventana_CM.setAlignment(Pos.CENTER);
+        Ventana_CM.setHgap(10);
+        Ventana_CM.setVgap(10);
         try {
             Archivo = new RandomAccessFile("cuadroMagico.dat", "r");
             for (Fila = 0; Fila < Tamano; Fila++) {
@@ -118,16 +119,17 @@ public class Cuadro_magico extends Stage {
                     Celda.setMinWidth(30);
                     Celda.setMinHeight(30);
                     // Ahora se agrega el botón al GridPane en lugar de una etiqueta y +2 para ajustar por los elementos de entrada.
-                    gridMagico.add(Celda, Columna + 2, Fila);
+                    Ventana_CM.add(Celda, Columna + 2, Fila);
                 }
             }
             Archivo.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Scene escenaMagica = new Scene(gridMagico, 300, 300);
-        stageMagico.setTitle("Cuadro Mágico");
-        stageMagico.setScene(escenaMagica);
-        stageMagico.show();
+        Escena_CM = new Scene(Ventana_CM, 300, 300);
+        Escena_CM.getStylesheets().add(getClass().getResource("/Estilos/CM.css").toString());
+        S_CM.setTitle("Cuadro mágico");
+        S_CM.setScene(Escena_CM);
+        S_CM.show();
     }
 }
