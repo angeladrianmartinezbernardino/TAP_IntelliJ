@@ -52,7 +52,7 @@ public class Cuadro_magico extends Stage {
 
     private void calcularCuadroMagico() {
         Tamano = Integer.parseInt(Cuadro_texto.getText());
-        // Validación del tamaño introducido por el usuario
+        // Validación del tamaño introducido por el usuario.
         if (Tamano < 3 || Tamano % 2 == 0) {
             System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
             return;
