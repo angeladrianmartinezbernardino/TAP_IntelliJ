@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,15 +181,8 @@
       <workItem from="1714087041454" duration="1575000" />
       <workItem from="1714121200998" duration="3480000" />
       <workItem from="1714757778594" duration="3374000" />
-      <workItem from="1714763789718" duration="2395000" />
-    </task>
-    <task id="LOCAL-00048" summary="Falta ordenar.">
-      <option name="closed" value="true" />
-      <created>1702411386154</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1702411386155</updated>
+      <workItem from="1714763789718" duration="2901000" />
+      <workItem from="1715296854172" duration="734000" />
     </task>
     <task id="LOCAL-00049" summary="Ordenando.">
       <option name="closed" value="true" />
@@ -575,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714766146337</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1714766486912</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1714766486912</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
