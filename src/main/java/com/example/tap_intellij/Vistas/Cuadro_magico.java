@@ -24,9 +24,9 @@ public class Cuadro_magico extends Stage {
     private TextField Cuadro_texto;
     private Button Calcular, Celda;
     private Label Introducir_tamano;
-    private int Tamano, i, Numero, Fila, Columna, Valor;
-    private RandomAccessFile Archivo;
+    private int Tamano, i, Numero, Fila, Columna, Valor, Nueva_fila, Nueva_columna;
     private Stage S_CM;
+    private Alert Alerta;
 
     public Cuadro_magico() {
         CrearUI();
@@ -54,7 +54,7 @@ public class Cuadro_magico extends Stage {
     private void Calcular_cuadro_magico() {
         try {
             Tamano = Integer.parseInt(Cuadro_texto.getText());
-            if (Tamano < 3 || Tamano % 2 == 0) {
+            if (!Es_tamano_valido(Tamano)) {
                 mostrarAlerta("Error", "El tamaño debe ser impar y mayor o igual a 3.");
                 return;
             }
@@ -65,40 +65,31 @@ public class Cuadro_magico extends Stage {
         }
     }
 
+    private boolean Es_tamano_valido(int tamano) {
+        return tamano >= 3 && tamano % 2 != 0;
+    }
+
     private void Generar_cuadro_magico(int Tamano) {
-        try {
-            Archivo = new RandomAccessFile("cuadroMagico.dat", "rw");
+        try (RandomAccessFile Archivo = new RandomAccessFile("Cuadro_magico.dat", "rw")) {
             for (i = 0; i < Tamano * Tamano; i++) {
                 Archivo.writeInt(0);
             }
             Numero = 1;
             Fila = Tamano / 2;
-            Columna = Tamano - 1;
+            Columna = Tamano / 2;
             while (Numero <= Tamano * Tamano) {
-                if (Fila == -1 && Columna == Tamano) {
-                    Columna = Tamano - 2;
-                    Fila = 0;
-                } else {
-                    if (Columna == Tamano) {
-                        Columna = 0;
-                    }
-                    if (Fila < 0) {
-                        Fila = Tamano - 1;
-                    }
-                }
                 Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
+                Archivo.writeInt(Numero++);
+                Nueva_fila = (Fila - 1 + Tamano) % Tamano;
+                Nueva_columna = (Columna + 1) % Tamano;
+                Archivo.seek((Nueva_fila * Tamano + Nueva_columna) * Integer.BYTES);
                 if (Archivo.readInt() != 0) {
-                    Columna -= 2;
-                    Fila++;
-                    continue;
+                    Fila = (Fila + 1) % Tamano;
                 } else {
-                    Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
-                    Archivo.writeInt(Numero++);
+                    Fila = Nueva_fila;
+                    Columna = Nueva_columna;
                 }
-                Fila--;
-                Columna++;
             }
-            Archivo.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,8 +101,7 @@ public class Cuadro_magico extends Stage {
         Ventana_CM.setAlignment(Pos.CENTER);
         Ventana_CM.setHgap(10);
         Ventana_CM.setVgap(10);
-        try {
-            Archivo = new RandomAccessFile("cuadroMagico.dat", "r");
+        try (RandomAccessFile Archivo = new RandomAccessFile("Cuadro_magico.dat", "r")) {
             for (Fila = 0; Fila < Tamano; Fila++) {
                 for (Columna = 0; Columna < Tamano; Columna++) {
                     Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
@@ -122,7 +112,6 @@ public class Cuadro_magico extends Stage {
                     Ventana_CM.add(Celda, Columna + 2, Fila);
                 }
             }
-            Archivo.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -134,10 +123,10 @@ public class Cuadro_magico extends Stage {
     }
 
     private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alerta = new Alert(Alert.AlertType.ERROR);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
+        Alerta = new Alert(Alert.AlertType.ERROR);
+        Alerta.setTitle(titulo);
+        Alerta.setHeaderText(null);
+        Alerta.setContentText(mensaje);
+        Alerta.showAndWait();
     }
 }
