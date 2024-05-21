@@ -44,13 +44,13 @@ public class Cuadro_magico extends Stage {
         Introducir_tamano = new Label("Tamaño del cuadro");
         Cuadro_texto = new TextField();
         Calcular = new Button("Calcular cuadro mágico");
-        Calcular.setOnAction(event -> calcularCuadroMagico());
+        Calcular.setOnAction(event -> Calcular_cuadro_magico());
         Ventana_datos.add(Introducir_tamano, 0, 0);
         Ventana_datos.add(Cuadro_texto, 1, 0);
         Ventana_datos.add(Calcular, 1, 1);
     }
 
-    private void calcularCuadroMagico() {
+    private void Calcular_cuadro_magico() {
         Tamano = Integer.parseInt(Cuadro_texto.getText());
         if (Tamano < 3 || Tamano % 2 == 0) {
             System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
