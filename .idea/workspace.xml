@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles." />
+    <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Simulador_impresion/Tarea.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Impresion_tarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Impresion_tarea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Simulador_impresion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Simulador_impresion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,11 +103,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Simulador_impresion" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Taqueria" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Loteria" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\IntelliJ\TAP_IntelliJ\src\main\resources\Imágenes" />
-      <recent name="C:\Users\AAdri\OneDrive\Documentos\IntelliJ\TAP_IntelliJ\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.tap_intellij.Modelos" />
@@ -181,14 +187,7 @@
       <workItem from="1714757778594" duration="3374000" />
       <workItem from="1714763789718" duration="2901000" />
       <workItem from="1715296854172" duration="808000" />
-    </task>
-    <task id="LOCAL-00050" summary="Ordenando.">
-      <option name="closed" value="true" />
-      <created>1702450118475</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1702450118476</updated>
+      <workItem from="1716262817230" duration="4371000" />
     </task>
     <task id="LOCAL-00051" summary="Ordenando.">
       <option name="closed" value="true" />
@@ -574,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715298552375</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1716262976647</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1716262976648</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
