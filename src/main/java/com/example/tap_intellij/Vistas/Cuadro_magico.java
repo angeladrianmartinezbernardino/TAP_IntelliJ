@@ -52,7 +52,6 @@ public class Cuadro_magico extends Stage {
 
     private void calcularCuadroMagico() {
         Tamano = Integer.parseInt(Cuadro_texto.getText());
-        // Validación del tamaño introducido por el usuario.
         if (Tamano < 3 || Tamano % 2 == 0) {
             System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
             return;
@@ -116,7 +115,6 @@ public class Cuadro_magico extends Stage {
                     Celda = new Button(String.valueOf(Valor));
                     Celda.setMinWidth(30);
                     Celda.setMinHeight(30);
-                    // Ahora se agrega el botón al GridPane en lugar de una etiqueta y +2 para ajustar por los elementos de entrada.
                     Ventana_CM.add(Celda, Columna + 2, Fila);
                 }
             }
