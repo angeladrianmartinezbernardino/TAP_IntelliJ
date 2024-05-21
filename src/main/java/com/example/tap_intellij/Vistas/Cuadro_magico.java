@@ -2,6 +2,7 @@ package com.example.tap_intellij.Vistas;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -51,19 +52,22 @@ public class Cuadro_magico extends Stage {
     }
 
     private void Calcular_cuadro_magico() {
-        Tamano = Integer.parseInt(Cuadro_texto.getText());
-        if (Tamano < 3 || Tamano % 2 == 0) {
-            System.out.println("El tamaño debe ser impar y mayor o igual a 3.");
-            return;
+        try {
+            Tamano = Integer.parseInt(Cuadro_texto.getText());
+            if (Tamano < 3 || Tamano % 2 == 0) {
+                mostrarAlerta("Error", "El tamaño debe ser impar y mayor o igual a 3.");
+                return;
+            }
+            Generar_cuadro_magico(Tamano);
+            Mostrar_cuadro_magico(Tamano);
+        } catch (NumberFormatException e) {
+            mostrarAlerta("Error", "Por favor, introduce un número válido.");
         }
-        Generar_cuadro_magico(Tamano);
-        Mostrar_cuadro_magico(Tamano);
     }
 
     private void Generar_cuadro_magico(int Tamano) {
         try {
             Archivo = new RandomAccessFile("cuadroMagico.dat", "rw");
-            // Inicializar archivo
             for (i = 0; i < Tamano * Tamano; i++) {
                 Archivo.writeInt(0);
             }
@@ -127,5 +131,13 @@ public class Cuadro_magico extends Stage {
         S_CM.setTitle("Cuadro mágico");
         S_CM.setScene(Escena_CM);
         S_CM.show();
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 }

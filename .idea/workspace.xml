@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cuadroMagico.dat" beforeDir="false" afterPath="$PROJECT_DIR$/cuadroMagico.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Cuadro_magico.java" afterDir="false" />
     </list>
@@ -185,15 +186,7 @@
       <workItem from="1714763789718" duration="2901000" />
       <workItem from="1715296854172" duration="808000" />
       <workItem from="1716262817230" duration="4988000" />
-      <workItem from="1716332574410" duration="322000" />
-    </task>
-    <task id="LOCAL-00054" summary="Ordenando.">
-      <option name="closed" value="true" />
-      <created>1702458156228</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1702458156229</updated>
+      <workItem from="1716332574410" duration="1001000" />
     </task>
     <task id="LOCAL-00055" summary="Ordenando.">
       <option name="closed" value="true" />
@@ -579,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716332772092</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1716333084805</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1716333084805</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
