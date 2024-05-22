@@ -10,9 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import org.kordamp.bootstrapfx.BootstrapFX;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
@@ -25,104 +23,97 @@ public class Simulador_impresion extends Stage {
     private Panel pnlPrincipal;
     private BorderPane bpnPrincipal;
     private ToolBar tlbMenu;
-    private Scene escena;
-    private TableView<Impresion_tarea> tablaTareas;
-    private ProgressBar barraProgreso;
-    private Button btnAgregarTarea, btnControlSimulador;
-    private ObservableList<Impresion_tarea> listaTareas;
-    private SimuladorHilo hiloSimulador;
-    private boolean simuladorActivo;
-    private Random aleatorio;
-    private SimpleDateFormat formatoFecha;
-    private static final String IMAGEN_RUTA = "/Imagenes/Simulador_impresion/Tarea.png"; // Cambia esto por la ruta de tu imagen
+    private Scene Escena;
+    private TableView<Impresion_tarea> Tareas;
+    private ProgressBar Barra_progreso;
+    private Button Agregar_tarea, Control_simulador;
+    private ObservableList<Impresion_tarea> Lista_tareas;
+    private SimuladorHilo Simulador_hilo;
+    private boolean Simulador_activo;
+    private Random Aleatorio;
+    private SimpleDateFormat Formato_fecha;
+    private ImageView Imagen_Tarea;
+    private String Nombre_archivo, Hora_acceso_archivo;
+    private int Numero_hojas;
+    private static final String Ruta = "/Imagenes/Simulador_impresion/Tarea.png"; // Cambia esto por la ruta de tu imagen
 
     public Simulador_impresion() {
-        aleatorio = new Random();
-        formatoFecha = new SimpleDateFormat("yyyyMMddHHmmss");
-
+        Aleatorio = new Random();
+        Formato_fecha = new SimpleDateFormat("yyyyMMddHHmmss");
         CrearUI();
-        hiloSimulador = new SimuladorHilo();
-        simuladorActivo = false;
-
+        Simulador_hilo = new SimuladorHilo();
+        Simulador_activo = false;
         this.setTitle("Simulador de Impresión");
-        this.setScene(escena);
+        this.setScene(Escena);
         this.show();
     }
 
     private void CrearUI() {
-        CrearBarraDeHerramientas();
-        CrearTabla();
-        CrearBarraDeProgreso();
-
+        Crear_barra_herramientas();
+        Crear_tabla();
+        Crear_barra_progreso();
         bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(tlbMenu);
-        bpnPrincipal.setCenter(tablaTareas);
-        bpnPrincipal.setBottom(barraProgreso);
-
+        bpnPrincipal.setCenter(Tareas);
+        bpnPrincipal.setBottom(Barra_progreso);
         pnlPrincipal = new Panel("Simulador de Impresión");
         pnlPrincipal.getStyleClass().add("panel-primary");
         pnlPrincipal.setBody(bpnPrincipal);
-
-        escena = new Scene(pnlPrincipal, 700, 400);
-        escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        Escena = new Scene(pnlPrincipal, 700, 400);
+        Escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
     }
 
-    private void CrearBarraDeHerramientas() {
-        ImageView imvTarea = new ImageView(new Image(getClass().getResourceAsStream(IMAGEN_RUTA)));
-        imvTarea.setFitHeight(50);
-        imvTarea.setFitWidth(50);
-
-        btnAgregarTarea = new Button();
-        btnAgregarTarea.setOnAction(event -> AgregarTarea());
-        btnAgregarTarea.setPrefSize(50, 50);
-        btnAgregarTarea.setGraphic(imvTarea);
-
-        btnControlSimulador = new Button("Iniciar simulador");
-        btnControlSimulador.setOnAction(event -> ControlarSimulador());
-
-        tlbMenu = new ToolBar(btnAgregarTarea, btnControlSimulador);
+    private void Crear_barra_herramientas() {
+        Imagen_Tarea = new ImageView(new Image(getClass().getResourceAsStream(Ruta)));
+        Imagen_Tarea.setFitHeight(50);
+        Imagen_Tarea.setFitWidth(50);
+        Agregar_tarea = new Button();
+        Agregar_tarea.setOnAction(event -> Agregar_tarea());
+        Agregar_tarea.setPrefSize(50, 50);
+        Agregar_tarea.setGraphic(Imagen_Tarea);
+        Control_simulador = new Button("Iniciar simulador");
+        Control_simulador.setOnAction(event -> Controlar_simulador());
+        tlbMenu = new ToolBar(Agregar_tarea, Control_simulador);
     }
 
-    private void CrearTabla() {
-        tablaTareas = new TableView<>();
-        listaTareas = FXCollections.observableArrayList();
-        tablaTareas.setItems(listaTareas);
-
-        TableColumn<Impresion_tarea, String> tbcNumeroArchivo = new TableColumn<>("Número de archivo");
-        tbcNumeroArchivo.setCellValueFactory(new PropertyValueFactory<>("Numero_archivo"));
-        TableColumn<Impresion_tarea, String> tbcNombreArchivo = new TableColumn<>("Nombre del archivo");
-        tbcNombreArchivo.setCellValueFactory(new PropertyValueFactory<>("Nombre_archivo"));
-        TableColumn<Impresion_tarea, Integer> tbcNumeroHojas = new TableColumn<>("Número de hojas a imprimir");
-        tbcNumeroHojas.setCellValueFactory(new PropertyValueFactory<>("Numero_hojas"));
-        TableColumn<Impresion_tarea, String> tbcHoraAcceso = new TableColumn<>("Hora de acceso a la cola de impresión");
-        tbcHoraAcceso.setCellValueFactory(new PropertyValueFactory<>("Hora_acceso"));
-
-        tablaTareas.getColumns().addAll(tbcNumeroArchivo, tbcNombreArchivo, tbcNumeroHojas, tbcHoraAcceso);
+    private void Crear_tabla() {
+        Tareas = new TableView<>();
+        Lista_tareas = FXCollections.observableArrayList();
+        Tareas.setItems(Lista_tareas);
+        TableColumn<Impresion_tarea, String> TBC_Numero_archivo = new TableColumn<>("Número de archivo");
+        TBC_Numero_archivo.setCellValueFactory(new PropertyValueFactory<>("Numero_archivo"));
+        TableColumn<Impresion_tarea, String> TBC_Nombre_archivo = new TableColumn<>("Nombre del archivo");
+        TBC_Nombre_archivo.setCellValueFactory(new PropertyValueFactory<>("Nombre_archivo"));
+        TableColumn<Impresion_tarea, Integer> TBC_Numero_hojas = new TableColumn<>("Número de hojas a imprimir");
+        TBC_Numero_hojas.setCellValueFactory(new PropertyValueFactory<>("Numero_hojas"));
+        TableColumn<Impresion_tarea, String> TBC_Hora_acceso = new TableColumn<>("Hora de acceso a la cola de impresión");
+        TBC_Hora_acceso.setCellValueFactory(new PropertyValueFactory<>("Hora_acceso"));
+        Tareas.getColumns().addAll(TBC_Numero_archivo, TBC_Nombre_archivo, TBC_Numero_hojas, TBC_Hora_acceso);
     }
 
-    private void CrearBarraDeProgreso() {
-        barraProgreso = new ProgressBar(0);
+    private void Crear_barra_progreso() {
+        Barra_progreso = new ProgressBar(0);
     }
 
-    private void AgregarTarea() {
-        String nombreArchivo = "Archivo_" + formatoFecha.format(new Date()) + ".txt";
-        int numeroHojas = aleatorio.nextInt(50) + 1;
-        String horaAccesoArchivo = new SimpleDateFormat("HH:mm:ss").format(new Date());
-        Impresion_tarea tarea = new Impresion_tarea(String.valueOf(listaTareas.size() + 1), nombreArchivo, numeroHojas, horaAccesoArchivo);
-        listaTareas.add(tarea);
-        tablaTareas.refresh();
+    private void Agregar_tarea() {
+        Nombre_archivo = "Archivo_" + Formato_fecha.format(new Date()) + ".txt";
+        Numero_hojas = Aleatorio.nextInt(50) + 1;
+        Hora_acceso_archivo = new SimpleDateFormat("HH:mm:ss").format(new Date());
+        Impresion_tarea Tarea = new Impresion_tarea(String.valueOf(Lista_tareas.size() + 1), Nombre_archivo, Numero_hojas, Hora_acceso_archivo);
+        Lista_tareas.add(Tarea);
+        Tareas.refresh();
     }
 
-    private void ControlarSimulador() {
-        if (simuladorActivo) {
-            simuladorActivo = false;
-            btnControlSimulador.setText("Iniciar simulador");
-            hiloSimulador.interrupt();
+    private void Controlar_simulador() {
+        if (Simulador_activo) {
+            Simulador_activo = false;
+            Control_simulador.setText("Iniciar simulador");
+            Simulador_hilo.interrupt();
         } else {
-            simuladorActivo = true;
-            btnControlSimulador.setText("Detener simulador");
-            hiloSimulador = new SimuladorHilo();
-            hiloSimulador.start();
+            Simulador_activo = true;
+            Control_simulador.setText("Detener simulador");
+            Simulador_hilo = new SimuladorHilo();
+            Simulador_hilo.start();
         }
     }
 
@@ -130,18 +121,18 @@ public class Simulador_impresion extends Stage {
         @Override
         public void run() {
             while (!Thread.interrupted()) {
-                if (!listaTareas.isEmpty() && simuladorActivo) {
-                    Impresion_tarea tareaActual = listaTareas.get(0);
-                    for (int i = 0; i < tareaActual.getNumero_hojas(); i++) {
+                if (!Lista_tareas.isEmpty() && Simulador_activo) {
+                    Impresion_tarea Tarea_actual = Lista_tareas.get(0);
+                    for (int i = 0; i < Tarea_actual.getNumero_hojas(); i++) {
                         try {
                             Thread.sleep(100);
-                            final double progreso = (i + 1) / (double) tareaActual.getNumero_hojas();
-                            Platform.runLater(() -> barraProgreso.setProgress(progreso));
+                            final double Progreso = (i + 1) / (double) Tarea_actual.getNumero_hojas();
+                            Platform.runLater(() -> Barra_progreso.setProgress(Progreso));
                         } catch (InterruptedException e) {
                             break;
                         }
                     }
-                    Platform.runLater(() -> listaTareas.remove(tareaActual));
+                    Platform.runLater(() -> Lista_tareas.remove(Tarea_actual));
                 }
             }
         }
