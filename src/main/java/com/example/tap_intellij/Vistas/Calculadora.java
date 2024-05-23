@@ -14,32 +14,35 @@ import javafx.stage.Stage;
  * */
 
 public class Calculadora extends Stage {
-    private final Button[][] Tecla = new Button[4][4];
-    private final char[] Digito = {'7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+'};
-    private GridPane GP_Ventana;
-    private TextField Calculos;
-    private Button Limpiar_pantalla;
+    private Scene S_Calculadora;
+    private GridPane GP_Calculadora;
     private int Posicion;
     private double Primer_numero = 0, Segundo_numero = 0, Resultado = 0;
     private String Operador = "", Contenido_pantalla = "";
     private boolean Tiene_decimal = false, Despues_de_igual = false, Es_negativo = false;
-    private Scene Escena;
+    private final char[] Digito = {'7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+'};
+    private final Button[][] Tecla = new Button[4][4];
+    private TextField Calculos;
+    private Button Limpiar_pantalla;
 
     public Calculadora() {
         Crear_UI();
-        Escena = new Scene(GP_Ventana, 250, 250);
-        Escena.getStylesheets().add(getClass().getResource("/Estilos/Calculadora.css").toString());
+        S_Calculadora = new Scene(GP_Calculadora, 250, 250);
+        S_Calculadora.getStylesheets().add(getClass().getResource("/Estilos/Calculadora.css").toString());
         this.setTitle("Calculadora");
-        this.setScene(Escena);
+        this.setScene(S_Calculadora);
         this.show();
     }
 
     private void Crear_UI() {
-        GP_Ventana = new GridPane();
+        GP_Calculadora = new GridPane();
+        GP_Calculadora.setAlignment(Pos.CENTER);
+        GP_Calculadora.setHgap(10);
+        GP_Calculadora.setVgap(10);
         Calculos = new TextField("0");
         Calculos.setAlignment(Pos.BASELINE_RIGHT);
         Calculos.setEditable(false);
-        GP_Ventana.add(Calculos, 0, 0, 4, 1);
+        GP_Calculadora.add(Calculos, 0, 0, 4, 1);
         Limpiar_pantalla = new Button("C");
         Limpiar_pantalla.setPrefSize(50, 50);
         Limpiar_pantalla.setOnAction((event) -> {
@@ -52,7 +55,7 @@ public class Calculadora extends Stage {
             Despues_de_igual = false;
             Es_negativo = false;
         });
-        GP_Ventana.add(Limpiar_pantalla, 4, 0);
+        GP_Calculadora.add(Limpiar_pantalla, 4, 0);
         Posicion = 0;
         for (int i = 1; i <= 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -60,7 +63,7 @@ public class Calculadora extends Stage {
                 Tecla[i - 1][j] = new Button(String.valueOf(Simbolo_actual));
                 Tecla[i - 1][j].setPrefSize(50, 50);
                 Tecla[i - 1][j].setOnAction((event) -> Generar_expresion(Simbolo_actual));
-                GP_Ventana.add(Tecla[i - 1][j], j, i);
+                GP_Calculadora.add(Tecla[i - 1][j], j, i);
                 Posicion++;
             }
         }

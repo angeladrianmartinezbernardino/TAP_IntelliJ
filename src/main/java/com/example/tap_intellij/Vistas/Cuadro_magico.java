@@ -19,36 +19,36 @@ import java.io.RandomAccessFile;
  * */
 
 public class Cuadro_magico extends Stage {
-    private Scene Escena_tamano_cuadro_magico, Escena_cuadro_magico;
-    private GridPane Ventana_tamano_cuadro_magico, Ventana_cuadro_magico;
-    private TextField Tamano_cuadro_magico;
-    private Button Calcular, Cuadrado_individual;
-    private Label Introducir_tamano_cuadro_magico;
+    private Stage CM;
+    private Scene S_tamano_cuadro_magico, S_cuadro_magico;
+    private GridPane GP_tamano_cuadro_magico, GP_cuadro_magico;
     private int Tamano, i, Numero_cuadrado_individual, Fila, Columna, Valor, Nueva_fila, Nueva_columna;
-    private Stage Cuadro_magico;
+    private TextField Tamano_cuadro_magico;
+    private Label Introducir_tamano_cuadro_magico;
+    private Button Calcular, Cuadrado_individual;
     private Alert Alerta;
 
     public Cuadro_magico() {
-        CrearUI();
-        Escena_tamano_cuadro_magico = new Scene(Ventana_tamano_cuadro_magico, 800, 400);
-        Escena_tamano_cuadro_magico.getStylesheets().add(getClass().getResource("/Estilos/Datos_CM.css").toString());
+        Crear_UI();
+        S_tamano_cuadro_magico = new Scene(GP_tamano_cuadro_magico, 800, 400);
+        S_tamano_cuadro_magico.getStylesheets().add(getClass().getResource("/Estilos/Datos_CM.css").toString());
         this.setTitle("Cuadro mágico");
-        this.setScene(Escena_tamano_cuadro_magico);
+        this.setScene(S_tamano_cuadro_magico);
         this.show();
     }
 
-    private void CrearUI() {
-        Ventana_tamano_cuadro_magico = new GridPane();
-        Ventana_tamano_cuadro_magico.setAlignment(Pos.CENTER);
-        Ventana_tamano_cuadro_magico.setHgap(10);
-        Ventana_tamano_cuadro_magico.setVgap(10);
+    private void Crear_UI() {
+        GP_tamano_cuadro_magico = new GridPane();
+        GP_tamano_cuadro_magico.setAlignment(Pos.CENTER);
+        GP_tamano_cuadro_magico.setHgap(10);
+        GP_tamano_cuadro_magico.setVgap(10);
         Introducir_tamano_cuadro_magico = new Label("Tamaño del cuadro");
         Tamano_cuadro_magico = new TextField();
         Calcular = new Button("Calcular cuadro mágico");
         Calcular.setOnAction(event -> Calcular_cuadro_magico());
-        Ventana_tamano_cuadro_magico.add(Introducir_tamano_cuadro_magico, 0, 0);
-        Ventana_tamano_cuadro_magico.add(Tamano_cuadro_magico, 1, 0);
-        Ventana_tamano_cuadro_magico.add(Calcular, 1, 1);
+        GP_tamano_cuadro_magico.add(Introducir_tamano_cuadro_magico, 0, 0);
+        GP_tamano_cuadro_magico.add(Tamano_cuadro_magico, 1, 0);
+        GP_tamano_cuadro_magico.add(Calcular, 1, 1);
     }
 
     private void Calcular_cuadro_magico() {
@@ -96,11 +96,11 @@ public class Cuadro_magico extends Stage {
     }
 
     private void Mostrar_cuadro_magico(int Tamano) {
-        Cuadro_magico = new Stage();
-        Ventana_cuadro_magico = new GridPane();
-        Ventana_cuadro_magico.setAlignment(Pos.CENTER);
-        Ventana_cuadro_magico.setHgap(10);
-        Ventana_cuadro_magico.setVgap(10);
+        CM = new Stage();
+        GP_cuadro_magico = new GridPane();
+        GP_cuadro_magico.setAlignment(Pos.CENTER);
+        GP_cuadro_magico.setHgap(10);
+        GP_cuadro_magico.setVgap(10);
         try (RandomAccessFile Archivo = new RandomAccessFile("Cuadro_magico.dat", "r")) {
             for (Fila = 0; Fila < Tamano; Fila++) {
                 for (Columna = 0; Columna < Tamano; Columna++) {
@@ -109,17 +109,17 @@ public class Cuadro_magico extends Stage {
                     Cuadrado_individual = new Button(String.valueOf(Valor));
                     Cuadrado_individual.setMinWidth(30);
                     Cuadrado_individual.setMinHeight(30);
-                    Ventana_cuadro_magico.add(Cuadrado_individual, Columna + 2, Fila);
+                    GP_cuadro_magico.add(Cuadrado_individual, Columna + 2, Fila);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Escena_cuadro_magico = new Scene(Ventana_cuadro_magico, 300, 300);
-        Escena_cuadro_magico.getStylesheets().add(getClass().getResource("/Estilos/CM.css").toString());
-        Cuadro_magico.setTitle("Cuadro mágico");
-        Cuadro_magico.setScene(Escena_cuadro_magico);
-        Cuadro_magico.show();
+        S_cuadro_magico = new Scene(GP_cuadro_magico, 300, 300);
+        S_cuadro_magico.getStylesheets().add(getClass().getResource("/Estilos/CM.css").toString());
+        CM.setTitle("Cuadro mágico");
+        CM.setScene(S_cuadro_magico);
+        CM.show();
     }
 
     private void Mostrar_alerta(String Titulo, String Mensaje) {
