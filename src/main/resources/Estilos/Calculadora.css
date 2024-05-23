@@ -1,9 +1,5 @@
 .root {
-    -fx-background-color:
-            linear-gradient(to top left, rgb(0, 0, 0), rgb(234, 234, 0)),
-            linear-gradient(to bottom left, rgb(200, 200, 200), rgb(0, 0, 0)),
-            linear-gradient(to top right, rgb(200, 200, 200), rgb(0, 0, 0)),
-            linear-gradient(to bottom right, rgb(0, 0, 0),rgb(200, 200, 200));
+    -fx-background-color: rgb(234, 234, 0);
 }
 
 .button {
@@ -12,13 +8,15 @@
     -fx-border-radius: 10;
     -fx-pref-width: 40px;
     -fx-pref-height: 40px;
-    -fx-text-fill: rgb(255, 255, 255);
+    -fx-text-fill: rgb(0, 0, 0);
     -fx-font-family: "Arial Black";
-    -fx-font-size: 10px;
+    -fx-font-size: 15px;
 }
 
 .text-field {
     -fx-background-color: rgb(0, 0, 0);
-    -fx-text-fill: rgb(234, 234, 0);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 15px;
     -fx-border-radius: 10;
 }
