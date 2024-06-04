@@ -57,7 +57,7 @@ public class Memorama extends Stage {
         HBJ1.getChildren().addAll(L_Jugador_1, Puntaje_jugador_1);
         HBJ2.getChildren().addAll(L_Jugador_2, Puntaje_jugador_2);
         VB2.getChildren().addAll(HBJ1, HBJ2, L_Temporizador);
-        HBox HB = new HBox(50);
+        HB = new HBox(50);
         HB.getChildren().addAll(VB1, VB2);
         HB.setId("ARRIBA");
         ScrollPane scrollPane = new ScrollPane();
