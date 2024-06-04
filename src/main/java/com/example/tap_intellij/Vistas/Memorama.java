@@ -61,10 +61,11 @@ public class Memorama extends Stage {
         VB2.getChildren().addAll(HBJ1, HBJ2, L_Temporizador);
         HB = new HBox(50);
         HB.getChildren().addAll(VB1, VB2);
-        HB.setId("ARRIBA");
+        HB.setId("Arriba");
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(HB);
         scrollPane.setFitToWidth(true);
+        scrollPane.setId("scroll-pane");
         Scene scene = new Scene(scrollPane, 600, 400);
         scene.getStylesheets().add(getClass().getResource("/Estilos/Memorama.css").toString());
         this.setScene(scene);
@@ -78,10 +79,10 @@ public class Memorama extends Stage {
             Linea_tiempo.stop();
         }
         Tiempo_restante_turno = Tiempo_limite_turno;
-        L_Temporizador.setText("Tiempo restante: " + Tiempo_restante_turno + " segundos");
+        L_Temporizador.setText("Tiempo restante: " + Tiempo_restante_turno + " segundos.");
         Linea_tiempo = new Timeline(new KeyFrame(Duration.seconds(1), evt -> {
             Tiempo_restante_turno--;
-            L_Temporizador.setText("Tiempo restante: " + Tiempo_restante_turno + " segundos");
+            L_Temporizador.setText("Tiempo restante: " + Tiempo_restante_turno + " segundos.");
             if (Tiempo_restante_turno <= 0) {
                 cambiarTurno();
             }
@@ -284,7 +285,7 @@ public class Memorama extends Stage {
         Puntajes(0, 0);
         limpiarGrid();
         Linea_tiempo.stop();
-        L_Temporizador.setText("Tiempo restante: " + Tiempo_limite_turno + " segundos");
+        L_Temporizador.setText("Tiempo restante: " + Tiempo_limite_turno + " segundos.");
     }
 
     private void ocultarControles() {
