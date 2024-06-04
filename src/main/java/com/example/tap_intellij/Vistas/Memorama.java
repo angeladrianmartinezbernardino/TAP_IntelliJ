@@ -44,6 +44,7 @@ public class Memorama extends Stage {
         TF_Pares = new TextField();
         GP = new GridPane();
         GP.setHgap(10);
+        GP.setVgap(10);
         revolverButton.setOnAction(event -> revolver());
         VB1.getChildren().addAll(revolverButton, new HBox(10, new Label("Pares"), TF_Pares), GP);
         VB2 = new VBox(10);
@@ -102,7 +103,6 @@ public class Memorama extends Stage {
         }
         iniciarTimer();
     }
-
 
     private void revolver() {
         try {
@@ -186,7 +186,6 @@ public class Memorama extends Stage {
             }
         }
         Collections.shuffle(imagenes);
-        Collections.shuffle(posiciones);
         for (int i = 0; i < imagenes.size(); i++) {
             String imagen = imagenes.get(i);
             int[] posicion = posiciones.get(i);
