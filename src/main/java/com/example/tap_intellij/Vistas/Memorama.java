@@ -70,7 +70,7 @@ public class Memorama extends Stage {
         this.setScene(scene);
         this.setTitle("Memorama");
         this.show();
-        Imagen_trasera = new Image(getClass().getResourceAsStream("/Imagenes/back.jpg"));
+        Imagen_trasera = new Image(getClass().getResourceAsStream("/Imagenes/Memorama/Dorso.jpg"));
     }
 
     private void iniciarTimer() {
@@ -155,21 +155,21 @@ public class Memorama extends Stage {
 
     private List<String> generarImagenes(int cantidadPares) {
         List<String> imagenes = Arrays.asList(
-                "nezuco.jpg",
-                "ren.jpg",
-                "tanji.jpg",
-                "-1.jpg",
-                "-2.jpg",
-                "-3.jpg",
-                "-4.jpg",
-                "-5.jpg",
-                "-6.jpg",
-                "amor.jpg",
-                "ino.jpg",
-                "logods.jpg",
-                "rayo.jpg",
-                "sol.jpg",
-                "to.jpg"
+                "Amarillo.jpg",
+                "Azul.jpg",
+                "Blanco.jpg",
+                "Café.jpg",
+                "Dorado.jpg",
+                "Gris.jpg",
+                "Morado.jpg",
+                "Naranja.jpg",
+                "Negro.jpg",
+                "Oliva.jpg",
+                "Plateado.jpg",
+                "Rojo.jpg",
+                "Rosa.jpg",
+                "Turquesa.jpg",
+                "Verde.jpg"
         );
         Collections.shuffle(imagenes);
         List<String> imagenesSeleccionadas = new ArrayList<>();
@@ -192,8 +192,8 @@ public class Memorama extends Stage {
             String imagen = imagenes.get(i);
             int[] posicion = posiciones.get(i);
             Button boton = new Button();
-            Image imagenFrontal = new Image(getClass().getResourceAsStream("/Imagenes/" + imagen));
-            Image imagenTrasera = new Image(getClass().getResourceAsStream("/Imagenes/back.jpg"));
+            Image imagenFrontal = new Image(getClass().getResourceAsStream("/Imagenes/Memorama/" + imagen));
+            Image imagenTrasera = new Image(getClass().getResourceAsStream("/Imagenes/Memorama/Dorso.jpg"));
             ImageView imageView = new ImageView(imagenTrasera);
             imageView.setFitWidth(100);
             imageView.setFitHeight(150);
@@ -249,9 +249,9 @@ public class Memorama extends Stage {
         }
     }
 
-    private void Puntajes(int puntajeJugador1, int puntajeJugador2) {
-        this.Puntaje_jugador_1.setText("Puntaje: " + puntajeJugador1);
-        this.Puntaje_jugador_2.setText("Puntaje: " + puntajeJugador2);
+    private void Puntajes(int Puntaje_jugador_1, int Puntaje_jugador_2) {
+        this.Puntaje_jugador_1.setText("Puntaje: " + Puntaje_jugador_1 + ".");
+        this.Puntaje_jugador_2.setText("Puntaje: " + Puntaje_jugador_2 + ".");
     }
 
     private void verificarFinJuego() {
@@ -259,9 +259,9 @@ public class Memorama extends Stage {
         if (Pares_encontrados_jugador_1 + Pares_encontrados_jugador_2 == totalPares) {
             String mensajeGanador;
             if (Pares_encontrados_jugador_1 > Pares_encontrados_jugador_2) {
-                mensajeGanador = "¡Jugador 1 ha ganado!";
+                mensajeGanador = "¡El jugador 1 ha ganado!";
             } else if (Pares_encontrados_jugador_2 > Pares_encontrados_jugador_1) {
-                mensajeGanador = "¡Jugador 2 ha ganado!";
+                mensajeGanador = "¡El jugador 2 ha ganado!";
             } else {
                 mensajeGanador = "¡Empate!";
             }
