@@ -30,7 +30,7 @@ public class Producto_Taqueria extends Stage {
 
     private void CrearUI() {
         ImageView imvEmp = new ImageView(
-                getClass().getResource("/imagenes/Productos.jpg").toString()
+                getClass().getResource("/Imagenes/Productos.jpg").toString()
         );
         tbvProductos = new TableView<>();
 

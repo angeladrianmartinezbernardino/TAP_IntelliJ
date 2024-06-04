@@ -30,7 +30,7 @@ public class Servicio_domicilio_Taqueria extends Stage {
 
     private void CrearUI() {
         ImageView imvEmp = new ImageView(
-                getClass().getResource("/imagenes/servicio.jpg").toString()
+                getClass().getResource("/Imagenes/servicio.jpg").toString()
         );
         tbvServicios = new TableView<>();
 

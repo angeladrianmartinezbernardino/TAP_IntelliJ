@@ -30,7 +30,7 @@ public class Promocion_Taqueria extends Stage {
 
     private void CrearUI() {
         ImageView imvEmp = new ImageView(
-                getClass().getResource("/imagenes/promo.jpg").toString()
+                getClass().getResource("/Imagenes/promo.jpg").toString()
         );
         tbvPromociones = new TableView<>();
 

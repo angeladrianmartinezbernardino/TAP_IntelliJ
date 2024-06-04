@@ -45,12 +45,12 @@ public class Menu_Taqueria extends Stage {
         gridPane.setVgap(10);
 
         // Crear botones para cada categoría
-        Button tortasButton = crearBoton("Tortas", "/imagenes/tortas.jpg");
-        Button tacosButton = crearBoton("Tacos", "/imagenes/tacos.jpg");
-        Button especialidadesButton = crearBoton("Especialidades", "/imagenes/especialidades.jpg");
-        Button bebidasButton = crearBoton("Bebidas", "/imagenes/refrescos.jpg");
-        Button mesasButton = crearBoton("Mesas", "/imagenes/mesas.jpg");
-        Button empleadosButton = crearBoton("Empleados", "/imagenes/employee.png");
+        Button tortasButton = crearBoton("Tortas", "/Imagenes/tortas.jpg");
+        Button tacosButton = crearBoton("Tacos", "/Imagenes/tacos.jpg");
+        Button especialidadesButton = crearBoton("Especialidades", "/Imagenes/especialidades.jpg");
+        Button bebidasButton = crearBoton("Bebidas", "/Imagenes/refrescos.jpg");
+        Button mesasButton = crearBoton("Mesas", "/Imagenes/mesas.jpg");
+        Button empleadosButton = crearBoton("Empleados", "/Imagenes/employee.png");
 
 
         // Agregar botones al gridPane

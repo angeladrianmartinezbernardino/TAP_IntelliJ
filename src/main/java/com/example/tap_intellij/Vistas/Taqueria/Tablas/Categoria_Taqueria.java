@@ -30,7 +30,7 @@ public class Categoria_Taqueria extends Stage {
 
     private void CrearUI() {
         ImageView imvEmp = new ImageView(
-                getClass().getResource("/imagenes/cat.jpg").toString()
+                getClass().getResource("/Imagenes/cat.jpg").toString()
         );
         tbvCategorias = new TableView<>();
 

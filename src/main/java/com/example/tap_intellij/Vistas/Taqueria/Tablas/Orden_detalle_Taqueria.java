@@ -50,6 +50,10 @@ public class Orden_detalle_Taqueria extends Stage {
 
         tablaDetalleOrden.getColumns().addAll(colIdOrden, colIdProducto, colCantidad, colPrecio, colIdPromocion, colIdMesa);
 
+        // Inicializar los botones
+        btnAgregarDetalle = new Button("Agregar Detalle");
+        btnEliminarDetalle = new Button("Eliminar Detalle");
+
         HBox hBoxBotones = new HBox(10);
         hBoxBotones.getChildren().addAll(btnAgregarDetalle, btnEliminarDetalle);
         hBoxBotones.setAlignment(Pos.CENTER);

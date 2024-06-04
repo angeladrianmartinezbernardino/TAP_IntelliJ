@@ -5,45 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Categoria_Button_Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Producto_Button_Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Promocion_Button_Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Servicio_domicilio_Button_Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Categoria_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Orden_detalle_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Promocion_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Servicio_domicilio_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Categoria_Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Orden_detalle_Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Promocion_Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Servicio_domicilio_Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Categoria_Taqueria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Menu_Taqueria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_detalle_Taqueria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Promocion_Taqueria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Servicio_domicilio_Taqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Productos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/amor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/especialidades.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/ino.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/logods.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/mesas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/nezuco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/promo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/rayo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/refrescos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/ren.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/servicio.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/sol.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tacos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tanji.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/to.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tortas.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Empleados_Button_Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Empleado_Button_Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Mesas_Button_Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Mesa_Button_Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Ordenes_Button_Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Orden_Button_Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Productos_Button_Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Usuarios_Button_Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Componentes/Taqueria/Usuario_Button_Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Empleados_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Empleado_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Mesas_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Mesa_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Ordenes_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Orden_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Productos_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Producto_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Usuarios_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Usuario_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Categorias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Empleados_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Empleado_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Mesas_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Mesa_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Ordenes_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Orden_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Productos_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Producto_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Usuarios_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Usuario_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Empleado_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Empleado_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Mesa_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Mesa_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Usuario_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Usuario_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneradoDocumento.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/GeneradoDocumento.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Categoria_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Categoria_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Menu_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Menu_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Producto_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Producto_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Promocion_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Promocion_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Servicio_domicilio_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Servicio_domicilio_Taqueria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +115,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AAdri/OneDrive/Documentos/Programas/IntelliJ/TAP_IntelliJ/src/main/java/com/example/tap_intellij/Modelos/Taqueria",
+    "last_opened_file_path": "C:/Users/AAdri/OneDrive/Documentos/Programas/IntelliJ/TAP_IntelliJ/src/main/resources/Imagenes",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -140,6 +135,7 @@
       <recent name="com.example.tap_intellij.Vistas" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\java\com\example\tap_intellij\Modelos\Taqueria" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -238,15 +234,7 @@
       <workItem from="1717022519932" duration="60000" />
       <workItem from="1717192261387" duration="8000" />
       <workItem from="1717192389807" duration="746000" />
-      <workItem from="1717472427125" duration="4071000" />
-    </task>
-    <task id="LOCAL-00064" summary="Ajustando detalles.">
-      <option name="closed" value="true" />
-      <created>1709592986382</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1709592986382</updated>
+      <workItem from="1717472427125" duration="5863000" />
     </task>
     <task id="LOCAL-00065" summary="Ajustando detalles.">
       <option name="closed" value="true" />
@@ -632,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717472693837</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1717477268193</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1717477268193</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
