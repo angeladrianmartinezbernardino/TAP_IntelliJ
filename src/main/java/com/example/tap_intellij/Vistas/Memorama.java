@@ -24,6 +24,7 @@ public class Memorama extends Stage {
     private Label Puntaje_jugador_1, Puntaje_jugador_2, L_Jugador_1, L_Jugador_2, L_Temporizador;
     private GridPane GP;
     private TextField TF_Pares;
+    private Button revolverButton;
     private Image Imagen_trasera;
     private int Pares_encontrados_jugador_1, Pares_encontrados_jugador_2, Tiempo_restante_turno;
     private String Imagen_primea_carta;
@@ -40,7 +41,7 @@ public class Memorama extends Stage {
     private void CrearUI() {
         VB1 = new VBox(10);
         VB1.setId("v1");
-        Button revolverButton = new Button("Revolver");
+        revolverButton = new Button("Revolver");
         TF_Pares = new TextField();
         GP = new GridPane();
         GP.setHgap(10);
@@ -114,6 +115,7 @@ public class Memorama extends Stage {
                 mostrarError("Por favor, introduce un número de pares entre 3 y 15.");
                 return;
             }
+            ocultarControles();
             Pares_encontrados_jugador_1 = 0;
             Pares_encontrados_jugador_2 = 0;
             Puntajes(Pares_encontrados_jugador_1, Pares_encontrados_jugador_2);
@@ -269,6 +271,7 @@ public class Memorama extends Stage {
             alert.setContentText(mensajeGanador);
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.showAndWait();
+            mostrarControles();
             reiniciarJuego();
         } else {
             iniciarTimer();
@@ -282,6 +285,16 @@ public class Memorama extends Stage {
         limpiarGrid();
         Linea_tiempo.stop();
         L_Temporizador.setText("Tiempo restante: " + Tiempo_limite_turno + " segundos");
+    }
+
+    private void ocultarControles() {
+        revolverButton.setVisible(false);
+        TF_Pares.setVisible(false);
+    }
+
+    private void mostrarControles() {
+        revolverButton.setVisible(true);
+        TF_Pares.setVisible(true);
     }
 
     public static void main(String[] args) {
