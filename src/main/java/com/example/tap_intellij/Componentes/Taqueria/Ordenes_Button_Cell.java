@@ -1,17 +1,17 @@
-package com.example.tap_intellij.Componentes;
+package com.example.tap_intellij.Componentes.Taqueria;
 
-import com.example.tap_intellij.Modelos.Usuarios_DAO;
-import com.example.tap_intellij.Vistas.Taqueria.Formularios.Usuarios_Form;
+import com.example.tap_intellij.Modelos.Taqueria.Ordenes_DAO;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Ordenes_Form;
 import javafx.scene.control.*;
 
 import java.util.Optional;
 
-public class Usuarios_Button_Cell extends TableCell<Usuarios_DAO, String> {
+public class Ordenes_Button_Cell extends TableCell<Ordenes_DAO, String> {
     Button btnCelda;
     int opc;
-    Usuarios_DAO objUsu;
+    Ordenes_DAO objOrd;
 
-    public Usuarios_Button_Cell(int opc) {
+    public Ordenes_Button_Cell(int opc) {
         this.opc = opc;
         String txtButton = (opc == 1) ? "Editar" : "Eliminar";
         btnCelda = new Button(txtButton);
@@ -19,20 +19,20 @@ public class Usuarios_Button_Cell extends TableCell<Usuarios_DAO, String> {
     }
 
     private void AccionBoton(int opc) {
-        TableView<Usuarios_DAO> tbvUsuarios = Usuarios_Button_Cell.this.getTableView();
-        objUsu = tbvUsuarios.getItems().get(Usuarios_Button_Cell.this.getIndex());
+        TableView<Ordenes_DAO> tbvOrdenes = Ordenes_Button_Cell.this.getTableView();
+        objOrd = tbvOrdenes.getItems().get(Ordenes_Button_Cell.this.getIndex());
         if (opc == 1) {
-            new Usuarios_Form(tbvUsuarios, objUsu);
+            new Ordenes_Form(tbvOrdenes, objOrd);
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar el usuario? " + objUsu.getNombre());
+            alert.setContentText("¿Deseas borrar la orden? " + objOrd.getIdOrden());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                objUsu.Eliminar();
-                tbvUsuarios.setItems((objUsu.Consultar()));
-                tbvUsuarios.refresh();
+                objOrd.Eliminar();
+                tbvOrdenes.setItems((objOrd.Consultar()));
+                tbvOrdenes.refresh();
             }
         }
     }

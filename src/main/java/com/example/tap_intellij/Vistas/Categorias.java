@@ -1,10 +1,9 @@
 package com.example.tap_intellij.Vistas;
 
-import com.example.tap_intellij.Vistas.Taqueria.*;
-import com.example.tap_intellij.Vistas.Taqueria.Formularios.*;
+import com.example.tap_intellij.Vistas.Taqueria.Generar_PDF;
+import com.example.tap_intellij.Vistas.Taqueria.Tablas.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -52,6 +51,7 @@ public class Categorias extends Stage {
         // Crear botones PDF y Gráficas
         botoneraInferior = new HBox(5);
         btnPDF = new Button("PDF");
+        btnPDF.setOnAction(event -> new Generar_PDF());
         btnGraficas = new Button("Gráficas");
         botoneraInferior.getChildren().addAll(btnPDF, btnGraficas);
         // Agregar todas las botoneras al layout principal

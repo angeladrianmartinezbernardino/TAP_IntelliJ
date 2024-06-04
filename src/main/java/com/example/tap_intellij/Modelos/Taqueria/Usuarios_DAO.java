@@ -1,5 +1,6 @@
-package com.example.tap_intellij.Modelos;
+package com.example.tap_intellij.Modelos.Taqueria;
 
+import com.example.tap_intellij.Modelos.Conexion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

@@ -1,6 +1,7 @@
-package com.example.tap_intellij.Vistas;
+package com.example.tap_intellij.Vistas.Taqueria;
 
-import com.example.tap_intellij.Modelos.Usuarios_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Usuarios_DAO;
+import com.example.tap_intellij.Vistas.Categorias;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -30,25 +31,25 @@ public class Login extends Stage {
         txtContrasena.setPromptText("Contraseña");
 
         btnEntrar = new Button("Entrar");
-        btnEntrar.setOnAction(event -> autenticarYAcceder());
+        btnEntrar.setOnAction(event -> Autenticar_y_acceder());
 
         layout.getChildren().addAll(txtUsuario, txtContrasena, btnEntrar);
 
         escena = new Scene(layout, 300, 200);
     }
 
-    private void autenticarYAcceder() {
+    private void Autenticar_y_acceder() {
         String usuario = txtUsuario.getText();
         String contrasena = txtContrasena.getText();
         if (modeloUsuario.autenticar(usuario, contrasena)) {
             Categorias categorias = new Categorias();
             categorias.show();
-            this.close(); // Cierra la ventana de login
+            this.close();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error de autenticación");
             alert.setHeaderText("Credenciales inválidas");
-            alert.setContentText("El usuario y/o la contraseña son incorrectos.");
+            alert.setContentText("El usuario o la contraseña son incorrectass.");
             alert.showAndWait();
         }
     }

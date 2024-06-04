@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Generar_PDF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Estilos/Calculadora.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Estilos/Calculadora.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cuadro_magico.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Cuadro_magico.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Categorias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Categorias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +64,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -99,6 +104,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.tap_intellij.Vistas" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Simulador_impresion" />
       <recent name="C:\Users\AAdri\OneDrive\Documentos\Programas\IntelliJ\TAP_IntelliJ\src\main\resources\Imagenes\Taqueria" />
@@ -187,15 +195,12 @@
       <workItem from="1716262817230" duration="4988000" />
       <workItem from="1716332574410" duration="3171000" />
       <workItem from="1716355932468" duration="5338000" />
-      <workItem from="1716444332426" duration="5364000" />
-    </task>
-    <task id="LOCAL-00062" summary="Ajustando detalles.">
-      <option name="closed" value="true" />
-      <created>1709461207256</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1709461207258</updated>
+      <workItem from="1716444332426" duration="5451000" />
+      <workItem from="1716495022620" duration="90000" />
+      <workItem from="1716505673459" duration="5338000" />
+      <workItem from="1717022519932" duration="60000" />
+      <workItem from="1717192261387" duration="8000" />
+      <workItem from="1717192389807" duration="746000" />
     </task>
     <task id="LOCAL-00063" summary="Ajustando detalles.">
       <option name="closed" value="true" />
@@ -581,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716458212122</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1716459311022</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1716459311023</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

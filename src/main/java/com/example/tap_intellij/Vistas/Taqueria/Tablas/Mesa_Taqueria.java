@@ -1,7 +1,7 @@
-package com.example.tap_intellij.Vistas.Taqueria;
+package com.example.tap_intellij.Vistas.Taqueria.Tablas;
 
-import com.example.tap_intellij.Componentes.Mesas_Button_Cell;
-import com.example.tap_intellij.Modelos.Mesas_DAO;
+import com.example.tap_intellij.Componentes.Taqueria.Mesas_Button_Cell;
+import com.example.tap_intellij.Modelos.Taqueria.Mesas_DAO;
 import com.example.tap_intellij.Vistas.Taqueria.Formularios.Mesas_Form;
 import javafx.scene.Scene;
 import javafx.scene.control.*;

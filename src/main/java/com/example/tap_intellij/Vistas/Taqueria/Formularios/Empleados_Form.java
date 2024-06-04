@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
-import com.example.tap_intellij.Modelos.Empleados_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Empleados_DAO;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
