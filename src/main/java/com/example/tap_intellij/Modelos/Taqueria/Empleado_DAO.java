@@ -7,7 +7,7 @@ import javafx.collections.ObservableList;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Empleados_DAO {
+public class Empleado_DAO {
     private int idEmpleado;
     private String nomEmpleado;
     private String RFCEmpleado;
@@ -93,15 +93,15 @@ public class Empleados_DAO {
         }
     }
 
-    public ObservableList<Empleados_DAO> Consultar() {
-        ObservableList<Empleados_DAO> listaEmp = FXCollections.observableArrayList();
+    public ObservableList<Empleado_DAO> Consultar() {
+        ObservableList<Empleado_DAO> listaEmp = FXCollections.observableArrayList();
         String query = "SELECT * FROM empleado";
         try {
-            Empleados_DAO objEmp;
+            Empleado_DAO objEmp;
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
-                objEmp = new Empleados_DAO();
+                objEmp = new Empleado_DAO();
                 objEmp.idEmpleado = res.getInt("idEmpleado");
                 objEmp.nomEmpleado = res.getString("nomEmpleado");
                 objEmp.RFCEmpleado = res.getString("RFCEmpleado");

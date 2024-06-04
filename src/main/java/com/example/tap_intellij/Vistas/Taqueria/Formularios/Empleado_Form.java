@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
-import com.example.tap_intellij.Modelos.Taqueria.Empleados_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Empleado_DAO;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,18 +10,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Empleados_Form extends Stage {
-    private TableView<Empleados_DAO> tbvEmpleado;
-    private Empleados_DAO objEmp;
+public class Empleado_Form extends Stage {
+    private TableView<Empleado_DAO> tbvEmpleado;
+    private Empleado_DAO objEmp;
     String[] arPrompts = {"Nombre del empleado", "RFC del empleado", "Sueldo del empleado", "Telefono del empleado", "Direccion del empleado"};
     private Scene escena;
     private TextField[] arTxtCampos = new TextField[5];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public Empleados_Form(TableView<Empleados_DAO> tbvEmp, Empleados_DAO objEmp) {
+    public Empleado_Form(TableView<Empleado_DAO> tbvEmp, Empleado_DAO objEmp) {
         tbvEmpleado = tbvEmp;
-        this.objEmp = (objEmp == null) ? new Empleados_DAO() : objEmp;
+        this.objEmp = (objEmp == null) ? new Empleado_DAO() : objEmp;
         CrearUI();
         this.setTitle("Insertar usuario");
         this.setScene(escena);

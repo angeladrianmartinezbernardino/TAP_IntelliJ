@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
-import com.example.tap_intellij.Modelos.Taqueria.Mesas_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Categoria_DAO;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,20 +10,20 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Mesas_Form extends Stage {
-    private TableView<Mesas_DAO> tbvMesas;
-    private Mesas_DAO objMes;
-    String[] arPrompts = {"Número de la mesa"};
+public class Categoria_Form extends Stage {
+    private TableView<Categoria_DAO> tbvCategorias;
+    private Categoria_DAO objCategoria;
+    private String[] arPrompts = {"Nombre de la categoría"};
     private Scene escena;
     private TextField[] arTxtCampos = new TextField[1];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public Mesas_Form(TableView<Mesas_DAO> tbvMes, Mesas_DAO objMes) {
-        tbvMesas = tbvMes;
-        this.objMes = (objMes == null) ? new Mesas_DAO() : objMes;
+    public Categoria_Form(TableView<Categoria_DAO> tbvCategorias, Categoria_DAO objCategoria){
+        this.tbvCategorias = tbvCategorias;
+        this.objCategoria = (objCategoria == null) ? new Categoria_DAO() : objCategoria;
         CrearUI();
-        this.setTitle("Insertar usuario");
+        this.setTitle("Agregar/Editar Categoría");
         this.setScene(escena);
         this.show();
     }
@@ -33,31 +33,40 @@ public class Mesas_Form extends Stage {
         vbxPrincipal.setPadding(new Insets(10));
         vbxPrincipal.setSpacing(10);
         vbxPrincipal.setAlignment(Pos.CENTER);
+
         for (int i = 0; i < arTxtCampos.length; i++) {
             arTxtCampos[i] = new TextField();
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
+
         LlenarForm();
+
         btnGuardar = new Button("Guardar");
-        btnGuardar.setOnAction(event -> GuardarMesa());
+        btnGuardar.setOnAction(event -> GuardarCategoria());
         vbxPrincipal.getChildren().add(btnGuardar);
+
         escena = new Scene(vbxPrincipal, 350, 250);
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objMes.getNumero()+"");
+        arTxtCampos[0].setText(objCategoria.getNombre());
     }
 
-    private void GuardarMesa() {
-        objMes.setNumero(Integer.parseInt(arTxtCampos[0].getText()));
-        if (objMes.getIdMesa() > 0) {
-            objMes.Actualizar();
-        } else {
-            objMes.Insertar();
+    private void GuardarCategoria() {
+        objCategoria.setNombre(arTxtCampos[0].getText());
+
+        if (objCategoria.getIdCategoria() > 0)
+            objCategoria.ACTUALIZAR();
+        else
+            objCategoria.INSERTAR();
+
+        tbvCategorias.setItems(objCategoria.CONSULTAR());
+        tbvCategorias.refresh();
+
+        // Limpiar los campos después de guardar
+        for (TextField campo : arTxtCampos) {
+            campo.clear();
         }
-        tbvMesas.setItems(objMes.Consultar());
-        tbvMesas.refresh();
-        arTxtCampos[0].clear();
     }
 }

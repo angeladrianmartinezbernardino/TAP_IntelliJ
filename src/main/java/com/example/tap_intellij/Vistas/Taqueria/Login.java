@@ -1,7 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria;
 
-import com.example.tap_intellij.Modelos.Taqueria.Usuarios_DAO;
-import com.example.tap_intellij.Vistas.Categorias;
+import com.example.tap_intellij.Modelos.Taqueria.Usuario_DAO;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -12,10 +11,10 @@ public class Login extends Stage {
     private TextField txtUsuario;
     private PasswordField txtContrasena;
     private Button btnEntrar;
-    private Usuarios_DAO modeloUsuario;
+    private Usuario_DAO modeloUsuario;
 
     public Login() {
-        modeloUsuario = new Usuarios_DAO();
+        modeloUsuario = new Usuario_DAO();
         CrearUI();
         this.setTitle("Login");
         this.setScene(escena);
@@ -42,8 +41,8 @@ public class Login extends Stage {
         String usuario = txtUsuario.getText();
         String contrasena = txtContrasena.getText();
         if (modeloUsuario.autenticar(usuario, contrasena)) {
-            Categorias categorias = new Categorias();
-            categorias.show();
+            Categoria categoria = new Categoria();
+            categoria.show();
             this.close();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

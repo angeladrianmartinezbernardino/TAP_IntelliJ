@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Date;
 
-public class Ordenes_DAO {
+public class Orden_DAO {
     private int idOrden;
     private Integer idEmpleado; // Usamos Integer en lugar de int para permitir null.
     private Date fecha;
@@ -94,15 +94,15 @@ public class Ordenes_DAO {
         }
     }
 
-    public ObservableList<Ordenes_DAO> Consultar() {
-        ObservableList<Ordenes_DAO> listaEmp = FXCollections.observableArrayList();
+    public ObservableList<Orden_DAO> Consultar() {
+        ObservableList<Orden_DAO> listaEmp = FXCollections.observableArrayList();
         String query = "SELECT * FROM orden";
         try {
-            Ordenes_DAO objEmp;
+            Orden_DAO objEmp;
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
-                objEmp = new Ordenes_DAO();
+                objEmp = new Orden_DAO();
                 objEmp.idOrden = res.getInt("idOrden");
                 objEmp.idEmpleado = res.getInt("idEmpleado");
                 objEmp.fecha = res.getDate("fecha");

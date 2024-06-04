@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
-import com.example.tap_intellij.Modelos.Taqueria.Ordenes_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Orden_DAO;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,18 +12,18 @@ import javafx.stage.Stage;
 
 import java.sql.Date;
 
-public class Ordenes_Form extends Stage {
-    private TableView<Ordenes_DAO> tbvOrdenes;
-    private Ordenes_DAO objOrd;
+public class Orden_Form extends Stage {
+    private TableView<Orden_DAO> tbvOrdenes;
+    private Orden_DAO objOrd;
     String[] arPrompts = {"id del Empleado", "Fecha", "Observaciones", "ID de la mesa", "ID del Usuario"};
     private Scene escena;
     private TextField[] arTxtCampos = new TextField[5];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public Ordenes_Form(TableView<Ordenes_DAO> tbvOrd, Ordenes_DAO objOrd) {
+    public Orden_Form(TableView<Orden_DAO> tbvOrd, Orden_DAO objOrd) {
         tbvOrdenes = tbvOrd;
-        this.objOrd = (objOrd == null) ? new Ordenes_DAO() : objOrd;
+        this.objOrd = (objOrd == null) ? new Orden_DAO() : objOrd;
         CrearUI();
         this.setTitle("Insertar orden");
         this.setScene(escena);

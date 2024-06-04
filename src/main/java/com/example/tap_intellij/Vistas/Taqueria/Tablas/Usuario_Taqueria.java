@@ -1,8 +1,8 @@
 package com.example.tap_intellij.Vistas.Taqueria.Tablas;
 
-import com.example.tap_intellij.Componentes.Taqueria.Usuarios_Button_Cell;
-import com.example.tap_intellij.Modelos.Taqueria.Usuarios_DAO;
-import com.example.tap_intellij.Vistas.Taqueria.Formularios.Usuarios_Form;
+import com.example.tap_intellij.Componentes.Taqueria.Usuario_Button_Cell;
+import com.example.tap_intellij.Modelos.Taqueria.Usuario_DAO;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Usuario_Form;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,7 +18,7 @@ public class Usuario_Taqueria extends Stage {
     private BorderPane bpnPrincipal;
     private ToolBar tlbMenu;
     private Scene escena;
-    private TableView<Usuarios_DAO> tbvUsuarios;
+    private TableView<Usuario_DAO> tbvUsuarios;
     private Button btnAgregarUsuario;
 
     public Usuario_Taqueria() {
@@ -33,7 +33,7 @@ public class Usuario_Taqueria extends Stage {
         imvUsu.setFitHeight(50);
         imvUsu.setFitWidth(50);
         btnAgregarUsuario = new Button();
-        btnAgregarUsuario.setOnAction(event -> new Usuarios_Form(tbvUsuarios, null));
+        btnAgregarUsuario.setOnAction(event -> new Usuario_Form(tbvUsuarios, null));
         btnAgregarUsuario.setPrefSize(50, 50);
         btnAgregarUsuario.setGraphic(imvUsu);
         tlbMenu = new ToolBar(btnAgregarUsuario);
@@ -49,30 +49,30 @@ public class Usuario_Taqueria extends Stage {
     }
 
     private void CrearTable() {
-        Usuarios_DAO objUsu = new Usuarios_DAO();
-        tbvUsuarios = new TableView<Usuarios_DAO>();
-        TableColumn<Usuarios_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
+        Usuario_DAO objUsu = new Usuario_DAO();
+        tbvUsuarios = new TableView<Usuario_DAO>();
+        TableColumn<Usuario_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
         tbcidUsuario.setCellValueFactory(new PropertyValueFactory<>("idUsuario"));
-        TableColumn<Usuarios_DAO, String> tbcnombre = new TableColumn<>("Nombre");
+        TableColumn<Usuario_DAO, String> tbcnombre = new TableColumn<>("Nombre");
         tbcnombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        TableColumn<Usuarios_DAO, String> tbccontraseña = new TableColumn<>("Contraseña");
+        TableColumn<Usuario_DAO, String> tbccontraseña = new TableColumn<>("Contraseña");
         tbccontraseña.setCellValueFactory(new PropertyValueFactory<>("contraseña"));
-        TableColumn<Usuarios_DAO, Float> tbcrol = new TableColumn<>("Rol");
+        TableColumn<Usuario_DAO, Float> tbcrol = new TableColumn<>("Rol");
         tbcrol.setCellValueFactory(new PropertyValueFactory<>("rol"));
         //1
-        TableColumn<Usuarios_DAO, String> tbcEditar = new TableColumn<Usuarios_DAO, String>("Editar");
-        tbcEditar.setCellFactory(new Callback<TableColumn<Usuarios_DAO, String>, TableCell<Usuarios_DAO, String>>() {
+        TableColumn<Usuario_DAO, String> tbcEditar = new TableColumn<Usuario_DAO, String>("Editar");
+        tbcEditar.setCellFactory(new Callback<TableColumn<Usuario_DAO, String>, TableCell<Usuario_DAO, String>>() {
             @Override
-            public TableCell<Usuarios_DAO, String> call(TableColumn<Usuarios_DAO, String> param) {
-                return new Usuarios_Button_Cell(1);
+            public TableCell<Usuario_DAO, String> call(TableColumn<Usuario_DAO, String> param) {
+                return new Usuario_Button_Cell(1);
             }
         });
         //2
-        TableColumn<Usuarios_DAO, String> tbcEliminar = new TableColumn<Usuarios_DAO, String>("Eliminar");
-        tbcEliminar.setCellFactory(new Callback<TableColumn<Usuarios_DAO, String>, TableCell<Usuarios_DAO, String>>() {
+        TableColumn<Usuario_DAO, String> tbcEliminar = new TableColumn<Usuario_DAO, String>("Eliminar");
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Usuario_DAO, String>, TableCell<Usuario_DAO, String>>() {
             @Override
-            public TableCell<Usuarios_DAO, String> call(TableColumn<Usuarios_DAO, String> param) {
-                return new Usuarios_Button_Cell(2);
+            public TableCell<Usuario_DAO, String> call(TableColumn<Usuario_DAO, String> param) {
+                return new Usuario_Button_Cell(2);
             }
         });
         tbvUsuarios.getColumns().addAll(tbcidUsuario, tbcnombre, tbccontraseña, tbcrol, tbcEditar, tbcEliminar);

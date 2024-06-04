@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Usuarios_DAO {
+public class Usuario_DAO {
     private int idUsuario;
     private String nombre;
     private String contraseña;
@@ -76,15 +76,15 @@ public class Usuarios_DAO {
         }
     }
 
-    public ObservableList<Usuarios_DAO> Consultar() {
-        ObservableList<Usuarios_DAO> listaEmp = FXCollections.observableArrayList();
+    public ObservableList<Usuario_DAO> Consultar() {
+        ObservableList<Usuario_DAO> listaEmp = FXCollections.observableArrayList();
         String query = "SELECT * FROM usuarios";
         try {
-            Usuarios_DAO objUsu;
+            Usuario_DAO objUsu;
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
-                objUsu = new Usuarios_DAO();
+                objUsu = new Usuario_DAO();
                 objUsu.idUsuario = res.getInt("idUsuario");
                 objUsu.nombre = res.getString("nombre");
                 objUsu.contraseña = res.getString("contraseña");

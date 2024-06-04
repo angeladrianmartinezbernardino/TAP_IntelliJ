@@ -1,8 +1,8 @@
 package com.example.tap_intellij.Vistas.Taqueria.Tablas;
 
-import com.example.tap_intellij.Componentes.Taqueria.Empleados_Button_Cell;
-import com.example.tap_intellij.Modelos.Taqueria.Empleados_DAO;
-import com.example.tap_intellij.Vistas.Taqueria.Formularios.Empleados_Form;
+import com.example.tap_intellij.Componentes.Taqueria.Empleado_Button_Cell;
+import com.example.tap_intellij.Modelos.Taqueria.Empleado_DAO;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Empleado_Form;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,7 +18,7 @@ public class Empleado_Taqueria extends Stage {
     private BorderPane bpnPrincipal;
     private ToolBar tlbMenu;
     private Scene escena;
-    private TableView<Empleados_DAO> tbvEmpleados;
+    private TableView<Empleado_DAO> tbvEmpleados;
     private Button btnAgregarEmpleado;
 
     public Empleado_Taqueria() {
@@ -33,7 +33,7 @@ public class Empleado_Taqueria extends Stage {
         imvEmp.setFitHeight(50);
         imvEmp.setFitWidth(50);
         btnAgregarEmpleado = new Button();
-        btnAgregarEmpleado.setOnAction(event -> new Empleados_Form(tbvEmpleados, null));
+        btnAgregarEmpleado.setOnAction(event -> new Empleado_Form(tbvEmpleados, null));
         btnAgregarEmpleado.setPrefSize(50, 50);
         btnAgregarEmpleado.setGraphic(imvEmp);
         tlbMenu = new ToolBar(btnAgregarEmpleado);
@@ -49,34 +49,34 @@ public class Empleado_Taqueria extends Stage {
     }
 
     private void CrearTable() {
-        Empleados_DAO objEmp = new Empleados_DAO();
-        tbvEmpleados = new TableView<Empleados_DAO>();
-        TableColumn<Empleados_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
+        Empleado_DAO objEmp = new Empleado_DAO();
+        tbvEmpleados = new TableView<Empleado_DAO>();
+        TableColumn<Empleado_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
         tbcidEmpleado.setCellValueFactory(new PropertyValueFactory<>("idEmpleado"));
-        TableColumn<Empleados_DAO, String> tbcnomEmpleado = new TableColumn<>("Empleado");
+        TableColumn<Empleado_DAO, String> tbcnomEmpleado = new TableColumn<>("Empleado");
         tbcnomEmpleado.setCellValueFactory(new PropertyValueFactory<>("nomEmpleado"));
-        TableColumn<Empleados_DAO, String> tbcRFCEmpleado = new TableColumn<>("RFC");
+        TableColumn<Empleado_DAO, String> tbcRFCEmpleado = new TableColumn<>("RFC");
         tbcRFCEmpleado.setCellValueFactory(new PropertyValueFactory<>("RFCEmpleado"));
-        TableColumn<Empleados_DAO, Float> tbcsueldo = new TableColumn<>("Sueldo");
+        TableColumn<Empleado_DAO, Float> tbcsueldo = new TableColumn<>("Sueldo");
         tbcsueldo.setCellValueFactory(new PropertyValueFactory<>("salario"));
-        TableColumn<Empleados_DAO, String> tbctelefono = new TableColumn<>("Telefono");
+        TableColumn<Empleado_DAO, String> tbctelefono = new TableColumn<>("Telefono");
         tbctelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
-        TableColumn<Empleados_DAO, String> tbcdireccion = new TableColumn<>("Direccion");
+        TableColumn<Empleado_DAO, String> tbcdireccion = new TableColumn<>("Direccion");
         tbcdireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         //1
-        TableColumn<Empleados_DAO, String> tbcEditar = new TableColumn<Empleados_DAO, String>("Editar");
-        tbcEditar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
+        TableColumn<Empleado_DAO, String> tbcEditar = new TableColumn<Empleado_DAO, String>("Editar");
+        tbcEditar.setCellFactory(new Callback<TableColumn<Empleado_DAO, String>, TableCell<Empleado_DAO, String>>() {
             @Override
-            public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new Empleados_Button_Cell(1);
+            public TableCell<Empleado_DAO, String> call(TableColumn<Empleado_DAO, String> param) {
+                return new Empleado_Button_Cell(1);
             }
         });
         //2
-        TableColumn<Empleados_DAO, String> tbcEliminar = new TableColumn<Empleados_DAO, String>("Eliminar");
-        tbcEliminar.setCellFactory(new Callback<TableColumn<Empleados_DAO, String>, TableCell<Empleados_DAO, String>>() {
+        TableColumn<Empleado_DAO, String> tbcEliminar = new TableColumn<Empleado_DAO, String>("Eliminar");
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Empleado_DAO, String>, TableCell<Empleado_DAO, String>>() {
             @Override
-            public TableCell<Empleados_DAO, String> call(TableColumn<Empleados_DAO, String> param) {
-                return new Empleados_Button_Cell(2);
+            public TableCell<Empleado_DAO, String> call(TableColumn<Empleado_DAO, String> param) {
+                return new Empleado_Button_Cell(2);
             }
         });
         tbvEmpleados.getColumns().addAll(tbcidEmpleado, tbcnomEmpleado, tbcRFCEmpleado, tbcsueldo, tbctelefono, tbcdireccion, tbcEditar, tbcEliminar);

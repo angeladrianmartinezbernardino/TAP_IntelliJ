@@ -1,6 +1,5 @@
-package com.example.tap_intellij.Vistas;
+package com.example.tap_intellij.Vistas.Taqueria;
 
-import com.example.tap_intellij.Vistas.Taqueria.Generar_PDF;
 import com.example.tap_intellij.Vistas.Taqueria.Tablas.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,7 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Categorias extends Stage {
+public class Categoria extends Stage {
     private Scene escena;
     private VBox layoutPrincipal;
     private HBox botoneraSuperior;
@@ -16,7 +15,7 @@ public class Categorias extends Stage {
     private Button[] botonesCategorias;
     private Button btnPDF, btnGraficas;
 
-    public Categorias() {
+    public Categoria() {
         CrearUI();
         this.setTitle("Categorías");
         this.setScene(escena);
@@ -28,7 +27,7 @@ public class Categorias extends Stage {
         layoutPrincipal = new VBox(10);
         // Crear botonera superior
         botoneraSuperior = new HBox(5);
-        Button btnA = new Button("Categorias");
+        Button btnA = new Button("Categoria");
         //btnA.setOnAction(event -> new Categoria_Taqueria());
         Button btnB = new Button("Detalle de la orden");
         //btnB.setOnAction(event -> new Detalle_Orden_Taqueria());

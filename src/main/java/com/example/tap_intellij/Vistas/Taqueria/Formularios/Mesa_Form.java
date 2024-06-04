@@ -1,6 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria.Formularios;
 
-import com.example.tap_intellij.Modelos.Taqueria.Usuarios_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Mesa_DAO;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,18 +10,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Usuarios_Form extends Stage {
-    private TableView<Usuarios_DAO> tbvEmpleado;
-    private Usuarios_DAO objUsu;
-    String[] arPrompts = {"Nombre", "Contraseña", "Rol"};
+public class Mesa_Form extends Stage {
+    private TableView<Mesa_DAO> tbvMesas;
+    private Mesa_DAO objMes;
+    String[] arPrompts = {"Número de la mesa"};
     private Scene escena;
-    private TextField[] arTxtCampos = new TextField[3];
+    private TextField[] arTxtCampos = new TextField[1];
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public Usuarios_Form(TableView<Usuarios_DAO> tbvUsu, Usuarios_DAO objUsu) {
-        tbvEmpleado = tbvUsu;
-        this.objUsu = (objUsu == null) ? new Usuarios_DAO() : objUsu;
+    public Mesa_Form(TableView<Mesa_DAO> tbvMes, Mesa_DAO objMes) {
+        tbvMesas = tbvMes;
+        this.objMes = (objMes == null) ? new Mesa_DAO() : objMes;
         CrearUI();
         this.setTitle("Insertar usuario");
         this.setScene(escena);
@@ -40,30 +40,24 @@ public class Usuarios_Form extends Stage {
         }
         LlenarForm();
         btnGuardar = new Button("Guardar");
-        btnGuardar.setOnAction(event -> GuardarUsuario());
+        btnGuardar.setOnAction(event -> GuardarMesa());
         vbxPrincipal.getChildren().add(btnGuardar);
         escena = new Scene(vbxPrincipal, 350, 250);
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objUsu.getNombre());
-        arTxtCampos[1].setText(objUsu.getContraseña());
-        arTxtCampos[2].setText(objUsu.getRol());
+        arTxtCampos[0].setText(objMes.getNumero()+"");
     }
 
-    private void GuardarUsuario() {
-        objUsu.setNombre(arTxtCampos[0].getText());
-        objUsu.setContraseña(arTxtCampos[1].getText());
-        objUsu.setRol(arTxtCampos[2].getText());
-        if (objUsu.getIdUsuario() > 0) {
-            objUsu.Actualizar();
+    private void GuardarMesa() {
+        objMes.setNumero(Integer.parseInt(arTxtCampos[0].getText()));
+        if (objMes.getIdMesa() > 0) {
+            objMes.Actualizar();
         } else {
-            objUsu.Insertar();
+            objMes.Insertar();
         }
-        tbvEmpleado.setItems(objUsu.Consultar());
-        tbvEmpleado.refresh();
+        tbvMesas.setItems(objMes.Consultar());
+        tbvMesas.refresh();
         arTxtCampos[0].clear();
-        arTxtCampos[1].clear();
-        arTxtCampos[2].clear();
     }
 }

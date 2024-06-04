@@ -1,8 +1,8 @@
 package com.example.tap_intellij.Vistas.Taqueria.Tablas;
 
-import com.example.tap_intellij.Componentes.Taqueria.Ordenes_Button_Cell;
-import com.example.tap_intellij.Modelos.Taqueria.Ordenes_DAO;
-import com.example.tap_intellij.Vistas.Taqueria.Formularios.Ordenes_Form;
+import com.example.tap_intellij.Componentes.Taqueria.Orden_Button_Cell;
+import com.example.tap_intellij.Modelos.Taqueria.Orden_DAO;
+import com.example.tap_intellij.Vistas.Taqueria.Formularios.Orden_Form;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,7 +18,7 @@ public class Orden_Taqueria extends Stage {
     private BorderPane bpnPrincipal;
     private ToolBar tlbMenu;
     private Scene escena;
-    private TableView<Ordenes_DAO> tbvOrdenes;
+    private TableView<Orden_DAO> tbvOrdenes;
     private Button btnAgregarOrden;
 
     public Orden_Taqueria() {
@@ -33,7 +33,7 @@ public class Orden_Taqueria extends Stage {
         imvOrd.setFitHeight(50);
         imvOrd.setFitWidth(50);
         btnAgregarOrden = new Button();
-        btnAgregarOrden.setOnAction(event -> new Ordenes_Form(tbvOrdenes, null));
+        btnAgregarOrden.setOnAction(event -> new Orden_Form(tbvOrdenes, null));
         btnAgregarOrden.setPrefSize(50, 50);
         btnAgregarOrden.setGraphic(imvOrd);
         tlbMenu = new ToolBar(btnAgregarOrden);
@@ -49,34 +49,34 @@ public class Orden_Taqueria extends Stage {
     }
 
     private void CrearTable() {
-        Ordenes_DAO objOrd = new Ordenes_DAO();
-        tbvOrdenes = new TableView<Ordenes_DAO>();
-        TableColumn<Ordenes_DAO, String> tbcidOrden = new TableColumn<>("ID Orden");
+        Orden_DAO objOrd = new Orden_DAO();
+        tbvOrdenes = new TableView<Orden_DAO>();
+        TableColumn<Orden_DAO, String> tbcidOrden = new TableColumn<>("ID Orden");
         tbcidOrden.setCellValueFactory(new PropertyValueFactory<>("idOrden"));
-        TableColumn<Ordenes_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
+        TableColumn<Orden_DAO, String> tbcidEmpleado = new TableColumn<>("ID Empleado");
         tbcidEmpleado.setCellValueFactory(new PropertyValueFactory<>("idEmpleado"));
-        TableColumn<Ordenes_DAO, String> tbcfecha = new TableColumn<>("Fecha");
+        TableColumn<Orden_DAO, String> tbcfecha = new TableColumn<>("Fecha");
         tbcfecha.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
-        TableColumn<Ordenes_DAO, Float> tbcobservaciones = new TableColumn<>("Observaciones");
+        TableColumn<Orden_DAO, Float> tbcobservaciones = new TableColumn<>("Observaciones");
         tbcobservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
-        TableColumn<Ordenes_DAO, String> tbcidMesa = new TableColumn<>("ID Mesa");
+        TableColumn<Orden_DAO, String> tbcidMesa = new TableColumn<>("ID Mesa");
         tbcidMesa.setCellValueFactory(new PropertyValueFactory<>("idMesa"));
-        TableColumn<Ordenes_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
+        TableColumn<Orden_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
         tbcidUsuario.setCellValueFactory(new PropertyValueFactory<>("idUsuario"));
         //1
-        TableColumn<Ordenes_DAO, String> tbcEditar = new TableColumn<Ordenes_DAO, String>("Editar");
-        tbcEditar.setCellFactory(new Callback<TableColumn<Ordenes_DAO, String>, TableCell<Ordenes_DAO, String>>() {
+        TableColumn<Orden_DAO, String> tbcEditar = new TableColumn<Orden_DAO, String>("Editar");
+        tbcEditar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
-            public TableCell<Ordenes_DAO, String> call(TableColumn<Ordenes_DAO, String> param) {
-                return new Ordenes_Button_Cell(1);
+            public TableCell<Orden_DAO, String> call(TableColumn<Orden_DAO, String> param) {
+                return new Orden_Button_Cell(1);
             }
         });
         //2
-        TableColumn<Ordenes_DAO, String> tbcEliminar = new TableColumn<Ordenes_DAO, String>("Eliminar");
-        tbcEliminar.setCellFactory(new Callback<TableColumn<Ordenes_DAO, String>, TableCell<Ordenes_DAO, String>>() {
+        TableColumn<Orden_DAO, String> tbcEliminar = new TableColumn<Orden_DAO, String>("Eliminar");
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
-            public TableCell<Ordenes_DAO, String> call(TableColumn<Ordenes_DAO, String> param) {
-                return new Ordenes_Button_Cell(2);
+            public TableCell<Orden_DAO, String> call(TableColumn<Orden_DAO, String> param) {
+                return new Orden_Button_Cell(2);
             }
         });
         tbvOrdenes.getColumns().addAll(tbcidOrden, tbcidEmpleado, tbcfecha, tbcobservaciones, tbcidMesa, tbcidUsuario, tbcEditar, tbcEliminar);
