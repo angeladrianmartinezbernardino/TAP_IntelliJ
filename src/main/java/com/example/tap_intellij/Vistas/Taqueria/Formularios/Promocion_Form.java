@@ -33,19 +33,15 @@ public class Promocion_Form extends Stage {
         vbxPrincipal.setPadding(new Insets(10));
         vbxPrincipal.setSpacing(10);
         vbxPrincipal.setAlignment(Pos.CENTER);
-
         for (int i = 0; i < arTxtCampos.length; i++) {
             arTxtCampos[i] = new TextField();
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
-
         LlenarForm();
-
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarPromocion());
         vbxPrincipal.getChildren().add(btnGuardar);
-
         escena = new Scene(vbxPrincipal, 350, 300);
     }
 
@@ -63,16 +59,10 @@ public class Promocion_Form extends Stage {
         objPromocion.setCostoPromo(Float.parseFloat(arTxtCampos[2].getText()));
         objPromocion.setFechaInicio(arTxtCampos[3].getText());
         objPromocion.setFechaFin(arTxtCampos[4].getText());
-
-        if (objPromocion.getIdPromocion() > 0)
-            objPromocion.ACTUALIZAR();
-        else
-            objPromocion.INSERTAR();
-
+        if (objPromocion.getIdPromocion() > 0) objPromocion.ACTUALIZAR();
+        else objPromocion.INSERTAR();
         tbvPromociones.setItems(objPromocion.CONSULTAR());
         tbvPromociones.refresh();
-
-        // Limpiar los campos después de guardar
         for (TextField campo : arTxtCampos) {
             campo.clear();
         }

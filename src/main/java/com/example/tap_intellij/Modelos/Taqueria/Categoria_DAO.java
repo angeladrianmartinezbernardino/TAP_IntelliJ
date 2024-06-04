@@ -27,7 +27,7 @@ public class Categoria_DAO {
         this.nombre = nombre;
     }
 
-    public void INSERTAR(){
+    public void INSERTAR() {
         String query = "INSERT INTO categorias(nombre) VALUES('" + nombre + "')";
 
         try {
@@ -38,7 +38,7 @@ public class Categoria_DAO {
         }
     }
 
-    public void ACTUALIZAR(){
+    public void ACTUALIZAR() {
         String query = "UPDATE categorias SET nombre='" + nombre + "' WHERE idCategoria=" + idCategoria;
 
         try {
@@ -49,7 +49,7 @@ public class Categoria_DAO {
         }
     }
 
-    public void ELIMINAR(){
+    public void ELIMINAR() {
         String query = "DELETE FROM categorias WHERE idCategoria=" + idCategoria;
 
         try {
@@ -60,15 +60,14 @@ public class Categoria_DAO {
         }
     }
 
-    public ObservableList<Categoria_DAO> CONSULTAR(){
+    public ObservableList<Categoria_DAO> CONSULTAR() {
         ObservableList<Categoria_DAO> listaCategorias = FXCollections.observableArrayList();
         String query = "SELECT * FROM categorias";
-
         try {
             Categoria_DAO objCategoria;
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
-            while (res.next()){
+            while (res.next()) {
                 objCategoria = new Categoria_DAO();
                 objCategoria.idCategoria = res.getInt("idCategoria");
                 objCategoria.nombre = res.getString("nombre");

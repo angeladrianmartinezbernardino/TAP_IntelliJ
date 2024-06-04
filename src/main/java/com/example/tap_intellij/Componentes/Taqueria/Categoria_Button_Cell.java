@@ -10,6 +10,7 @@ public class Categoria_Button_Cell extends TableCell<Categoria_DAO, String> {
     Button button;
     int opc;
     Categoria_DAO objCategoria;
+
     public Categoria_Button_Cell(int opc) {
         this.opc = opc;
         String buttonText = (opc == 1) ? "Editar" : "Eliminar";
@@ -21,20 +22,17 @@ public class Categoria_Button_Cell extends TableCell<Categoria_DAO, String> {
         TableView<Categoria_DAO> tbvCategoria = Categoria_Button_Cell.this.getTableView();
         objCategoria = tbvCategoria.getItems().get(Categoria_Button_Cell.this.getIndex());
         if (opc == 1) {
-            //codigo editar
             new Categoria_Form(tbvCategoria, objCategoria);
-
-        }else {
-            Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("mensaje de sistema");
-            alert.setHeaderText("CONFIRMACION");
-            alert.setContentText("¿Desea borrar la categoria: "+objCategoria.getIdCategoria());
-            Optional<ButtonType> result  = alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Mensaje de sistema");
+            alert.setHeaderText("Confirmación");
+            alert.setContentText("¿Desea borrar la categoria: " + objCategoria.getIdCategoria() + "?");
+            Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objCategoria.ELIMINAR();
                 tbvCategoria.setItems(objCategoria.CONSULTAR());
                 tbvCategoria.refresh();
-
             }
 
         }

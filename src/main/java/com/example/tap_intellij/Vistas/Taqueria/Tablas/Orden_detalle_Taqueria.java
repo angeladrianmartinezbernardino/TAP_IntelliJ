@@ -29,35 +29,24 @@ public class Orden_detalle_Taqueria extends Stage {
     private void crearUI(ObservableList<Orden_detalle_DAO> detalles) {
         tablaDetalleOrden = new TableView<>();
         tablaDetalleOrden.setItems(detalles);
-
         TableColumn<Orden_detalle_DAO, Integer> colIdOrden = new TableColumn<>("ID Orden");
         colIdOrden.setCellValueFactory(new PropertyValueFactory<>("idOrden"));
-
         TableColumn<Orden_detalle_DAO, Integer> colIdProducto = new TableColumn<>("ID Producto");
         colIdProducto.setCellValueFactory(new PropertyValueFactory<>("idProducto"));
-
         TableColumn<Orden_detalle_DAO, Integer> colCantidad = new TableColumn<>("Cantidad");
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
-
         TableColumn<Orden_detalle_DAO, Double> colPrecio = new TableColumn<>("Precio");
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-
         TableColumn<Orden_detalle_DAO, Integer> colIdPromocion = new TableColumn<>("ID Promoción");
         colIdPromocion.setCellValueFactory(new PropertyValueFactory<>("idPromocion"));
-
         TableColumn<Orden_detalle_DAO, Integer> colIdMesa = new TableColumn<>("ID Mesa");
         colIdMesa.setCellValueFactory(new PropertyValueFactory<>("idMesa"));
-
         tablaDetalleOrden.getColumns().addAll(colIdOrden, colIdProducto, colCantidad, colPrecio, colIdPromocion, colIdMesa);
-
-        // Inicializar los botones
         btnAgregarDetalle = new Button("Agregar Detalle");
         btnEliminarDetalle = new Button("Eliminar Detalle");
-
         HBox hBoxBotones = new HBox(10);
         hBoxBotones.getChildren().addAll(btnAgregarDetalle, btnEliminarDetalle);
         hBoxBotones.setAlignment(Pos.CENTER);
-
         vBoxPrincipal = new VBox(10);
         vBoxPrincipal.setPadding(new Insets(10));
         vBoxPrincipal.getChildren().addAll(tablaDetalleOrden, hBoxBotones);

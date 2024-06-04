@@ -63,10 +63,8 @@ public class Promocion_DAO {
         this.fechaFin = fechaFin;
     }
 
-    public void INSERTAR(){
-        String query = "INSERT INTO promociones(nombre, descripcion, costo_promo, fecha_inicio, fecha_fin) " +
-                "VALUES('" + nombre + "', '" + descripcion + "', " + costoPromo + ", '" + fechaInicio + "', '" + fechaFin + "')";
-
+    public void INSERTAR() {
+        String query = "INSERT INTO promociones(nombre, descripcion, costo_promo, fecha_inicio, fecha_fin) " + "VALUES('" + nombre + "', '" + descripcion + "', " + costoPromo + ", '" + fechaInicio + "', '" + fechaFin + "')";
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -75,11 +73,8 @@ public class Promocion_DAO {
         }
     }
 
-    public void ACTUALIZAR(){
-        String query = "UPDATE promociones SET nombre='" + nombre + "', descripcion='" + descripcion +
-                "', costo_promo=" + costoPromo + ", fecha_inicio='" + fechaInicio + "', fecha_fin='" + fechaFin +
-                "' WHERE idPromocion=" + idPromocion;
-
+    public void ACTUALIZAR() {
+        String query = "UPDATE promociones SET nombre='" + nombre + "', descripcion='" + descripcion + "', costo_promo=" + costoPromo + ", fecha_inicio='" + fechaInicio + "', fecha_fin='" + fechaFin + "' WHERE idPromocion=" + idPromocion;
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -88,9 +83,8 @@ public class Promocion_DAO {
         }
     }
 
-    public void ELIMINAR(){
+    public void ELIMINAR() {
         String query = "DELETE FROM promociones WHERE idPromocion=" + idPromocion;
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -99,15 +93,14 @@ public class Promocion_DAO {
         }
     }
 
-    public ObservableList<Promocion_DAO> CONSULTAR(){
+    public ObservableList<Promocion_DAO> CONSULTAR() {
         ObservableList<Promocion_DAO> listaPromociones = FXCollections.observableArrayList();
         String query = "SELECT * FROM promociones";
-
         try {
             Promocion_DAO objPromocion;
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
-            while (res.next()){
+            while (res.next()) {
                 objPromocion = new Promocion_DAO();
                 objPromocion.idPromocion = res.getInt("idPromocion");
                 objPromocion.nombre = res.getString("nombre");

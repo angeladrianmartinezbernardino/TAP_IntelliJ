@@ -29,11 +29,8 @@ public class Servicio_domicilio_Taqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(
-                getClass().getResource("/Imagenes/servicio.jpg").toString()
-        );
+        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/servicio.jpg").toString());
         tbvServicios = new TableView<>();
-
         imvEmp.setFitHeight(50);
         imvEmp.setFitWidth(50);
         btnAgregarServicio = new Button();
@@ -41,9 +38,7 @@ public class Servicio_domicilio_Taqueria extends Stage {
         btnAgregarServicio.setPrefSize(30, 30);
         btnAgregarServicio.setGraphic(imvEmp);
         tlbMenu = new ToolBar(btnAgregarServicio);
-
         CrearTabla();
-
         bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(tlbMenu);
         bpnPrincipal.setCenter(tbvServicios);
@@ -57,44 +52,31 @@ public class Servicio_domicilio_Taqueria extends Stage {
     private void CrearTabla() {
         Servicio_domicilio_DAO objServicio = new Servicio_domicilio_DAO();
         tbvServicios = new TableView<>();
-
         TableColumn<Servicio_domicilio_DAO, Integer> tbcIdServicio = new TableColumn<>("ID");
         tbcIdServicio.setCellValueFactory(new PropertyValueFactory<>("idServicio"));
-
         TableColumn<Servicio_domicilio_DAO, String> tbcFecha = new TableColumn<>("Fecha");
         tbcFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-
         TableColumn<Servicio_domicilio_DAO, String> tbcDireccionEntrega = new TableColumn<>("Dirección de Entrega");
         tbcDireccionEntrega.setCellValueFactory(new PropertyValueFactory<>("direccionEntrega"));
-
         TableColumn<Servicio_domicilio_DAO, Double> tbcCosto = new TableColumn<>("Costo");
         tbcCosto.setCellValueFactory(new PropertyValueFactory<>("costo"));
-
         TableColumn<Servicio_domicilio_DAO, String> tbcObservaciones = new TableColumn<>("Observaciones");
         tbcObservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
-
         TableColumn<Servicio_domicilio_DAO, String> tbcEditar = new TableColumn<>("Editar");
-        tbcEditar.setCellFactory(
-                new Callback<TableColumn<Servicio_domicilio_DAO, String>, TableCell<Servicio_domicilio_DAO, String>>() {
-                    @Override
-                    public TableCell<Servicio_domicilio_DAO, String> call(TableColumn<Servicio_domicilio_DAO, String> param) {
-                        return new Servicio_domicilio_Button_Cell(1);
-                    }
-                }
-        );
-
+        tbcEditar.setCellFactory(new Callback<TableColumn<Servicio_domicilio_DAO, String>, TableCell<Servicio_domicilio_DAO, String>>() {
+            @Override
+            public TableCell<Servicio_domicilio_DAO, String> call(TableColumn<Servicio_domicilio_DAO, String> param) {
+                return new Servicio_domicilio_Button_Cell(1);
+            }
+        });
         TableColumn<Servicio_domicilio_DAO, String> tbcEliminar = new TableColumn<>("Eliminar");
-        tbcEliminar.setCellFactory(
-                new Callback<TableColumn<Servicio_domicilio_DAO, String>, TableCell<Servicio_domicilio_DAO, String>>() {
-                    @Override
-                    public TableCell<Servicio_domicilio_DAO, String> call(TableColumn<Servicio_domicilio_DAO, String> param) {
-                        return new Servicio_domicilio_Button_Cell(2);
-                    }
-                }
-        );
-
-        tbvServicios.getColumns().addAll(tbcIdServicio, tbcFecha, tbcDireccionEntrega,
-                tbcCosto, tbcObservaciones, tbcEditar, tbcEliminar);
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Servicio_domicilio_DAO, String>, TableCell<Servicio_domicilio_DAO, String>>() {
+            @Override
+            public TableCell<Servicio_domicilio_DAO, String> call(TableColumn<Servicio_domicilio_DAO, String> param) {
+                return new Servicio_domicilio_Button_Cell(2);
+            }
+        });
+        tbvServicios.getColumns().addAll(tbcIdServicio, tbcFecha, tbcDireccionEntrega, tbcCosto, tbcObservaciones, tbcEditar, tbcEliminar);
         tbvServicios.setItems(objServicio.CONSULTAR());
     }
 }

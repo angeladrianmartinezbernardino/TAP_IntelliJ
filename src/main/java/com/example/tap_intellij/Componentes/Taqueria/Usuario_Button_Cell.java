@@ -27,7 +27,7 @@ public class Usuario_Button_Cell extends TableCell<Usuario_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje del sistema");
             alert.setHeaderText("Confirmación de acción");
-            alert.setContentText("¿Deseas borrar el usuario? " + objUsu.getNombre());
+            alert.setContentText("¿Deseas borrar el usuario " + objUsu.getNombre() + "?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objUsu.Eliminar();

@@ -46,7 +46,7 @@ public class Mesa_Form extends Stage {
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objMes.getNumero()+"");
+        arTxtCampos[0].setText(objMes.getNumero() + "");
     }
 
     private void GuardarMesa() {

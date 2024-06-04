@@ -28,7 +28,7 @@ public class Producto_Button_Cell extends TableCell<Producto_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Mensaje de sistema");
             alert.setHeaderText("Confirmación");
-            alert.setContentText("¿Desea borrar el producto: " + objProducto.getNombre() + "?");
+            alert.setContentText("¿Desea borrar el producto " + objProducto.getNombre() + "?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 objProducto.ELIMINAR();

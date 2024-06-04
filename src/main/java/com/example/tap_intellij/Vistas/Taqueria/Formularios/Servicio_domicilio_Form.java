@@ -33,19 +33,15 @@ public class Servicio_domicilio_Form extends Stage {
         vbxPrincipal.setPadding(new Insets(10));
         vbxPrincipal.setSpacing(10);
         vbxPrincipal.setAlignment(Pos.CENTER);
-
         for (int i = 0; i < arTxtCampos.length; i++) {
             arTxtCampos[i] = new TextField();
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
-
         LlenarForm();
-
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarServicioDomicilio());
         vbxPrincipal.getChildren().add(btnGuardar);
-
         escena = new Scene(vbxPrincipal, 350, 300);
     }
 
@@ -61,16 +57,10 @@ public class Servicio_domicilio_Form extends Stage {
         objServicioDomicilio.setDireccionEntrega(arTxtCampos[1].getText());
         objServicioDomicilio.setCosto(Float.parseFloat(arTxtCampos[2].getText()));
         objServicioDomicilio.setObservaciones(arTxtCampos[3].getText());
-
-        if (objServicioDomicilio.getIdServicio() > 0)
-            objServicioDomicilio.ACTUALIZAR();
-        else
-            objServicioDomicilio.INSERTAR();
-
+        if (objServicioDomicilio.getIdServicio() > 0) objServicioDomicilio.ACTUALIZAR();
+        else objServicioDomicilio.INSERTAR();
         tbvServicioDomicilio.setItems(objServicioDomicilio.CONSULTAR());
         tbvServicioDomicilio.refresh();
-
-        // Limpiar los campos después de guardar
         for (TextField campo : arTxtCampos) {
             campo.clear();
         }

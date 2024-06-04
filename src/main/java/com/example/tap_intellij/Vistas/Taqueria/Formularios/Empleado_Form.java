@@ -48,7 +48,7 @@ public class Empleado_Form extends Stage {
     private void LlenarForm() {
         arTxtCampos[0].setText(objEmp.getNomEmpleado());
         arTxtCampos[1].setText(objEmp.getRFCEmpleado());
-        arTxtCampos[2].setText(objEmp.getSalario()+"");
+        arTxtCampos[2].setText(objEmp.getSalario() + "");
         arTxtCampos[3].setText(objEmp.getTelefono());
         arTxtCampos[4].setText(objEmp.getDireccion());
     }

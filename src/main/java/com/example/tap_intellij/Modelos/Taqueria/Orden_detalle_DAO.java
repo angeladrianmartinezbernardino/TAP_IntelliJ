@@ -66,7 +66,6 @@ public class Orden_detalle_DAO {
     public ObservableList<Orden_detalle_DAO> consultarDetallesPorOrden(int idOrden) {
         ObservableList<Orden_detalle_DAO> listaDetalles = FXCollections.observableArrayList();
         String query = "SELECT * FROM DetOrden WHERE idOrden = " + idOrden;
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
@@ -83,16 +82,11 @@ public class Orden_detalle_DAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return listaDetalles;
     }
 
     public void insertarDetalle(Orden_detalle_DAO detalle) {
-        String query = String.format("INSERT INTO DetOrden (idOrden, idProducto, cantidad, precio, idPromocion, idMesa) " +
-                        "VALUES (%d, %d, %d, %.2f, %d, %d)",
-                detalle.getIdOrden(), detalle.getIdProducto(), detalle.getCantidad(), detalle.getPrecio(),
-                detalle.getIdPromocion(), detalle.getIdMesa());
-
+        String query = String.format("INSERT INTO DetOrden (idOrden, idProducto, cantidad, precio, idPromocion, idMesa) " + "VALUES (%d, %d, %d, %.2f, %d, %d)", detalle.getIdOrden(), detalle.getIdProducto(), detalle.getCantidad(), detalle.getPrecio(), detalle.getIdPromocion(), detalle.getIdMesa());
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -102,9 +96,7 @@ public class Orden_detalle_DAO {
     }
 
     public void eliminarDetalle(Orden_detalle_DAO detalle) {
-        String query = "DELETE FROM DetOrden WHERE idOrden = " + detalle.getIdOrden() +
-                " AND idProducto = " + detalle.getIdProducto();
-
+        String query = "DELETE FROM DetOrden WHERE idOrden = " + detalle.getIdOrden() + " AND idProducto = " + detalle.getIdProducto();
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);

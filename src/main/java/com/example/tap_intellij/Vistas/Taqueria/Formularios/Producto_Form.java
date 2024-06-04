@@ -33,19 +33,15 @@ public class Producto_Form extends Stage {
         vBoxPrincipal.setPadding(new Insets(10));
         vBoxPrincipal.setSpacing(10);
         vBoxPrincipal.setAlignment(Pos.CENTER);
-
         for (int i = 0; i < arTxtCampos.length; i++) {
             arTxtCampos[i] = new TextField();
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vBoxPrincipal.getChildren().add(arTxtCampos[i]);
         }
-
         LlenarForm();
-
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarProducto());
         vBoxPrincipal.getChildren().add(btnGuardar);
-
         scene = new Scene(vBoxPrincipal, 350, 250);
     }
 
@@ -63,16 +59,10 @@ public class Producto_Form extends Stage {
         producto.setCosto(Double.parseDouble(arTxtCampos[2].getText()));
         producto.setIdCategoria(Integer.parseInt(arTxtCampos[3].getText()));
         producto.setIdPromocion(Integer.parseInt(arTxtCampos[4].getText()));
-
-        if (producto.getIdProducto() > 0)
-            producto.ACTUALIZAR();
-        else
-            producto.INSERTAR();
-
+        if (producto.getIdProducto() > 0) producto.ACTUALIZAR();
+        else producto.INSERTAR();
         tbvProductos.setItems(producto.CONSULTAR());
         tbvProductos.refresh();
-
-        // Limpiar los campos después de guardar
         for (TextField campo : arTxtCampos) {
             campo.clear();
         }

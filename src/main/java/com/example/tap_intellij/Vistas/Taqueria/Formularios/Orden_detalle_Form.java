@@ -47,15 +47,7 @@ public class Orden_detalle_Form extends Stage {
         vBox.setPadding(new Insets(10));
         vBox.setAlignment(Pos.CENTER);
 
-        vBox.getChildren().addAll(
-                new Label("ID Orden:"), txtIdOrden,
-                new Label("ID Producto:"), txtIdProducto,
-                new Label("Cantidad:"), txtCantidad,
-                new Label("Precio:"), txtPrecio,
-                new Label("ID Promoción:"), txtIdPromocion,
-                new Label("ID Mesa:"), txtIdMesa,
-                btnGuardar
-        );
+        vBox.getChildren().addAll(new Label("ID Orden:"), txtIdOrden, new Label("ID Producto:"), txtIdProducto, new Label("Cantidad:"), txtCantidad, new Label("Precio:"), txtPrecio, new Label("ID Promoción:"), txtIdPromocion, new Label("ID Mesa:"), txtIdMesa, btnGuardar);
 
         Scene scene = new Scene(vBox, 300, 400);
         this.setScene(scene);
@@ -69,9 +61,7 @@ public class Orden_detalle_Form extends Stage {
         detalleOrden.setPrecio(Double.parseDouble(txtPrecio.getText()));
         detalleOrden.setIdPromocion(Integer.parseInt(txtIdPromocion.getText()));
         detalleOrden.setIdMesa(Integer.parseInt(txtIdMesa.getText()));
-
         // Lógica para guardar el detalle de la orden en la base de datos o en una estructura de datos
-
         // Después de guardar, limpiamos los campos
         txtIdOrden.clear();
         txtIdProducto.clear();

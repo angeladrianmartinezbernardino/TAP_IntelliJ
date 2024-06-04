@@ -56,7 +56,6 @@ public class Servicio_domicilio_DAO {
 
     public void INSERTAR() {
         String query = "INSERT INTO servicio_domicilio(fecha, direccion_entrega, costo, observaciones) VALUES('" + fecha + "', '" + direccionEntrega + "', " + costo + ", '" + observaciones + "')";
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -67,7 +66,6 @@ public class Servicio_domicilio_DAO {
 
     public void ELIMINAR() {
         String query = "DELETE FROM servicio_domicilio WHERE idServicio=" + idServicio;
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -78,7 +76,6 @@ public class Servicio_domicilio_DAO {
 
     public void ACTUALIZAR() {
         String query = "UPDATE servicio_domicilio SET fecha='" + fecha + "', direccion_entrega='" + direccionEntrega + "', costo=" + costo + ", observaciones='" + observaciones + "' WHERE idServicio=" + idServicio;
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             stmt.executeUpdate(query);
@@ -90,7 +87,6 @@ public class Servicio_domicilio_DAO {
     public ObservableList<Servicio_domicilio_DAO> CONSULTAR() {
         ObservableList<Servicio_domicilio_DAO> listaServicios = FXCollections.observableArrayList();
         String query = "SELECT * FROM servicio_domicilio";
-
         try {
             Servicio_domicilio_DAO objServicio;
             Statement stmt = Conexion.Conexion.createStatement();

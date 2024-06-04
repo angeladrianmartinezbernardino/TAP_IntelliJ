@@ -27,7 +27,7 @@ public class Promocion_Button_Cell extends TableCell<Promocion_DAO, String> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmación");
             alert.setHeaderText("Eliminar Promoción");
-            alert.setContentText("¿Estás seguro de eliminar la promoción: " + objPromocion.getNombre() + "?");
+            alert.setContentText("¿Estás seguro de eliminar la promoción " + objPromocion.getNombre() + "?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 objPromocion.ELIMINAR();

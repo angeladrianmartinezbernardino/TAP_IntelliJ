@@ -29,64 +29,47 @@ public class Categoria_Taqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(
-                getClass().getResource("/Imagenes/cat.jpg").toString()
-        );
+        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/cat.jpg").toString());
         tbvCategorias = new TableView<>();
-
         imvEmp.setFitHeight(50);
         imvEmp.setFitWidth(50);
         Button btnAgregarCategoria = new Button();
         btnAgregarCategoria.setOnAction(event -> new Categoria_Form(tbvCategorias, null));
         btnAgregarCategoria.setPrefSize(30, 30);
         btnAgregarCategoria.setGraphic(imvEmp);
-
         CrearTabla();
-
         BorderPane bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(btnAgregarCategoria);
         bpnPrincipal.setCenter(tbvCategorias);
-
         Panel pnlPrincipal = new Panel("Categorías de Taquería");
         pnlPrincipal.getStyleClass().add("panel-info");
         pnlPrincipal.setBody(bpnPrincipal);
-
-        Scene escena = new Scene(pnlPrincipal, 600, 400); // Ajusta el tamaño según sea necesario
+        Scene escena = new Scene(pnlPrincipal, 600, 400);
         escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
-
         this.setScene(escena);
         this.show();
     }
 
     private void CrearTabla() {
         Categoria_DAO objCategoria = new Categoria_DAO();
-
         TableColumn<Categoria_DAO, Integer> tbcIdCategoria = new TableColumn<>("ID");
         tbcIdCategoria.setCellValueFactory(new PropertyValueFactory<>("idCategoria"));
-
         TableColumn<Categoria_DAO, String> tbcNombreCategoria = new TableColumn<>("Nombre");
         tbcNombreCategoria.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-
         TableColumn<Categoria_DAO, String> tbcEditar = new TableColumn<>("Editar");
-        tbcEditar.setCellFactory(
-                new Callback<TableColumn<Categoria_DAO, String>, TableCell<Categoria_DAO, String>>() {
-                    @Override
-                    public TableCell<Categoria_DAO, String> call(TableColumn<Categoria_DAO, String> param) {
-                        return new Categoria_Button_Cell(1);
-                    }
-                }
-        );
-
+        tbcEditar.setCellFactory(new Callback<TableColumn<Categoria_DAO, String>, TableCell<Categoria_DAO, String>>() {
+            @Override
+            public TableCell<Categoria_DAO, String> call(TableColumn<Categoria_DAO, String> param) {
+                return new Categoria_Button_Cell(1);
+            }
+        });
         TableColumn<Categoria_DAO, String> tbcEliminar = new TableColumn<>("Eliminar");
-        tbcEliminar.setCellFactory(
-                new Callback<TableColumn<Categoria_DAO, String>, TableCell<Categoria_DAO, String>>() {
-                    @Override
-                    public TableCell<Categoria_DAO, String> call(TableColumn<Categoria_DAO, String> param) {
-                        return new Categoria_Button_Cell(2);
-                    }
-                }
-        );
-
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Categoria_DAO, String>, TableCell<Categoria_DAO, String>>() {
+            @Override
+            public TableCell<Categoria_DAO, String> call(TableColumn<Categoria_DAO, String> param) {
+                return new Categoria_Button_Cell(2);
+            }
+        });
         tbvCategorias.getColumns().addAll(tbcIdCategoria, tbcNombreCategoria, tbcEditar, tbcEliminar);
         tbvCategorias.setItems(objCategoria.CONSULTAR());
     }

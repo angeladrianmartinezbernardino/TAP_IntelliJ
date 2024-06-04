@@ -48,11 +48,11 @@ public class Orden_Form extends Stage {
     }
 
     private void LlenarForm() {
-        arTxtCampos[0].setText(objOrd.getIdEmpleado()+"");
+        arTxtCampos[0].setText(objOrd.getIdEmpleado() + "");
         arTxtCampos[1].setText(objOrd.getFecha() + "");
         arTxtCampos[2].setText(objOrd.getObservaciones());
-        arTxtCampos[3].setText(objOrd.getIdMesa()+"");
-        arTxtCampos[4].setText(objOrd.getIdUsuario()+"");
+        arTxtCampos[3].setText(objOrd.getIdMesa() + "");
+        arTxtCampos[4].setText(objOrd.getIdUsuario() + "");
     }
 
     private void GuardarOrden() {

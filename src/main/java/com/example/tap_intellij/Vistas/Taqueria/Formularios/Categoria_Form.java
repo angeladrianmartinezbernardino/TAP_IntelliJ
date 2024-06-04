@@ -19,7 +19,7 @@ public class Categoria_Form extends Stage {
     private Button btnGuardar;
     private VBox vbxPrincipal;
 
-    public Categoria_Form(TableView<Categoria_DAO> tbvCategorias, Categoria_DAO objCategoria){
+    public Categoria_Form(TableView<Categoria_DAO> tbvCategorias, Categoria_DAO objCategoria) {
         this.tbvCategorias = tbvCategorias;
         this.objCategoria = (objCategoria == null) ? new Categoria_DAO() : objCategoria;
         CrearUI();
@@ -33,19 +33,15 @@ public class Categoria_Form extends Stage {
         vbxPrincipal.setPadding(new Insets(10));
         vbxPrincipal.setSpacing(10);
         vbxPrincipal.setAlignment(Pos.CENTER);
-
         for (int i = 0; i < arTxtCampos.length; i++) {
             arTxtCampos[i] = new TextField();
             arTxtCampos[i].setPromptText(arPrompts[i]);
             vbxPrincipal.getChildren().add(arTxtCampos[i]);
         }
-
         LlenarForm();
-
         btnGuardar = new Button("Guardar");
         btnGuardar.setOnAction(event -> GuardarCategoria());
         vbxPrincipal.getChildren().add(btnGuardar);
-
         escena = new Scene(vbxPrincipal, 350, 250);
     }
 
@@ -55,16 +51,10 @@ public class Categoria_Form extends Stage {
 
     private void GuardarCategoria() {
         objCategoria.setNombre(arTxtCampos[0].getText());
-
-        if (objCategoria.getIdCategoria() > 0)
-            objCategoria.ACTUALIZAR();
-        else
-            objCategoria.INSERTAR();
-
+        if (objCategoria.getIdCategoria() > 0) objCategoria.ACTUALIZAR();
+        else objCategoria.INSERTAR();
         tbvCategorias.setItems(objCategoria.CONSULTAR());
         tbvCategorias.refresh();
-
-        // Limpiar los campos después de guardar
         for (TextField campo : arTxtCampos) {
             campo.clear();
         }

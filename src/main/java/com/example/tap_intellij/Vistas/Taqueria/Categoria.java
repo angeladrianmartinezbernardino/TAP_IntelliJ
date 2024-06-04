@@ -29,13 +29,8 @@ public class Categoria extends Stage {
     }
 
     private void CrearUI() {
-        // Inicializar la lista Observable
         detalles = FXCollections.observableArrayList();
-
-        // Contenedor principal
         layoutPrincipal = new VBox(10);
-
-        // Crear botonera superior
         botoneraSuperior = new HBox(5);
         Button btnA = new Button("Categoria");
         btnA.setOnAction(event -> new Categoria_Taqueria());
@@ -55,26 +50,16 @@ public class Categoria extends Stage {
         btnH.setOnAction(event -> new Servicio_domicilio_Taqueria());
         Button btnI = new Button("Usuarios");
         btnI.setOnAction(event -> new Usuario_Taqueria());
-
-        // Agregar botones a la botonera
         botoneraSuperior.getChildren().addAll(btnA, btnB, btnC, btnD, btnE, btnF, btnG, btnH, btnI);
-
-        // Crear botones PDF y Gráficas
         botoneraInferior = new HBox(5);
         btnPDF = new Button("PDF");
         btnPDF.setOnAction(event -> new Generar_ticket_PDF(orden, detalles));
         btnGraficas = new Button("Gráficas");
         botoneraInferior.getChildren().addAll(btnPDF, btnGraficas);
-
-        // Agregar todas las botoneras al layout principal
         layoutPrincipal.getChildren().addAll(botoneraSuperior, botoneraInferior);
-
-        // Espacio reservado para TableView (vacío por ahora)
         VBox tableViewPlaceholder = new VBox();
         tableViewPlaceholder.setPrefHeight(200); // Ajustar al tamaño deseado
         layoutPrincipal.getChildren().add(tableViewPlaceholder);
-
-        // Configurar la escena
         escena = new Scene(layoutPrincipal, 800, 600);
     }
 }

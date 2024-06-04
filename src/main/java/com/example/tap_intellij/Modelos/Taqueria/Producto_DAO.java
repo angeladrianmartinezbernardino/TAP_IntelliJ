@@ -115,10 +115,10 @@ public class Producto_DAO {
         }
         return listaProductos;
     }
+
     public ObservableList<Producto_DAO> obtenerProductosPorCategoria(String categoria) {
         ObservableList<Producto_DAO> productosPorCategoria = FXCollections.observableArrayList();
         String query = "SELECT * FROM productos WHERE id_categoria = (SELECT idCategoria FROM categorias WHERE nombre = '" + categoria + "')";
-
         try {
             Statement stmt = Conexion.Conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);

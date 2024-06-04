@@ -42,12 +42,9 @@ public class Orden_Taqueria extends Stage {
         btnAgregarOrden.setOnAction(event -> new Orden_Form(tbvOrdenes, null));
         btnAgregarOrden.setPrefSize(50, 50);
         btnAgregarOrden.setGraphic(imvOrd);
-
         btnFinalizarOrden = new Button("Finalizar Orden");
         btnFinalizarOrden.setOnAction(event -> finalizarOrden());
-
         tlbMenu = new ToolBar(btnAgregarOrden, btnFinalizarOrden);
-
         CrearTable();
         bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(tlbMenu);
@@ -57,7 +54,6 @@ public class Orden_Taqueria extends Stage {
         pnlPrincipal.setBody(bpnPrincipal);
         escena = new Scene(pnlPrincipal, 700, 400);
         escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
-
         detalles = FXCollections.observableArrayList();
     }
 
@@ -76,7 +72,6 @@ public class Orden_Taqueria extends Stage {
         tbcidMesa.setCellValueFactory(new PropertyValueFactory<>("idMesa"));
         TableColumn<Orden_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
         tbcidUsuario.setCellValueFactory(new PropertyValueFactory<>("idUsuario"));
-
         TableColumn<Orden_DAO, String> tbcEditar = new TableColumn<Orden_DAO, String>("Editar");
         tbcEditar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
@@ -84,7 +79,6 @@ public class Orden_Taqueria extends Stage {
                 return new Orden_Button_Cell(1);
             }
         });
-
         TableColumn<Orden_DAO, String> tbcEliminar = new TableColumn<Orden_DAO, String>("Eliminar");
         tbcEliminar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
@@ -92,7 +86,6 @@ public class Orden_Taqueria extends Stage {
                 return new Orden_Button_Cell(2);
             }
         });
-
         tbvOrdenes.getColumns().addAll(tbcidOrden, tbcidEmpleado, tbcfecha, tbcobservaciones, tbcidMesa, tbcidUsuario, tbcEditar, tbcEliminar);
         tbvOrdenes.setItems(objOrd.Consultar());
     }
@@ -100,8 +93,8 @@ public class Orden_Taqueria extends Stage {
     private void finalizarOrden() {
         Orden_DAO orden = tbvOrdenes.getSelectionModel().getSelectedItem();
         if (orden != null) {
-            // Aquí se puede añadir lógica para obtener los detalles de la orden
-            // Por simplicidad, se usa una lista vacía
+            // Aquí se puede añadir lógica para obtener los detalles de la orden.
+            // Por simplicidad, se usa una lista vacía.
             new Generar_ticket_PDF(orden, detalles);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

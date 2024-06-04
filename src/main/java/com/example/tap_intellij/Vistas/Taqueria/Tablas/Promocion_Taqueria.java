@@ -29,11 +29,8 @@ public class Promocion_Taqueria extends Stage {
     }
 
     private void CrearUI() {
-        ImageView imvEmp = new ImageView(
-                getClass().getResource("/Imagenes/promo.jpg").toString()
-        );
+        ImageView imvEmp = new ImageView(getClass().getResource("/Imagenes/promo.jpg").toString());
         tbvPromociones = new TableView<>();
-
         imvEmp.setFitHeight(50);
         imvEmp.setFitWidth(50);
         btnAgregarPromocion = new Button();
@@ -41,9 +38,7 @@ public class Promocion_Taqueria extends Stage {
         btnAgregarPromocion.setPrefSize(30, 30);
         btnAgregarPromocion.setGraphic(imvEmp);
         tlbMenu = new ToolBar(btnAgregarPromocion);
-
         CrearTabla();
-
         bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(tlbMenu);
         bpnPrincipal.setCenter(tbvPromociones);
@@ -57,47 +52,33 @@ public class Promocion_Taqueria extends Stage {
     private void CrearTabla() {
         Promocion_DAO objPromocion = new Promocion_DAO();
         tbvPromociones = new TableView<>();
-
         TableColumn<Promocion_DAO, Integer> tbcIdPromocion = new TableColumn<>("ID");
         tbcIdPromocion.setCellValueFactory(new PropertyValueFactory<>("idPromocion"));
-
         TableColumn<Promocion_DAO, String> tbcNombrePromocion = new TableColumn<>("Nombre");
         tbcNombrePromocion.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-
         TableColumn<Promocion_DAO, String> tbcDescripcionPromocion = new TableColumn<>("Descripción");
         tbcDescripcionPromocion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
-
         TableColumn<Promocion_DAO, Double> tbcCostoPromocion = new TableColumn<>("Costo");
         tbcCostoPromocion.setCellValueFactory(new PropertyValueFactory<>("costoPromo"));
-
         TableColumn<Promocion_DAO, String> tbcFechaInicio = new TableColumn<>("Fecha Inicio");
         tbcFechaInicio.setCellValueFactory(new PropertyValueFactory<>("fechaInicio"));
-
         TableColumn<Promocion_DAO, String> tbcFechaFin = new TableColumn<>("Fecha Fin");
         tbcFechaFin.setCellValueFactory(new PropertyValueFactory<>("fechaFin"));
-
         TableColumn<Promocion_DAO, String> tbcEditar = new TableColumn<>("Editar");
-        tbcEditar.setCellFactory(
-                new Callback<TableColumn<Promocion_DAO, String>, TableCell<Promocion_DAO, String>>() {
-                    @Override
-                    public TableCell<Promocion_DAO, String> call(TableColumn<Promocion_DAO, String> param) {
-                        return new Promocion_Button_Cell(1);
-                    }
-                }
-        );
-
+        tbcEditar.setCellFactory(new Callback<TableColumn<Promocion_DAO, String>, TableCell<Promocion_DAO, String>>() {
+            @Override
+            public TableCell<Promocion_DAO, String> call(TableColumn<Promocion_DAO, String> param) {
+                return new Promocion_Button_Cell(1);
+            }
+        });
         TableColumn<Promocion_DAO, String> tbcEliminar = new TableColumn<>("Eliminar");
-        tbcEliminar.setCellFactory(
-                new Callback<TableColumn<Promocion_DAO, String>, TableCell<Promocion_DAO, String>>() {
-                    @Override
-                    public TableCell<Promocion_DAO, String> call(TableColumn<Promocion_DAO, String> param) {
-                        return new Promocion_Button_Cell(2);
-                    }
-                }
-        );
-
-        tbvPromociones.getColumns().addAll(tbcIdPromocion, tbcNombrePromocion, tbcDescripcionPromocion,
-                tbcCostoPromocion, tbcFechaInicio, tbcFechaFin, tbcEditar, tbcEliminar);
+        tbcEliminar.setCellFactory(new Callback<TableColumn<Promocion_DAO, String>, TableCell<Promocion_DAO, String>>() {
+            @Override
+            public TableCell<Promocion_DAO, String> call(TableColumn<Promocion_DAO, String> param) {
+                return new Promocion_Button_Cell(2);
+            }
+        });
+        tbvPromociones.getColumns().addAll(tbcIdPromocion, tbcNombrePromocion, tbcDescripcionPromocion, tbcCostoPromocion, tbcFechaInicio, tbcFechaFin, tbcEditar, tbcEliminar);
         tbvPromociones.setItems(objPromocion.CONSULTAR());
     }
 }

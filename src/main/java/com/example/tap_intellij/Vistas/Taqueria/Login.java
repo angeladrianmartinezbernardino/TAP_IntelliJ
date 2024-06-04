@@ -25,15 +25,11 @@ public class Login extends Stage {
         VBox layout = new VBox(10);
         txtUsuario = new TextField();
         txtUsuario.setPromptText("Usuario");
-
         txtContrasena = new PasswordField();
         txtContrasena.setPromptText("Contraseña");
-
         btnEntrar = new Button("Entrar");
         btnEntrar.setOnAction(event -> Autenticar_y_acceder());
-
         layout.getChildren().addAll(txtUsuario, txtContrasena, btnEntrar);
-
         escena = new Scene(layout, 300, 200);
     }
 

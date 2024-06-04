@@ -20,29 +20,18 @@ public class Generar_ticket_PDF {
     public void generarTicketPDF() {
         Document pdfDocument = new Document();
         Page page = pdfDocument.getPages().add();
-
-        // Añadir detalles del ticket
         TextFragment titulo = new TextFragment("Ticket de Compra");
         titulo.getTextState().setFontSize(20);
         page.getParagraphs().add(titulo);
-
-        // Información de la orden
         page.getParagraphs().add(new TextFragment("ID Orden: " + orden.getIdOrden()));
         page.getParagraphs().add(new TextFragment("Fecha: " + orden.getFecha()));
         page.getParagraphs().add(new TextFragment("ID Empleado: " + orden.getIdEmpleado()));
         page.getParagraphs().add(new TextFragment("ID Mesa: " + orden.getIdMesa()));
-
-        // Detalles de la orden
         for (Orden_detalle_DAO detalle : detalles) {
-            page.getParagraphs().add(new TextFragment("ID Producto: " + detalle.getIdProducto() +
-                    " | Cantidad: " + detalle.getCantidad() +
-                    " | Precio: " + detalle.getPrecio()));
+            page.getParagraphs().add(new TextFragment("ID Producto: " + detalle.getIdProducto() + " | Cantidad: " + detalle.getCantidad() + " | Precio: " + detalle.getPrecio()));
         }
-
-        // Total (ejemplo simple, necesitará lógica adicional)
         double total = detalles.stream().mapToDouble(d -> d.getCantidad() * d.getPrecio()).sum();
         page.getParagraphs().add(new TextFragment("Total: $" + total));
-
         try {
             pdfDocument.save("TicketCompra.pdf");
             System.out.println("Ticket de compra generado exitosamente.");
