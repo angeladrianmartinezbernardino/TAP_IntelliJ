@@ -195,11 +195,11 @@ public class Memorama extends Stage {
             Image imagenFrontal = new Image(getClass().getResourceAsStream("/Imagenes/Memorama/" + imagen));
             Image imagenTrasera = new Image(getClass().getResourceAsStream("/Imagenes/Memorama/Dorso.jpg"));
             ImageView imageView = new ImageView(imagenTrasera);
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
+            imageView.setFitWidth(55);
+            imageView.setFitHeight(95);
             imageView.setOpacity(1.0);
             boton.setGraphic(imageView);
-            boton.setPrefSize(100, 150);
+            boton.setPrefSize(55, 95);
             boton.setOnAction(event -> manejarClickCarta(boton, imagenFrontal, imagen));
             GP.add(boton, posicion[1], posicion[0]);
         }
@@ -295,9 +295,5 @@ public class Memorama extends Stage {
     private void mostrarControles() {
         revolverButton.setVisible(true);
         TF_Pares.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 }
