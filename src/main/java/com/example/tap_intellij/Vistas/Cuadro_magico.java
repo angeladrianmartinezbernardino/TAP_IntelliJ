@@ -75,7 +75,7 @@ public class Cuadro_magico extends Stage {
                 Archivo.writeInt(0);
             }
             Numero_cuadrado_individual = 1;
-            Fila = Tamano / 2;
+            Fila = 0;
             Columna = Tamano / 2;
             while (Numero_cuadrado_individual <= Tamano * Tamano) {
                 Archivo.seek((Fila * Tamano + Columna) * Integer.BYTES);
