@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Producto_DAO {
     private int idProducto;
@@ -136,5 +138,22 @@ public class Producto_DAO {
             e.printStackTrace();
         }
         return productosPorCategoria;
+    }
+
+    public Map<String, Integer> getProductosMasVendidos() {
+        Map<String, Integer> productosMasVendidos = new HashMap<>();
+        String query = "SELECT nombre, SUM(cantidad) as cantidad_vendida FROM productos " +
+                "INNER JOIN DetOrden ON productos.idProducto = DetOrden.idProducto " +
+                "GROUP BY nombre ORDER BY cantidad_vendida DESC";
+        try {
+            Statement stmt = Conexion.Conexion.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+            while (res.next()) {
+                productosMasVendidos.put(res.getString("nombre"), res.getInt("cantidad_vendida"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return productosMasVendidos;
     }
 }

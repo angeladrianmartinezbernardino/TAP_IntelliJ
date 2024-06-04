@@ -16,4 +16,6 @@ module com.example.tap_intellij {
 
     requires org.kordamp.bootstrapfx.core;
     requires aspose.pdf;
+    requires org.jfree.jfreechart;
+    requires jfreechart.fx;
 }

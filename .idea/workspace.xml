@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Graficas_Taqueria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Orden_detalle_Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Formularios/Orden_detalle_Form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_detalle_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_detalle_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketCompra.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/TicketCompra.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Producto_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Modelos/Taqueria/Producto_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -203,15 +207,7 @@
       <workItem from="1717022519932" duration="60000" />
       <workItem from="1717192261387" duration="8000" />
       <workItem from="1717192389807" duration="746000" />
-      <workItem from="1717472427125" duration="12107000" />
-    </task>
-    <task id="LOCAL-00068" summary="Ajustando detalles.">
-      <option name="closed" value="true" />
-      <created>1711012617693</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1711012617696</updated>
+      <workItem from="1717472427125" duration="15755000" />
     </task>
     <task id="LOCAL-00069" summary="Ajustando detalles.">
       <option name="closed" value="true" />
@@ -597,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717483981403</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1717487327276</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1717487327276</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

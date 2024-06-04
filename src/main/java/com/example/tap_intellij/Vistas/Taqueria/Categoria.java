@@ -55,6 +55,7 @@ public class Categoria extends Stage {
         btnPDF = new Button("PDF");
         btnPDF.setOnAction(event -> new Generar_ticket_PDF(orden, detalles));
         btnGraficas = new Button("Gráficas");
+        btnGraficas.setOnAction(event -> new Graficas_Taqueria().start(new Stage()));
         botoneraInferior.getChildren().addAll(btnPDF, btnGraficas);
         layoutPrincipal.getChildren().addAll(botoneraSuperior, botoneraInferior);
         VBox tableViewPlaceholder = new VBox();
