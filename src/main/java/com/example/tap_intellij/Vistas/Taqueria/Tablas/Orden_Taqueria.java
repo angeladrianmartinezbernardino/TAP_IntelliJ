@@ -2,7 +2,11 @@ package com.example.tap_intellij.Vistas.Taqueria.Tablas;
 
 import com.example.tap_intellij.Componentes.Taqueria.Orden_Button_Cell;
 import com.example.tap_intellij.Modelos.Taqueria.Orden_DAO;
+import com.example.tap_intellij.Modelos.Taqueria.Orden_detalle_DAO;
 import com.example.tap_intellij.Vistas.Taqueria.Formularios.Orden_Form;
+import com.example.tap_intellij.Vistas.Taqueria.Generar_ticket_PDF;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,6 +24,8 @@ public class Orden_Taqueria extends Stage {
     private Scene escena;
     private TableView<Orden_DAO> tbvOrdenes;
     private Button btnAgregarOrden;
+    private Button btnFinalizarOrden;
+    private ObservableList<Orden_detalle_DAO> detalles;
 
     public Orden_Taqueria() {
         CrearUI();
@@ -36,7 +42,12 @@ public class Orden_Taqueria extends Stage {
         btnAgregarOrden.setOnAction(event -> new Orden_Form(tbvOrdenes, null));
         btnAgregarOrden.setPrefSize(50, 50);
         btnAgregarOrden.setGraphic(imvOrd);
-        tlbMenu = new ToolBar(btnAgregarOrden);
+
+        btnFinalizarOrden = new Button("Finalizar Orden");
+        btnFinalizarOrden.setOnAction(event -> finalizarOrden());
+
+        tlbMenu = new ToolBar(btnAgregarOrden, btnFinalizarOrden);
+
         CrearTable();
         bpnPrincipal = new BorderPane();
         bpnPrincipal.setTop(tlbMenu);
@@ -46,6 +57,8 @@ public class Orden_Taqueria extends Stage {
         pnlPrincipal.setBody(bpnPrincipal);
         escena = new Scene(pnlPrincipal, 700, 400);
         escena.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+
+        detalles = FXCollections.observableArrayList();
     }
 
     private void CrearTable() {
@@ -63,7 +76,7 @@ public class Orden_Taqueria extends Stage {
         tbcidMesa.setCellValueFactory(new PropertyValueFactory<>("idMesa"));
         TableColumn<Orden_DAO, String> tbcidUsuario = new TableColumn<>("ID Usuario");
         tbcidUsuario.setCellValueFactory(new PropertyValueFactory<>("idUsuario"));
-        //1
+
         TableColumn<Orden_DAO, String> tbcEditar = new TableColumn<Orden_DAO, String>("Editar");
         tbcEditar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
@@ -71,7 +84,7 @@ public class Orden_Taqueria extends Stage {
                 return new Orden_Button_Cell(1);
             }
         });
-        //2
+
         TableColumn<Orden_DAO, String> tbcEliminar = new TableColumn<Orden_DAO, String>("Eliminar");
         tbcEliminar.setCellFactory(new Callback<TableColumn<Orden_DAO, String>, TableCell<Orden_DAO, String>>() {
             @Override
@@ -79,7 +92,23 @@ public class Orden_Taqueria extends Stage {
                 return new Orden_Button_Cell(2);
             }
         });
+
         tbvOrdenes.getColumns().addAll(tbcidOrden, tbcidEmpleado, tbcfecha, tbcobservaciones, tbcidMesa, tbcidUsuario, tbcEditar, tbcEliminar);
         tbvOrdenes.setItems(objOrd.Consultar());
+    }
+
+    private void finalizarOrden() {
+        Orden_DAO orden = tbvOrdenes.getSelectionModel().getSelectedItem();
+        if (orden != null) {
+            // Aquí se puede añadir lógica para obtener los detalles de la orden
+            // Por simplicidad, se usa una lista vacía
+            new Generar_ticket_PDF(orden, detalles);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No se ha seleccionado una orden");
+            alert.setContentText("Por favor, seleccione una orden para finalizar.");
+            alert.showAndWait();
+        }
     }
 }

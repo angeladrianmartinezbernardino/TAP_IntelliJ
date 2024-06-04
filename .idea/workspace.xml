@@ -5,40 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd34de10-02fe-411b-84ec-a13c16b41f2c" name="Changes" comment="Ajustando detalles.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/Productos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/amor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/employee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/especialidades.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/ino.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/logods.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/mesas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/nezuco.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/promo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/rayo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/refrescos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/ren.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/servicio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/sol.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tacos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tanji.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/to.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Imagenes/tortas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Generar_ticket_PDF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneradoDocumento.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/GeneradoDocumento.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Categoria_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Categoria_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Menu_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Menu_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Producto_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Producto_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Promocion_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Promocion_Taqueria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Servicio_domicilio_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Servicio_domicilio_Taqueria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Generar_PDF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_Taqueria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tap_intellij/Vistas/Taqueria/Tablas/Orden_Taqueria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +63,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -234,15 +206,7 @@
       <workItem from="1717022519932" duration="60000" />
       <workItem from="1717192261387" duration="8000" />
       <workItem from="1717192389807" duration="746000" />
-      <workItem from="1717472427125" duration="5863000" />
-    </task>
-    <task id="LOCAL-00065" summary="Ajustando detalles.">
-      <option name="closed" value="true" />
-      <created>1709600296500</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1709600296500</updated>
+      <workItem from="1717472427125" duration="7578000" />
     </task>
     <task id="LOCAL-00066" summary="Ajustando detalles.">
       <option name="closed" value="true" />
@@ -628,7 +592,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717477268193</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Ajustando detalles.">
+      <option name="closed" value="true" />
+      <created>1717478562609</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1717478562610</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

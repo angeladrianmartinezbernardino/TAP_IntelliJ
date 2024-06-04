@@ -1,5 +1,6 @@
 package com.example.tap_intellij.Vistas.Taqueria;
 
+import com.example.tap_intellij.Modelos.Taqueria.Orden_DAO;
 import com.example.tap_intellij.Modelos.Taqueria.Orden_detalle_DAO;
 import com.example.tap_intellij.Vistas.Taqueria.Tablas.*;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ public class Categoria extends Stage {
     private Button[] botonesCategorias;
     private Button btnPDF, btnGraficas;
     private ObservableList<Orden_detalle_DAO> detalles;
+    private Orden_DAO orden;
 
     public Categoria() {
         CrearUI();
@@ -60,7 +62,7 @@ public class Categoria extends Stage {
         // Crear botones PDF y Gráficas
         botoneraInferior = new HBox(5);
         btnPDF = new Button("PDF");
-        btnPDF.setOnAction(event -> new Generar_PDF());
+        btnPDF.setOnAction(event -> new Generar_ticket_PDF(orden, detalles));
         btnGraficas = new Button("Gráficas");
         botoneraInferior.getChildren().addAll(btnPDF, btnGraficas);
 
